@@ -23,6 +23,7 @@
     <bpmn2:property id="rechazadoTramiteSeleccionado" itemSubjectRef="ItemDefinition_3" name="rechazadoTramiteSeleccionado"/>
     <bpmn2:property id="resultRest" itemSubjectRef="ItemDefinition_495" name="resultRest"/>
     <bpmn2:property id="revisor" itemSubjectRef="ItemDefinition_1" name="revisor"/>
+    <bpmn2:property id="aprobado" itemSubjectRef="ItemDefinition_3" name="aprobado"/>
     <bpmn2:startEvent id="_1">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
@@ -130,7 +131,8 @@
         <bpmn2:dataInput id="DataInput_16" itemSubjectRef="ItemDefinition_1" name="proyectista"/>
         <bpmn2:dataInput id="DataInput_18" itemSubjectRef="ItemDefinition_1" name="tramite"/>
         <bpmn2:dataInput id="DataInput_20" itemSubjectRef="ItemDefinition_1" name="revisor"/>
-        <bpmn2:dataOutput id="DataOutput_1" itemSubjectRef="ItemDefinition_3" name="rechazadoFaltaCompetencia"/>
+        <bpmn2:dataOutput id="DataOutput_1" itemSubjectRef="ItemDefinition_3" name="rechazadoTramiteSeleccionado"/>
+        <bpmn2:dataOutput id="DataOutput_3" itemSubjectRef="ItemDefinition_3" name="aprobado"/>
         <bpmn2:inputSet id="InputSet_1" name="Input Set 1">
           <bpmn2:dataInputRefs>DataInput_10</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_11</bpmn2:dataInputRefs>
@@ -144,6 +146,7 @@
         </bpmn2:inputSet>
         <bpmn2:outputSet id="OutputSet_2" name="Output Set 2">
           <bpmn2:dataOutputRefs>DataOutput_1</bpmn2:dataOutputRefs>
+          <bpmn2:dataOutputRefs>DataOutput_3</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
       <bpmn2:dataInputAssociation id="DataInputAssociation_10">
@@ -185,6 +188,10 @@
       <bpmn2:dataOutputAssociation id="DataOutputAssociation_1">
         <bpmn2:sourceRef>DataOutput_1</bpmn2:sourceRef>
         <bpmn2:targetRef>rechazadoTramiteSeleccionado</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+      <bpmn2:dataOutputAssociation id="DataOutputAssociation_3">
+        <bpmn2:sourceRef>DataOutput_3</bpmn2:sourceRef>
+        <bpmn2:targetRef>aprobado</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
     </bpmn2:callActivity>
     <bpmn2:sequenceFlow id="SequenceFlow_4" tns:priority="1" sourceRef="UserTask_1" targetRef="CallActivity_1"/>
