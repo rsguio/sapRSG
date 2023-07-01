@@ -17,7 +17,7 @@
     <bpmn2:property id="proyectista" itemSubjectRef="ItemDefinition_1" name="proyectista"/>
     <bpmn2:property id="revisor" itemSubjectRef="ItemDefinition_1" name="revisor"/>
     <bpmn2:property id="tramite" itemSubjectRef="ItemDefinition_1" name="tramite"/>
-    <bpmn2:property id="rechazadoFaltaCompetencia" itemSubjectRef="ItemDefinition_3" name="rechazadoFaltaCompetencia"/>
+    <bpmn2:property id="rechazadoTramiteSeleccionado" itemSubjectRef="ItemDefinition_3" name="rechazadoTramiteSeleccionado"/>
     <bpmn2:startEvent id="_1">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
@@ -213,7 +213,7 @@
     </bpmn2:exclusiveGateway>
     <bpmn2:sequenceFlow id="SequenceFlow_9" tns:priority="1" sourceRef="UserTask_1" targetRef="ExclusiveGateway_2"/>
     <bpmn2:sequenceFlow id="SequenceFlow_10" tns:priority="1" sourceRef="ExclusiveGateway_2" targetRef="ExclusiveGateway_1">
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_5" language="http://www.java.com/java">return KieFunctions.isFalse(rechazadoFaltaCompetencia);</bpmn2:conditionExpression>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_5" language="http://www.java.com/java">return KieFunctions.isFalse(rechazadoTramiteSeleccionado);</bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:endEvent id="EndEvent_3" name="Fin">
       <bpmn2:extensionElements>
@@ -224,7 +224,7 @@
       <bpmn2:incoming>SequenceFlow_11</bpmn2:incoming>
     </bpmn2:endEvent>
     <bpmn2:sequenceFlow id="SequenceFlow_11" tns:priority="1" sourceRef="ExclusiveGateway_2" targetRef="EndEvent_3">
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_6" language="http://www.java.com/java">return KieFunctions.isTrue(rechazadoFaltaCompetencia);</bpmn2:conditionExpression>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_6" language="http://www.java.com/java">return KieFunctions.isTrue(rechazadoTramiteSeleccionado);</bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:endEvent id="EndEvent_4" name="Fin">
       <bpmn2:extensionElements>

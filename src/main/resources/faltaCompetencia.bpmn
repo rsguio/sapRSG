@@ -20,7 +20,7 @@
     <bpmn2:property id="cliente" itemSubjectRef="ItemDefinition_1" name="cliente"/>
     <bpmn2:property id="proyectista" itemSubjectRef="ItemDefinition_1" name="proyectista"/>
     <bpmn2:property id="tramite" itemSubjectRef="ItemDefinition_1" name="tramite"/>
-    <bpmn2:property id="rechazadoFaltaCompetencia" itemSubjectRef="ItemDefinition_3" name="rechazadoFaltaCompetencia"/>
+    <bpmn2:property id="rechazadoTramiteSeleccionado" itemSubjectRef="ItemDefinition_3" name="rechazadoTramiteSeleccionado"/>
     <bpmn2:property id="resultRest" itemSubjectRef="ItemDefinition_495" name="resultRest"/>
     <bpmn2:property id="revisor" itemSubjectRef="ItemDefinition_1" name="revisor"/>
     <bpmn2:startEvent id="_1">
@@ -184,7 +184,7 @@
       </bpmn2:dataInputAssociation>
       <bpmn2:dataOutputAssociation id="DataOutputAssociation_1">
         <bpmn2:sourceRef>DataOutput_1</bpmn2:sourceRef>
-        <bpmn2:targetRef>rechazadoFaltaCompetencia</bpmn2:targetRef>
+        <bpmn2:targetRef>rechazadoTramiteSeleccionado</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
     </bpmn2:callActivity>
     <bpmn2:sequenceFlow id="SequenceFlow_4" tns:priority="1" sourceRef="UserTask_1" targetRef="CallActivity_1"/>
@@ -203,7 +203,7 @@
       <bpmn2:incoming>SequenceFlow_7</bpmn2:incoming>
     </bpmn2:endEvent>
     <bpmn2:sequenceFlow id="SequenceFlow_7" tns:priority="1" sourceRef="ExclusiveGateway_1" targetRef="EndEvent_3">
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_23" language="http://www.java.com/java">return KieFunctions.isFalse(rechazadoFaltaCompetencia);</bpmn2:conditionExpression>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_23" language="http://www.java.com/java">return KieFunctions.isFalse(rechazadoTramiteSeleccionado);</bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:endEvent id="EndEvent_4" name="Fin">
       <bpmn2:extensionElements>
@@ -268,7 +268,7 @@
       </bpmn2:dataOutputAssociation>
     </bpmn2:task>
     <bpmn2:sequenceFlow id="SequenceFlow_2" tns:priority="1" sourceRef="ExclusiveGateway_1" targetRef="Task_1">
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_13" language="http://www.java.com/java">return KieFunctions.isTrue(rechazadoFaltaCompetencia);</bpmn2:conditionExpression>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_13" language="http://www.java.com/java">return KieFunctions.isTrue(rechazadoTramiteSeleccionado);</bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="SequenceFlow_3" tns:priority="1" sourceRef="Task_1" targetRef="EndEvent_4"/>
   </bpmn2:process>
