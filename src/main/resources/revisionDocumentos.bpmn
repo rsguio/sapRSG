@@ -30,7 +30,7 @@
           <tns:metaValue><![CDATA[]]></tns:metaValue>
         </tns:metaData>
       </bpmn2:extensionElements>
-      <bpmn2:outgoing>SequenceFlow_19</bpmn2:outgoing>
+      <bpmn2:outgoing>SequenceFlow_7</bpmn2:outgoing>
     </bpmn2:startEvent>
     <bpmn2:userTask id="UserTask_1" name="Revisar documento">
       <bpmn2:extensionElements>
@@ -232,11 +232,10 @@
       <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_6" language="http://www.java.com/java">return KieFunctions.isTrue(rechazadoTramiteSeleccionado);</bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:exclusiveGateway id="ExclusiveGateway_4" gatewayDirection="Converging">
-      <bpmn2:incoming>SequenceFlow_19</bpmn2:incoming>
       <bpmn2:incoming>SequenceFlow_22</bpmn2:incoming>
-      <bpmn2:outgoing>SequenceFlow_15</bpmn2:outgoing>
+      <bpmn2:incoming>SequenceFlow_7</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_2</bpmn2:outgoing>
     </bpmn2:exclusiveGateway>
-    <bpmn2:sequenceFlow id="SequenceFlow_19" tns:priority="1" sourceRef="_1" targetRef="ExclusiveGateway_4"/>
     <bpmn2:sequenceFlow id="SequenceFlow_22" tns:priority="1" sourceRef="UserTask_2" targetRef="ExclusiveGateway_4"/>
     <bpmn2:task id="Task_6" tns:taskName="CustomWIH" name="Versionar Documento">
       <bpmn2:extensionElements>
@@ -246,7 +245,7 @@
         <tns:onEntry-script scriptFormat="http://www.java.com/java"/>
         <tns:onExit-script scriptFormat="http://www.java.com/java"/>
       </bpmn2:extensionElements>
-      <bpmn2:incoming>SequenceFlow_15</bpmn2:incoming>
+      <bpmn2:incoming>SequenceFlow_2</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_14</bpmn2:outgoing>
       <bpmn2:ioSpecification id="InputOutputSpecification_7">
         <bpmn2:dataInput id="DataInput_31" tns:dtype="Object" itemSubjectRef="ItemDefinition_1" name="TaskName"/>
@@ -264,12 +263,13 @@
       </bpmn2:dataInputAssociation>
     </bpmn2:task>
     <bpmn2:sequenceFlow id="SequenceFlow_14" tns:priority="1" sourceRef="Task_6" targetRef="UserTask_1"/>
-    <bpmn2:sequenceFlow id="SequenceFlow_15" tns:priority="1" sourceRef="ExclusiveGateway_4" targetRef="Task_6"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_2" tns:priority="1" sourceRef="ExclusiveGateway_4" targetRef="Task_6"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_7" tns:priority="1" sourceRef="_1" targetRef="ExclusiveGateway_4"/>
   </bpmn2:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_Process_1" bpmnElement="revisionDocumentos">
       <bpmndi:BPMNShape id="BPMNShape_StartEvent_1" bpmnElement="_1">
-        <dc:Bounds height="36.0" width="36.0" x="50.0" y="113.0"/>
+        <dc:Bounds height="36.0" width="36.0" x="80.0" y="113.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_1"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_UserTask_1" bpmnElement="UserTask_1" isExpanded="true">
@@ -356,12 +356,6 @@
           <dc:Bounds height="17.0" width="13.0" x="657.0" y="324.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_19" bpmnElement="SequenceFlow_19" sourceElement="BPMNShape_StartEvent_1" targetElement="BPMNShape_ExclusiveGateway_4">
-        <di:waypoint xsi:type="dc:Point" x="86.0" y="131.0"/>
-        <di:waypoint xsi:type="dc:Point" x="127.0" y="131.0"/>
-        <di:waypoint xsi:type="dc:Point" x="168.0" y="131.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_10"/>
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_22" bpmnElement="SequenceFlow_22" sourceElement="BPMNShape_UserTask_2" targetElement="BPMNShape_ExclusiveGateway_4">
         <di:waypoint xsi:type="dc:Point" x="1050.0" y="207.0"/>
         <di:waypoint xsi:type="dc:Point" x="1050.0" y="131.0"/>
@@ -374,11 +368,17 @@
         <di:waypoint xsi:type="dc:Point" x="360.0" y="232.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_14"/>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_15" bpmnElement="SequenceFlow_15" sourceElement="BPMNShape_ExclusiveGateway_4" targetElement="BPMNShape_Task_6">
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_2" bpmnElement="SequenceFlow_2" sourceElement="BPMNShape_ExclusiveGateway_4" targetElement="BPMNShape_Task_6">
         <di:waypoint xsi:type="dc:Point" x="193.0" y="156.0"/>
         <di:waypoint xsi:type="dc:Point" x="193.0" y="179.0"/>
         <di:waypoint xsi:type="dc:Point" x="193.0" y="202.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_16"/>
+        <bpmndi:BPMNLabel/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_7" bpmnElement="SequenceFlow_7" sourceElement="BPMNShape_StartEvent_1" targetElement="BPMNShape_ExclusiveGateway_4">
+        <di:waypoint xsi:type="dc:Point" x="116.0" y="131.0"/>
+        <di:waypoint xsi:type="dc:Point" x="142.0" y="131.0"/>
+        <di:waypoint xsi:type="dc:Point" x="168.0" y="131.0"/>
+        <bpmndi:BPMNLabel/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
