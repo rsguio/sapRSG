@@ -276,12 +276,8 @@
         <tns:metaData name="elementname">
           <tns:metaValue><![CDATA[REST]]></tns:metaValue>
         </tns:metaData>
-        <tns:onEntry-script scriptFormat="http://www.java.com/java">
-          <tns:script>System.out.println(&quot;before Rest Call ::::&quot;);</tns:script>
-        </tns:onEntry-script>
-        <tns:onExit-script scriptFormat="http://www.java.com/java">
-          <tns:script>System.out.println(&quot;before Rest Call ::::&quot;+output);</tns:script>
-        </tns:onExit-script>
+        <tns:onEntry-script scriptFormat="http://www.java.com/java"/>
+        <tns:onExit-script scriptFormat="http://www.java.com/java"/>
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_5</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_8</bpmn2:outgoing>
