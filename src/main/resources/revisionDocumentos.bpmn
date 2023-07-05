@@ -241,7 +241,7 @@
     <bpmn2:task id="Task_6" tns:taskName="CustomWIH" name="Versionar Documento">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
-          <tns:metaValue><![CDATA[CustomWIH]]></tns:metaValue>
+          <tns:metaValue><![CDATA[Versionar Documento]]></tns:metaValue>
         </tns:metaData>
         <tns:onEntry-script scriptFormat="http://www.java.com/java"/>
         <tns:onExit-script scriptFormat="http://www.java.com/java"/>
@@ -314,7 +314,7 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_Task_6" bpmnElement="Task_6">
         <dc:Bounds height="59.0" width="154.0" x="116.0" y="202.0"/>
-        <bpmndi:BPMNLabel>
+        <bpmndi:BPMNLabel id="BPMNLabel_9">
           <dc:Bounds height="17.0" width="142.0" x="122.0" y="223.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
@@ -372,13 +372,13 @@
         <di:waypoint xsi:type="dc:Point" x="270.0" y="231.0"/>
         <di:waypoint xsi:type="dc:Point" x="315.0" y="231.0"/>
         <di:waypoint xsi:type="dc:Point" x="360.0" y="232.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_14"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_15" bpmnElement="SequenceFlow_15" sourceElement="BPMNShape_ExclusiveGateway_4" targetElement="BPMNShape_Task_6">
         <di:waypoint xsi:type="dc:Point" x="193.0" y="156.0"/>
         <di:waypoint xsi:type="dc:Point" x="193.0" y="179.0"/>
         <di:waypoint xsi:type="dc:Point" x="193.0" y="202.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_16"/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

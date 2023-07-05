@@ -27,6 +27,15 @@
     </plugins>
   </build>
 
+<dependencies>
+	<dependency>
+      <groupId>VersionesDocumentoWIH</groupId>
+      <artifactId>VersionesDocumentoWIH</artifactId>
+      <version>1</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+
   <profiles>
     <profile>
       <id>docker</id>
