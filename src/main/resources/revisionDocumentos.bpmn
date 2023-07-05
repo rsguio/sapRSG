@@ -19,6 +19,9 @@
     <bpmn2:property id="tramite" itemSubjectRef="ItemDefinition_1" name="tramite"/>
     <bpmn2:property id="rechazadoTramiteSeleccionado" itemSubjectRef="ItemDefinition_3" name="rechazadoTramiteSeleccionado"/>
     <bpmn2:property id="nombreDocumentoRevision" itemSubjectRef="ItemDefinition_1" name="nombreDocumentoRevision"/>
+    <bpmn2:property id="proyectistaInicial" itemSubjectRef="ItemDefinition_1" name="proyectistaInicial"/>
+    <bpmn2:property id="plantillaDocumento" itemSubjectRef="ItemDefinition_1" name="plantillaDocumento"/>
+    <bpmn2:property id="nombreDocumentoModificadoRevisor" itemSubjectRef="ItemDefinition_1" name="nombreDocumentoModificadoRevisor"/>
     <bpmn2:startEvent id="_1">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
