@@ -325,7 +325,9 @@
         <bpmn2:targetRef>resultRest</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
     </bpmn2:task>
-    <bpmn2:sequenceFlow id="SequenceFlow_5" tns:priority="1" sourceRef="ExclusiveGateway_1" targetRef="Task_2"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_5" tns:priority="1" sourceRef="ExclusiveGateway_1" targetRef="Task_2">
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_28" language="http://www.java.com/java">return KieFunctions.isTrue(rechazadoTramiteSeleccionado);</bpmn2:conditionExpression>
+    </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="SequenceFlow_8" tns:priority="1" sourceRef="Task_2" targetRef="EndEvent_4"/>
   </bpmn2:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
