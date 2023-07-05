@@ -316,7 +316,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_20">
         <bpmn2:targetRef>DataInput_25</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_5">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_9"><![CDATA[Rest]]></bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_9">Rest</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_10">_628EB5DA-F299-4792-8D4C-693772435A13_TaskNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -349,9 +349,9 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_ExclusiveGateway_1" bpmnElement="ExclusiveGateway_1" isMarkerVisible="true">
-        <dc:Bounds height="50.0" width="50.0" x="731.0" y="138.0"/>
+        <dc:Bounds height="50.0" width="50.0" x="678.0" y="138.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_4">
-          <dc:Bounds height="102.0" width="87.0" x="713.0" y="188.0"/>
+          <dc:Bounds height="102.0" width="87.0" x="660.0" y="188.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_EndEvent_3" bpmnElement="EndEvent_3">
@@ -367,9 +367,9 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_Task_1" bpmnElement="Task_1">
-        <dc:Bounds height="55.0" width="125.0" x="694.0" y="312.0"/>
+        <dc:Bounds height="55.0" width="229.0" x="590.0" y="312.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_6">
-          <dc:Bounds height="34.0" width="118.0" x="697.0" y="322.0"/>
+          <dc:Bounds height="17.0" width="155.0" x="627.0" y="331.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_1" bpmnElement="SequenceFlow_1" sourceElement="BPMNShape_StartEvent_1" targetElement="BPMNShape_UserTask_1">
@@ -385,26 +385,26 @@
         <bpmndi:BPMNLabel id="BPMNLabel_9"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_6" bpmnElement="SequenceFlow_6" sourceElement="BPMNShape_CallActivity_1" targetElement="BPMNShape_ExclusiveGateway_1">
-        <di:waypoint xsi:type="dc:Point" x="601.0" y="88.0"/>
-        <di:waypoint xsi:type="dc:Point" x="601.0" y="163.0"/>
-        <di:waypoint xsi:type="dc:Point" x="731.0" y="163.0"/>
+        <di:waypoint xsi:type="dc:Point" x="656.0" y="63.0"/>
+        <di:waypoint xsi:type="dc:Point" x="703.0" y="63.0"/>
+        <di:waypoint xsi:type="dc:Point" x="703.0" y="138.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_10"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_7" bpmnElement="SequenceFlow_7" sourceElement="BPMNShape_ExclusiveGateway_1" targetElement="BPMNShape_EndEvent_3">
-        <di:waypoint xsi:type="dc:Point" x="781.0" y="163.0"/>
-        <di:waypoint xsi:type="dc:Point" x="828.0" y="163.0"/>
+        <di:waypoint xsi:type="dc:Point" x="728.0" y="163.0"/>
+        <di:waypoint xsi:type="dc:Point" x="802.0" y="163.0"/>
         <di:waypoint xsi:type="dc:Point" x="876.0" y="163.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_11"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_2" bpmnElement="SequenceFlow_2" sourceElement="BPMNShape_ExclusiveGateway_1" targetElement="BPMNShape_Task_1">
-        <di:waypoint xsi:type="dc:Point" x="756.0" y="188.0"/>
-        <di:waypoint xsi:type="dc:Point" x="756.0" y="250.0"/>
-        <di:waypoint xsi:type="dc:Point" x="756.0" y="312.0"/>
+        <di:waypoint xsi:type="dc:Point" x="703.0" y="188.0"/>
+        <di:waypoint xsi:type="dc:Point" x="703.0" y="250.0"/>
+        <di:waypoint xsi:type="dc:Point" x="704.0" y="312.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_12"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_3" bpmnElement="SequenceFlow_3" sourceElement="BPMNShape_Task_1" targetElement="BPMNShape_EndEvent_4">
         <di:waypoint xsi:type="dc:Point" x="819.0" y="339.0"/>
-        <di:waypoint xsi:type="dc:Point" x="847.0" y="340.0"/>
+        <di:waypoint xsi:type="dc:Point" x="847.0" y="339.0"/>
         <di:waypoint xsi:type="dc:Point" x="876.0" y="340.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_13"/>
       </bpmndi:BPMNEdge>

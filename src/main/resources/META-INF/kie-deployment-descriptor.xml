@@ -16,6 +16,12 @@
             <parameters/>
             <name>Rest</name>
         </work-item-handler>
+        <work-item-handler>
+            <resolver>mvel</resolver>
+            <identifier>new co.gov.sspd.sap.workItemHandler.VersionesDocumentoWIH()</identifier>
+            <parameters/>
+            <name>VersionesDocumentoWIH</name>
+        </work-item-handler>
     </work-item-handlers>
   <environment-entries/>
   <configurations/>
