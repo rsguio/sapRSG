@@ -38,7 +38,7 @@
           <tns:metaValue><![CDATA[Revisar documento]]></tns:metaValue>
         </tns:metaData>
       </bpmn2:extensionElements>
-      <bpmn2:incoming>SequenceFlow_12</bpmn2:incoming>
+      <bpmn2:incoming>SequenceFlow_14</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_9</bpmn2:outgoing>
       <bpmn2:ioSpecification id="InputOutputSpecification_1">
         <bpmn2:dataInput id="DataInput_1" itemSubjectRef="ItemDefinition_1" name="TaskName"/>
@@ -234,41 +234,37 @@
     <bpmn2:exclusiveGateway id="ExclusiveGateway_4" gatewayDirection="Converging">
       <bpmn2:incoming>SequenceFlow_19</bpmn2:incoming>
       <bpmn2:incoming>SequenceFlow_22</bpmn2:incoming>
-      <bpmn2:outgoing>SequenceFlow_13</bpmn2:outgoing>
+      <bpmn2:outgoing>SequenceFlow_15</bpmn2:outgoing>
     </bpmn2:exclusiveGateway>
     <bpmn2:sequenceFlow id="SequenceFlow_19" tns:priority="1" sourceRef="_1" targetRef="ExclusiveGateway_4"/>
     <bpmn2:sequenceFlow id="SequenceFlow_22" tns:priority="1" sourceRef="UserTask_2" targetRef="ExclusiveGateway_4"/>
-    <bpmn2:task id="Task_5" tns:taskName="Rest" name="Versionar Documento">
+    <bpmn2:task id="Task_6" tns:taskName="CustomWIH" name="Versionar Documento">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
-          <tns:metaValue><![CDATA[Registrar tramite errado]]></tns:metaValue>
+          <tns:metaValue><![CDATA[CustomWIH]]></tns:metaValue>
         </tns:metaData>
-        <tns:onEntry-script scriptFormat="http://www.java.com/java">
-          <tns:script>System.out.println(&quot;before Rest Call ::::&quot;);</tns:script>
-        </tns:onEntry-script>
-        <tns:onExit-script scriptFormat="http://www.java.com/java">
-          <tns:script>System.out.println(&quot;before Rest Call ::::&quot;+resultRest);</tns:script>
-        </tns:onExit-script>
+        <tns:onEntry-script scriptFormat="http://www.java.com/java"/>
+        <tns:onExit-script scriptFormat="http://www.java.com/java"/>
       </bpmn2:extensionElements>
-      <bpmn2:incoming>SequenceFlow_13</bpmn2:incoming>
-      <bpmn2:outgoing>SequenceFlow_12</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="InputOutputSpecification_6">
-        <bpmn2:dataInput id="DataInput_29" itemSubjectRef="ItemDefinition_1" name="TaskName"/>
-        <bpmn2:inputSet id="InputSet_4">
-          <bpmn2:dataInputRefs>DataInput_29</bpmn2:dataInputRefs>
+      <bpmn2:incoming>SequenceFlow_15</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_14</bpmn2:outgoing>
+      <bpmn2:ioSpecification id="InputOutputSpecification_7">
+        <bpmn2:dataInput id="DataInput_31" tns:dtype="Object" itemSubjectRef="ItemDefinition_1" name="TaskName"/>
+        <bpmn2:inputSet id="InputSet_5">
+          <bpmn2:dataInputRefs>DataInput_31</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="OutputSet_6"/>
+        <bpmn2:outputSet id="OutputSet_7"/>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_30">
-        <bpmn2:targetRef>DataInput_29</bpmn2:targetRef>
-        <bpmn2:assignment id="Assignment_18">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_44">VersionesDocumentoWIH</bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_42">DataInput_29</bpmn2:to>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_32">
+        <bpmn2:targetRef>DataInput_31</bpmn2:targetRef>
+        <bpmn2:assignment id="Assignment_19">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_45">VersionesDocumentoWIH</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_46">_E73D8A57-EFD0-460A-AE7F-08A85EF26922_TaskNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
     </bpmn2:task>
-    <bpmn2:sequenceFlow id="SequenceFlow_12" tns:priority="1" sourceRef="Task_5" targetRef="UserTask_1"/>
-    <bpmn2:sequenceFlow id="SequenceFlow_13" tns:priority="1" sourceRef="ExclusiveGateway_4" targetRef="Task_5"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_14" tns:priority="1" sourceRef="Task_6" targetRef="UserTask_1"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_15" tns:priority="1" sourceRef="ExclusiveGateway_4" targetRef="Task_6"/>
   </bpmn2:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_Process_1" bpmnElement="revisionDocumentos">
@@ -316,10 +312,10 @@
         <dc:Bounds height="50.0" width="50.0" x="168.0" y="106.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_8"/>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_Task_5" bpmnElement="Task_5">
-        <dc:Bounds height="55.0" width="229.0" x="78.0" y="204.0"/>
+      <bpmndi:BPMNShape id="BPMNShape_Task_6" bpmnElement="Task_6">
+        <dc:Bounds height="59.0" width="154.0" x="116.0" y="202.0"/>
         <bpmndi:BPMNLabel>
-          <dc:Bounds height="17.0" width="142.0" x="121.0" y="223.0"/>
+          <dc:Bounds height="17.0" width="142.0" x="122.0" y="223.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_3" bpmnElement="SequenceFlow_3" sourceElement="BPMNShape_ExclusiveGateway_1" targetElement="BPMNShape_UserTask_2">
@@ -372,16 +368,16 @@
         <di:waypoint xsi:type="dc:Point" x="218.0" y="131.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_15"/>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_12" bpmnElement="SequenceFlow_12" sourceElement="BPMNShape_Task_5" targetElement="BPMNShape_UserTask_1">
-        <di:waypoint xsi:type="dc:Point" x="307.0" y="231.0"/>
-        <di:waypoint xsi:type="dc:Point" x="333.0" y="232.0"/>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_14" bpmnElement="SequenceFlow_14" sourceElement="BPMNShape_Task_6" targetElement="BPMNShape_UserTask_1">
+        <di:waypoint xsi:type="dc:Point" x="270.0" y="231.0"/>
+        <di:waypoint xsi:type="dc:Point" x="315.0" y="231.0"/>
         <di:waypoint xsi:type="dc:Point" x="360.0" y="232.0"/>
         <bpmndi:BPMNLabel/>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_13" bpmnElement="SequenceFlow_13" sourceElement="BPMNShape_ExclusiveGateway_4" targetElement="BPMNShape_Task_5">
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_15" bpmnElement="SequenceFlow_15" sourceElement="BPMNShape_ExclusiveGateway_4" targetElement="BPMNShape_Task_6">
         <di:waypoint xsi:type="dc:Point" x="193.0" y="156.0"/>
-        <di:waypoint xsi:type="dc:Point" x="192.0" y="180.0"/>
-        <di:waypoint xsi:type="dc:Point" x="192.0" y="204.0"/>
+        <di:waypoint xsi:type="dc:Point" x="193.0" y="179.0"/>
+        <di:waypoint xsi:type="dc:Point" x="193.0" y="202.0"/>
         <bpmndi:BPMNLabel/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
