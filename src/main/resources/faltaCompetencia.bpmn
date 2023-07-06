@@ -229,7 +229,7 @@
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataInputAssociation id="DataInputAssociation_17">
-        <bpmn2:sourceRef>revisor</bpmn2:sourceRef>
+        <bpmn2:sourceRef>proyectista</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_17</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataInputAssociation id="DataInputAssociation_19">
