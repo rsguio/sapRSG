@@ -25,7 +25,7 @@
     <bpmn2:property id="nombreDocumentoAprobado" itemSubjectRef="ItemDefinition_1" name="nombreDocumentoAprobado"/>
     <bpmn2:property id="versionamientoDocumento" itemSubjectRef="ItemDefinition_1" name="versionamientoDocumento"/>
     <bpmn2:property id="correctorActual" itemSubjectRef="ItemDefinition_1" name="correctorActual"/>
-    <bpmn2:property id="versionActual" itemSubjectRef="ItemDefinition_1" name="versionActual"/>
+    <bpmn2:property id="versionActual" itemSubjectRef="ItemDefinition_2" name="versionActual"/>
     <bpmn2:task id="Task_6" tns:taskName="VersionesDocumentoWIH" name="Versionar Documento">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
@@ -41,7 +41,7 @@
         <bpmn2:dataInput id="DataInput_19" itemSubjectRef="ItemDefinition_1" name="nombreDocumentoRevision"/>
         <bpmn2:dataInput id="DataInput_20" itemSubjectRef="ItemDefinition_1" name="correctorActual"/>
         <bpmn2:dataInput id="DataInput_21" itemSubjectRef="ItemDefinition_1" name="observacionesRevision"/>
-        <bpmn2:dataInput id="DataInput_22" itemSubjectRef="ItemDefinition_1" name="versionActual"/>
+        <bpmn2:dataInput id="DataInput_22" itemSubjectRef="ItemDefinition_2" name="versionActual"/>
         <bpmn2:dataInput id="DataInput_23" itemSubjectRef="ItemDefinition_1" name="versionamientoDocumento"/>
         <bpmn2:dataOutput id="DataOutput_1" itemSubjectRef="ItemDefinition_1" name="Result"/>
         <bpmn2:inputSet id="InputSet_5">
