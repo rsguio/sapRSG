@@ -26,6 +26,9 @@
     <bpmn2:property id="versionamientoDocumento" itemSubjectRef="ItemDefinition_1" name="versionamientoDocumento"/>
     <bpmn2:property id="correctorActual" itemSubjectRef="ItemDefinition_1" name="correctorActual"/>
     <bpmn2:property id="versionActual" itemSubjectRef="ItemDefinition_2" name="versionActual"/>
+    <bpmn2:property id="direccion_cliente" itemSubjectRef="ItemDefinition_1" name="direccion_cliente"/>
+    <bpmn2:property id="correo_cliente" itemSubjectRef="ItemDefinition_1" name="correo_cliente"/>
+    <bpmn2:property id="cliente" itemSubjectRef="ItemDefinition_1" name="cliente"/>
     <bpmn2:task id="Task_6" tns:taskName="VersionesDocumentoWIH" name="Versionar Documento">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
