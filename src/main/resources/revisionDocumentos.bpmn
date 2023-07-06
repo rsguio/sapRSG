@@ -7,7 +7,7 @@
   <bpmn2:itemDefinition id="ItemDefinition_24" isCollection="false" structureRef="java.lang.Object"/>
   <bpmn2:process id="revisionDocumentos" tns:packageName="defaultPackage" name="Tramite revision documentos" isExecutable="true" processType="Private">
     <bpmn2:property id="aprobado" itemSubjectRef="ItemDefinition_3" name="aprobado"/>
-    <bpmn2:property id="observacionesRevisor" itemSubjectRef="ItemDefinition_1" name="observacionesRevisor"/>
+    <bpmn2:property id="observacionesRevision" itemSubjectRef="ItemDefinition_1" name="observacionesRevision"/>
     <bpmn2:property id="radicado" itemSubjectRef="ItemDefinition_1" name="radicado"/>
     <bpmn2:property id="expediente" itemSubjectRef="ItemDefinition_1" name="expediente"/>
     <bpmn2:property id="fecha_radicado" itemSubjectRef="ItemDefinition_1" name="fecha_radicado"/>
@@ -21,10 +21,11 @@
     <bpmn2:property id="nombreDocumentoRevision" itemSubjectRef="ItemDefinition_1" name="nombreDocumentoRevision"/>
     <bpmn2:property id="correctorInicial" itemSubjectRef="ItemDefinition_1" name="correctorInicial"/>
     <bpmn2:property id="plantillaDocumento" itemSubjectRef="ItemDefinition_1" name="plantillaDocumento"/>
-    <bpmn2:property id="nombreDocumentoModificadoRevisor" itemSubjectRef="ItemDefinition_1" name="nombreDocumentoModificadoRevisor"/>
     <bpmn2:property id="rolCorrigeDocumento" itemSubjectRef="ItemDefinition_1" name="rolCorrigeDocumento"/>
     <bpmn2:property id="nombreDocumentoAprobado" itemSubjectRef="ItemDefinition_1" name="nombreDocumentoAprobado"/>
     <bpmn2:property id="versionamientoDocumento" itemSubjectRef="ItemDefinition_1" name="versionamientoDocumento"/>
+    <bpmn2:property id="correctorActual" itemSubjectRef="ItemDefinition_1" name="correctorActual"/>
+    <bpmn2:property id="versionActual" itemSubjectRef="ItemDefinition_1" name="versionActual"/>
     <bpmn2:task id="Task_6" tns:taskName="VersionesDocumentoWIH" name="Versionar Documento">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">

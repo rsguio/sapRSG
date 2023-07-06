@@ -137,8 +137,9 @@
         <bpmn2:dataInput id="DataInput_21" itemSubjectRef="ItemDefinition_1" name="nombreDocumentoRevision"/>
         <bpmn2:dataInput id="DataInput_23" itemSubjectRef="ItemDefinition_1" name="correctorInicial"/>
         <bpmn2:dataInput id="DataInput_24" itemSubjectRef="ItemDefinition_1" name="plantillaDocumento"/>
-        <bpmn2:dataInput id="DataInput_26" itemSubjectRef="ItemDefinition_1" name="nombreDocumentoModificadoRevisor"/>
         <bpmn2:dataInput id="DataInput_27" itemSubjectRef="ItemDefinition_1" name="rolCorrigeDocumento"/>
+        <bpmn2:dataInput id="DataInput_17" itemSubjectRef="ItemDefinition_1" name="correctorActual"/>
+        <bpmn2:dataInput id="DataInput_19" itemSubjectRef="ItemDefinition_1" name="versionActual"/>
         <bpmn2:dataOutput id="DataOutput_1" itemSubjectRef="ItemDefinition_3" name="rechazadoTramiteSeleccionado"/>
         <bpmn2:dataOutput id="DataOutput_3" itemSubjectRef="ItemDefinition_3" name="aprobado"/>
         <bpmn2:dataOutput id="DataOutput_4" itemSubjectRef="ItemDefinition_1" name="corrector"/>
@@ -156,8 +157,9 @@
           <bpmn2:dataInputRefs>DataInput_21</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_23</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_24</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_26</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_27</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_17</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_19</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
         <bpmn2:outputSet id="OutputSet_2" name="Output Set 2">
           <bpmn2:dataOutputRefs>DataOutput_1</bpmn2:dataOutputRefs>
@@ -217,15 +219,22 @@
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_14">DataInput_24</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_26">
-        <bpmn2:sourceRef>nombreArchivoFaltaCompetencia</bpmn2:sourceRef>
-        <bpmn2:targetRef>DataInput_26</bpmn2:targetRef>
-      </bpmn2:dataInputAssociation>
       <bpmn2:dataInputAssociation id="DataInputAssociation_27">
         <bpmn2:targetRef>DataInput_27</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_9">
           <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_22">rolProyectista</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_20">DataInput_27</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_17">
+        <bpmn2:sourceRef>revisor</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_17</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_19">
+        <bpmn2:targetRef>DataInput_19</bpmn2:targetRef>
+        <bpmn2:assignment id="Assignment_3">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_7">0</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_5">DataInput_19</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataOutputAssociation id="DataOutputAssociation_1">
@@ -274,7 +283,7 @@
     <bpmn2:task id="Task_2" tns:taskName="Rest" name="Registrar tramite errado">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
-          <tns:metaValue><![CDATA[REST]]></tns:metaValue>
+          <tns:metaValue><![CDATA[Registrar tramite errado]]></tns:metaValue>
         </tns:metaData>
         <tns:onEntry-script scriptFormat="http://www.java.com/java"/>
         <tns:onExit-script scriptFormat="http://www.java.com/java"/>
@@ -364,7 +373,7 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_Task_2" bpmnElement="Task_2">
         <dc:Bounds height="61.0" width="154.0" x="627.0" y="310.0"/>
-        <bpmndi:BPMNLabel>
+        <bpmndi:BPMNLabel id="BPMNLabel_6">
           <dc:Bounds height="34.0" width="118.0" x="645.0" y="323.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
@@ -396,13 +405,13 @@
         <di:waypoint xsi:type="dc:Point" x="703.0" y="188.0"/>
         <di:waypoint xsi:type="dc:Point" x="703.0" y="249.0"/>
         <di:waypoint xsi:type="dc:Point" x="704.0" y="310.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_12"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_8" bpmnElement="SequenceFlow_8" sourceElement="BPMNShape_Task_2" targetElement="BPMNShape_EndEvent_4">
         <di:waypoint xsi:type="dc:Point" x="781.0" y="340.0"/>
         <di:waypoint xsi:type="dc:Point" x="828.0" y="340.0"/>
         <di:waypoint xsi:type="dc:Point" x="876.0" y="340.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_13"/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
