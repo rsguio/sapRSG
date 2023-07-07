@@ -29,6 +29,7 @@
     <bpmn2:property id="nombreDocumentoAprobado" itemSubjectRef="ItemDefinition_1" name="nombreDocumentoAprobado"/>
     <bpmn2:property id="direccion_cliente" itemSubjectRef="ItemDefinition_1" name="direccion_cliente"/>
     <bpmn2:property id="correo_cliente" itemSubjectRef="ItemDefinition_1" name="correo_cliente"/>
+    <bpmn2:property id="fechaRadicacionAnteEmpresa" itemSubjectRef="ItemDefinition_495" name="fechaRadicacionAnteEmpresa"/>
     <bpmn2:startEvent id="_1">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
@@ -146,6 +147,9 @@
         <bpmn2:dataInput id="DataInput_29" itemSubjectRef="ItemDefinition_1" name="direccion_cliente"/>
         <bpmn2:dataInput id="DataInput_30" itemSubjectRef="ItemDefinition_1" name="correo_cliente"/>
         <bpmn2:dataInput id="DataInput_31" itemSubjectRef="ItemDefinition_1" name="cliente"/>
+        <bpmn2:dataInput id="DataInput_32" itemSubjectRef="ItemDefinition_1" name="remitente"/>
+        <bpmn2:dataInput id="DataInput_33" itemSubjectRef="ItemDefinition_518" name="idempresa"/>
+        <bpmn2:dataInput id="DataInput_35" itemSubjectRef="ItemDefinition_495" name="fechaRadicacionAnteEmpresa"/>
         <bpmn2:dataOutput id="DataOutput_1" itemSubjectRef="ItemDefinition_3" name="rechazadoTramiteSeleccionado"/>
         <bpmn2:dataOutput id="DataOutput_3" itemSubjectRef="ItemDefinition_3" name="aprobado"/>
         <bpmn2:dataOutput id="DataOutput_4" itemSubjectRef="ItemDefinition_1" name="corrector"/>
@@ -170,6 +174,9 @@
           <bpmn2:dataInputRefs>DataInput_29</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_30</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_31</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_32</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_33</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_35</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
         <bpmn2:outputSet id="OutputSet_2" name="Output Set 2">
           <bpmn2:dataOutputRefs>DataOutput_1</bpmn2:dataOutputRefs>
@@ -266,6 +273,18 @@
         <bpmn2:sourceRef>cliente</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_31</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_33">
+        <bpmn2:sourceRef>remitente</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_32</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_34">
+        <bpmn2:sourceRef>idempresa</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_33</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_35">
+        <bpmn2:sourceRef>fechaRadicacionAnteEmpresa</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_35</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
       <bpmn2:dataOutputAssociation id="DataOutputAssociation_1">
         <bpmn2:sourceRef>DataOutput_1</bpmn2:sourceRef>
         <bpmn2:targetRef>rechazadoTramiteSeleccionado</bpmn2:targetRef>
@@ -320,8 +339,8 @@
       <bpmn2:incoming>SequenceFlow_5</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_8</bpmn2:outgoing>
       <bpmn2:ioSpecification id="InputOutputSpecification_4">
-        <bpmn2:dataInput id="DataInput_22" tns:dtype="String" itemSubjectRef="../../../../unit5-REST_SERVICETASK/src/main/resources/com/kie_space/unit5_rest_servicetask/Rest_Service_Task_Example.bpmn#__628EB5DA-F299-4792-8D4C-693772435A13_MethodInputXItem" name="Method"/>
-        <bpmn2:dataInput id="DataInput_28" tns:dtype="String" itemSubjectRef="../../../../unit5-REST_SERVICETASK/src/main/resources/com/kie_space/unit5_rest_servicetask/Rest_Service_Task_Example.bpmn#__628EB5DA-F299-4792-8D4C-693772435A13_UrlInputXItem" name="Url"/>
+        <bpmn2:dataInput id="DataInput_22" tns:dtype="String" itemSubjectRef="ItemDefinition_1" name="Method"/>
+        <bpmn2:dataInput id="DataInput_28" tns:dtype="String" itemSubjectRef="ItemDefinition_1" name="Url"/>
         <bpmn2:dataInput id="DataInput_34" tns:dtype="Object" itemSubjectRef="ItemDefinition_1" name="TaskName"/>
         <bpmn2:dataOutput id="DataOutput_6" tns:dtype="java.lang.Object" itemSubjectRef="ItemDefinition_495" name="Result"/>
         <bpmn2:inputSet id="InputSet_3">

@@ -5,6 +5,7 @@
   <bpmn2:itemDefinition id="ItemDefinition_2" isCollection="false" structureRef="java.lang.Integer"/>
   <bpmn2:itemDefinition id="ItemDefinition_3" isCollection="false" structureRef="java.lang.Boolean"/>
   <bpmn2:itemDefinition id="ItemDefinition_24" isCollection="false" structureRef="java.lang.Object"/>
+  <bpmn2:itemDefinition id="ItemDefinition_2078" isCollection="false" structureRef="java.lang.Long"/>
   <bpmn2:process id="revisionDocumentos" tns:packageName="defaultPackage" name="Tramite revision documentos" isExecutable="true" processType="Private">
     <bpmn2:property id="aprobado" itemSubjectRef="ItemDefinition_3" name="aprobado"/>
     <bpmn2:property id="observacionesRevision" itemSubjectRef="ItemDefinition_1" name="observacionesRevision"/>
@@ -29,6 +30,9 @@
     <bpmn2:property id="direccion_cliente" itemSubjectRef="ItemDefinition_1" name="direccion_cliente"/>
     <bpmn2:property id="correo_cliente" itemSubjectRef="ItemDefinition_1" name="correo_cliente"/>
     <bpmn2:property id="cliente" itemSubjectRef="ItemDefinition_1" name="cliente"/>
+    <bpmn2:property id="remitente" itemSubjectRef="ItemDefinition_1" name="remitente"/>
+    <bpmn2:property id="idempresa" itemSubjectRef="ItemDefinition_2078" name="idempresa"/>
+    <bpmn2:property id="fechaRadicacionAnteEmpresa" itemSubjectRef="ItemDefinition_1" name="fechaRadicacionAnteEmpresa"/>
     <bpmn2:task id="Task_6" tns:taskName="VersionesDocumentoWIH" name="Versionar Documento">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
