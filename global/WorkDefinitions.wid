@@ -53,6 +53,20 @@
     "displayName" : "VersionesDocumentoWIH",
     "icon" : "defaultservicenodeicon.png"
   ],
+  
+  
+  [
+    "name" : "TramiteErradoWIH",
+    "parameters" : [
+        "Message" : new StringDataType()
+    ],
+    "results" : [
+        "Result" : new StringDataType(),
+    ],
+    "displayName" : "TramiteErradoWIH",
+    "icon" : "defaultservicenodeicon.png"
+  ],
+  
 
  [
         "name" : "Rest",

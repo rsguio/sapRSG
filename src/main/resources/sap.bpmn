@@ -6,6 +6,7 @@
   <bpmn2:itemDefinition id="ItemDefinition_3" isCollection="false" structureRef="java.lang.Boolean"/>
   <bpmn2:itemDefinition id="ItemDefinition_812" isCollection="false" structureRef="java.lang.Long"/>
   <bpmn2:itemDefinition id="ItemDefinition_9" isCollection="false" structureRef="java.lang.Object"/>
+  <bpmn2:itemDefinition id="ItemDefinition_85" isCollection="false" structureRef="java.lang.Byte"/>
   <bpmn2:process id="sap" tns:packageName="defaultPackage" name="silencios administrativos positivos" isExecutable="true" processType="Private">
     <bpmn2:property id="asunto" itemSubjectRef="ItemDefinition_1" name="asunto"/>
     <bpmn2:property id="correo_remitente" itemSubjectRef="ItemDefinition_1" name="correo_remitente"/>
@@ -28,6 +29,8 @@
     <bpmn2:property id="direccion_cliente" itemSubjectRef="ItemDefinition_1" name="direccion_cliente"/>
     <bpmn2:property id="correo_cliente" itemSubjectRef="ItemDefinition_1" name="correo_cliente"/>
     <bpmn2:property id="fechaRadicacionAnteEmpresa" itemSubjectRef="ItemDefinition_9" name="fechaRadicacionAnteEmpresa"/>
+    <bpmn2:property id="observacionesTramiteDevuelto" itemSubjectRef="ItemDefinition_1" name="observacionesTramiteDevuelto"/>
+    <bpmn2:property id="tramiteDevuelto" itemSubjectRef="ItemDefinition_3" name="tramiteDevuelto"/>
     <bpmn2:startEvent id="_1">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
