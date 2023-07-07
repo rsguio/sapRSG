@@ -369,7 +369,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_29">
         <bpmn2:targetRef>DataInput_34</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_12">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_26"><![CDATA[Rest]]></bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_26">Rest</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_27">_628EB5DA-F299-4792-8D4C-693772435A13_TaskNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
