@@ -436,7 +436,7 @@
     <bpmn2:task id="Task_3" tns:taskName="Email" name="Envio Correo Rechazado">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
-          <tns:metaValue><![CDATA[Envio Correo Aprobado]]></tns:metaValue>
+          <tns:metaValue><![CDATA[Envio Correo Rechazado]]></tns:metaValue>
         </tns:metaData>
         <tns:onEntry-script scriptFormat="http://www.java.com/java"/>
         <tns:onExit-script scriptFormat="http://www.java.com/java"/>
@@ -468,7 +468,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_36">
         <bpmn2:targetRef>DataInput_36</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_9">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_18">Aprobación de documentos SAP</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_18">Rechazo de documentos SAP</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_24">DataInput_26</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
