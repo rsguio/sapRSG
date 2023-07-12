@@ -289,7 +289,7 @@
       <bpmn2:incoming>SequenceFlow_7</bpmn2:incoming>
     </bpmn2:endEvent>
     <bpmn2:sequenceFlow id="SequenceFlow_7" tns:priority="1" sourceRef="ExclusiveGateway_3" targetRef="EndEvent_1">
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_7" language="http://www.javascript.com/javascript">return !KieFunctions.equalsTo(tramite,&quot;Falta de competencia&quot;);</bpmn2:conditionExpression>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_7" language="http://www.java.com/java">return !KieFunctions.equalsTo(tramite,&quot;Falta de competencia&quot;);</bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
   </bpmn2:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
