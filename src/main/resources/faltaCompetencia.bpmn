@@ -14,9 +14,9 @@
     <bpmn2:property id="tipo_documento" itemSubjectRef="ItemDefinition_1" name="tipo_documento"/>
     <bpmn2:property id="idempresa" itemSubjectRef="ItemDefinition_518" name="idempresa"/>
     <bpmn2:property id="empresa" itemSubjectRef="ItemDefinition_1" name="empresa"/>
-    <bpmn2:property id="idremitente" itemSubjectRef="ItemDefinition_518" name="idremitente"/>
+    <bpmn2:property id="idremitente" itemSubjectRef="ItemDefinition_1" name="idremitente"/>
     <bpmn2:property id="remitente" itemSubjectRef="ItemDefinition_1" name="remitente"/>
-    <bpmn2:property id="idcliente" itemSubjectRef="ItemDefinition_518" name="idcliente"/>
+    <bpmn2:property id="idcliente" itemSubjectRef="ItemDefinition_1" name="idcliente"/>
     <bpmn2:property id="cliente" itemSubjectRef="ItemDefinition_1" name="cliente"/>
     <bpmn2:property id="proyectista" itemSubjectRef="ItemDefinition_1" name="proyectista"/>
     <bpmn2:property id="tramite" itemSubjectRef="ItemDefinition_1" name="tramite"/>
@@ -324,7 +324,7 @@
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_2</bpmn2:incoming>
     </bpmn2:endEvent>
-    <bpmn2:sequenceFlow id="SequenceFlow_2" tns:priority="1" sourceRef="ExclusiveGateway_1" targetRef="EndEvent_4">
+    <bpmn2:sequenceFlow id="SequenceFlow_2" tns:priority="1" name="SI" sourceRef="ExclusiveGateway_1" targetRef="EndEvent_4">
       <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_6" language="http://www.java.com/java">return KieFunctions.isTrue(rechazadoTramiteSeleccionado);</bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:endEvent id="EndEvent_5" name="Fin">
@@ -335,7 +335,7 @@
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_12</bpmn2:incoming>
     </bpmn2:endEvent>
-    <bpmn2:sequenceFlow id="SequenceFlow_12" tns:priority="1" sourceRef="ExclusiveGateway_1" targetRef="EndEvent_5">
+    <bpmn2:sequenceFlow id="SequenceFlow_12" tns:priority="1" name="NO" sourceRef="ExclusiveGateway_1" targetRef="EndEvent_5">
       <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_34" language="http://www.java.com/java">return KieFunctions.isFalse(rechazadoTramiteSeleccionado);</bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
   </bpmn2:process>
@@ -364,9 +364,9 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_EndEvent_4" bpmnElement="EndEvent_4">
-        <dc:Bounds height="36.0" width="36.0" x="686.0" y="300.0"/>
+        <dc:Bounds height="36.0" width="36.0" x="685.0" y="353.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_7">
-          <dc:Bounds height="17.0" width="20.0" x="694.0" y="336.0"/>
+          <dc:Bounds height="17.0" width="20.0" x="693.0" y="389.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_EndEvent_5" bpmnElement="EndEvent_5">
@@ -395,15 +395,19 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_2" bpmnElement="SequenceFlow_2" sourceElement="BPMNShape_ExclusiveGateway_1" targetElement="BPMNShape_EndEvent_4">
         <di:waypoint xsi:type="dc:Point" x="703.0" y="188.0"/>
-        <di:waypoint xsi:type="dc:Point" x="703.0" y="244.0"/>
-        <di:waypoint xsi:type="dc:Point" x="704.0" y="300.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_6"/>
+        <di:waypoint xsi:type="dc:Point" x="703.0" y="270.0"/>
+        <di:waypoint xsi:type="dc:Point" x="703.0" y="353.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_6">
+          <dc:Bounds height="17.0" width="13.0" x="697.0" y="272.0"/>
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_12" bpmnElement="SequenceFlow_12" sourceElement="BPMNShape_ExclusiveGateway_1" targetElement="BPMNShape_EndEvent_5">
         <di:waypoint xsi:type="dc:Point" x="728.0" y="163.0"/>
         <di:waypoint xsi:type="dc:Point" x="762.0" y="163.0"/>
         <di:waypoint xsi:type="dc:Point" x="796.0" y="163.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_11"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_11">
+          <dc:Bounds height="17.0" width="22.0" x="752.0" y="164.0"/>
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
