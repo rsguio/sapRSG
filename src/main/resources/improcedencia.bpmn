@@ -4,32 +4,29 @@
   <bpmn2:itemDefinition id="ItemDefinition_1" isCollection="false" structureRef="java.lang.String"/>
   <bpmn2:itemDefinition id="ItemDefinition_2" isCollection="false" structureRef="java.lang.Integer"/>
   <bpmn2:itemDefinition id="ItemDefinition_3" isCollection="false" structureRef="java.lang.Boolean"/>
-  <bpmn2:itemDefinition id="ItemDefinition_518" isCollection="false" structureRef="java.lang.Long"/>
-  <bpmn2:itemDefinition id="ItemDefinition_495" isCollection="false" structureRef="java.lang.Object"/>
-  <bpmn2:process id="faltaCompetencia" tns:packageName="defaultPackage" name="Tramite Falta Competencia" isExecutable="true" processType="Private">
+  <bpmn2:itemDefinition id="ItemDefinition_574" isCollection="false" structureRef="java.lang.Long"/>
+  <bpmn2:itemDefinition id="ItemDefinition_1455" isCollection="false" structureRef="java.lang.Object"/>
+  <bpmn2:process id="improcedencia" tns:packageName="defaultPackage" name="Tramite de Improcedencia" isExecutable="true" processType="Private">
     <bpmn2:property id="radicado" itemSubjectRef="ItemDefinition_1" name="radicado"/>
     <bpmn2:property id="expediente" itemSubjectRef="ItemDefinition_1" name="expediente"/>
     <bpmn2:property id="fecha_radicado" itemSubjectRef="ItemDefinition_1" name="fecha_radicado"/>
     <bpmn2:property id="asunto" itemSubjectRef="ItemDefinition_1" name="asunto"/>
     <bpmn2:property id="tipo_documento" itemSubjectRef="ItemDefinition_1" name="tipo_documento"/>
-    <bpmn2:property id="idempresa" itemSubjectRef="ItemDefinition_518" name="idempresa"/>
+    <bpmn2:property id="idempresa" itemSubjectRef="ItemDefinition_574" name="idempresa"/>
     <bpmn2:property id="empresa" itemSubjectRef="ItemDefinition_1" name="empresa"/>
     <bpmn2:property id="idremitente" itemSubjectRef="ItemDefinition_1" name="idremitente"/>
     <bpmn2:property id="remitente" itemSubjectRef="ItemDefinition_1" name="remitente"/>
     <bpmn2:property id="idcliente" itemSubjectRef="ItemDefinition_1" name="idcliente"/>
     <bpmn2:property id="cliente" itemSubjectRef="ItemDefinition_1" name="cliente"/>
-    <bpmn2:property id="proyectista" itemSubjectRef="ItemDefinition_1" name="proyectista"/>
-    <bpmn2:property id="tramite" itemSubjectRef="ItemDefinition_1" name="tramite"/>
-    <bpmn2:property id="rechazadoTramiteSeleccionado" itemSubjectRef="ItemDefinition_3" name="rechazadoTramiteSeleccionado"/>
-    <bpmn2:property id="procesoClonado" itemSubjectRef="ItemDefinition_1" name="procesoClonado"/>
-    <bpmn2:property id="revisor" itemSubjectRef="ItemDefinition_1" name="revisor"/>
-    <bpmn2:property id="aprobado" itemSubjectRef="ItemDefinition_3" name="aprobado"/>
-    <bpmn2:property id="nombreArchivoFaltaCompetencia" itemSubjectRef="ItemDefinition_1" name="nombreArchivoFaltaCompetencia"/>
-    <bpmn2:property id="proyectistaInicial" itemSubjectRef="ItemDefinition_1" name="proyectistaInicial"/>
-    <bpmn2:property id="nombreDocumentoAprobado" itemSubjectRef="ItemDefinition_1" name="nombreDocumentoAprobado"/>
     <bpmn2:property id="direccion_cliente" itemSubjectRef="ItemDefinition_1" name="direccion_cliente"/>
     <bpmn2:property id="correo_cliente" itemSubjectRef="ItemDefinition_1" name="correo_cliente"/>
-    <bpmn2:property id="fechaRadicacionAnteEmpresa" itemSubjectRef="ItemDefinition_495" name="fechaRadicacionAnteEmpresa"/>
+    <bpmn2:property id="proyectista" itemSubjectRef="ItemDefinition_1" name="proyectista"/>
+    <bpmn2:property id="fechaRadicacionAnteEmpresa" itemSubjectRef="ItemDefinition_1455" name="fechaRadicacionAnteEmpresa"/>
+    <bpmn2:property id="tramite" itemSubjectRef="ItemDefinition_1" name="tramite"/>
+    <bpmn2:property id="revisor" itemSubjectRef="ItemDefinition_1" name="revisor"/>
+    <bpmn2:property id="nombreArchivoImprocedencia" itemSubjectRef="ItemDefinition_1" name="nombreArchivoImprocedencia"/>
+    <bpmn2:property id="aprobado" itemSubjectRef="ItemDefinition_3" name="aprobado"/>
+    <bpmn2:property id="nombreDocumentoAprobado" itemSubjectRef="ItemDefinition_1" name="nombreDocumentoAprobado"/>
     <bpmn2:property id="observacionesRevision" itemSubjectRef="ItemDefinition_1" name="observacionesRevision"/>
     <bpmn2:startEvent id="_1">
       <bpmn2:extensionElements>
@@ -39,14 +36,14 @@
       </bpmn2:extensionElements>
       <bpmn2:outgoing>SequenceFlow_1</bpmn2:outgoing>
     </bpmn2:startEvent>
-    <bpmn2:userTask id="UserTask_1" name="Proyectar documento falta de competencia" implementation="Java">
+    <bpmn2:userTask id="UserTask_1" name="Proyectar Improcedencia" implementation="Java">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
-          <tns:metaValue><![CDATA[Proyectar documento falta de competencia]]></tns:metaValue>
+          <tns:metaValue><![CDATA[Proyectar Improcedencia]]></tns:metaValue>
         </tns:metaData>
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_1</bpmn2:incoming>
-      <bpmn2:outgoing>SequenceFlow_4</bpmn2:outgoing>
+      <bpmn2:outgoing>SequenceFlow_2</bpmn2:outgoing>
       <bpmn2:ioSpecification id="InputOutputSpecification_1">
         <bpmn2:dataInput id="DataInput_1" itemSubjectRef="ItemDefinition_1" name="TaskName"/>
         <bpmn2:dataInput id="DataInput_2" itemSubjectRef="ItemDefinition_2" name="Priority"/>
@@ -57,7 +54,7 @@
         <bpmn2:dataInput id="DataInput_7" itemSubjectRef="ItemDefinition_1" name="Content"/>
         <bpmn2:dataInput id="DataInput_8" itemSubjectRef="ItemDefinition_1" name="Locale"/>
         <bpmn2:dataInput id="DataInput_9" itemSubjectRef="ItemDefinition_1" name="CreatedBy"/>
-        <bpmn2:inputSet id="_InputSet_14">
+        <bpmn2:inputSet id="_InputSet_20">
           <bpmn2:dataInputRefs>DataInput_1</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_2</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_3</bpmn2:dataInputRefs>
@@ -73,7 +70,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_1">
         <bpmn2:targetRef>DataInput_1</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_1">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_1">02_proyectarFaltaCompetencia</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_1">06_Proyectar_Improcedencia</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_2">DataInput_1</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -126,36 +123,35 @@
           <tns:metaValue><![CDATA[Revision Documento]]></tns:metaValue>
         </tns:metaData>
       </bpmn2:extensionElements>
-      <bpmn2:incoming>SequenceFlow_4</bpmn2:incoming>
-      <bpmn2:outgoing>SequenceFlow_6</bpmn2:outgoing>
+      <bpmn2:incoming>SequenceFlow_2</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_3</bpmn2:outgoing>
       <bpmn2:ioSpecification id="InputOutputSpecification_2">
-        <bpmn2:dataInput id="DataInput_10" itemSubjectRef="ItemDefinition_1" name="radicado"/>
-        <bpmn2:dataInput id="DataInput_11" itemSubjectRef="ItemDefinition_1" name="fecha_radicado"/>
-        <bpmn2:dataInput id="DataInput_12" itemSubjectRef="ItemDefinition_1" name="expediente"/>
-        <bpmn2:dataInput id="DataInput_13" itemSubjectRef="ItemDefinition_1" name="empresa"/>
-        <bpmn2:dataInput id="DataInput_14" itemSubjectRef="ItemDefinition_1" name="asunto"/>
-        <bpmn2:dataInput id="DataInput_15" itemSubjectRef="ItemDefinition_1" name="tipo_documento"/>
-        <bpmn2:dataInput id="DataInput_16" itemSubjectRef="ItemDefinition_1" name="corrector"/>
-        <bpmn2:dataInput id="DataInput_18" itemSubjectRef="ItemDefinition_1" name="tramite"/>
-        <bpmn2:dataInput id="DataInput_20" itemSubjectRef="ItemDefinition_1" name="revisor"/>
-        <bpmn2:dataInput id="DataInput_21" itemSubjectRef="ItemDefinition_1" name="nombreDocumentoRevision"/>
-        <bpmn2:dataInput id="DataInput_23" itemSubjectRef="ItemDefinition_1" name="correctorInicial"/>
-        <bpmn2:dataInput id="DataInput_24" itemSubjectRef="ItemDefinition_1" name="plantillaDocumento"/>
-        <bpmn2:dataInput id="DataInput_27" itemSubjectRef="ItemDefinition_1" name="rolCorrigeDocumento"/>
-        <bpmn2:dataInput id="DataInput_17" itemSubjectRef="ItemDefinition_1" name="correctorActual"/>
-        <bpmn2:dataInput id="DataInput_19" itemSubjectRef="ItemDefinition_1" name="versionActual"/>
-        <bpmn2:dataInput id="DataInput_25" itemSubjectRef="ItemDefinition_1" name="versionamientoDocumento"/>
-        <bpmn2:dataInput id="DataInput_29" itemSubjectRef="ItemDefinition_1" name="direccion_cliente"/>
-        <bpmn2:dataInput id="DataInput_30" itemSubjectRef="ItemDefinition_1" name="correo_cliente"/>
-        <bpmn2:dataInput id="DataInput_31" itemSubjectRef="ItemDefinition_1" name="cliente"/>
-        <bpmn2:dataInput id="DataInput_32" itemSubjectRef="ItemDefinition_1" name="remitente"/>
-        <bpmn2:dataInput id="DataInput_33" itemSubjectRef="ItemDefinition_518" name="idempresa"/>
-        <bpmn2:dataInput id="DataInput_35" itemSubjectRef="ItemDefinition_495" name="fechaRadicacionAnteEmpresa"/>
-        <bpmn2:dataOutput id="DataOutput_1" itemSubjectRef="ItemDefinition_3" name="rechazadoTramiteSeleccionado"/>
-        <bpmn2:dataOutput id="DataOutput_3" itemSubjectRef="ItemDefinition_3" name="aprobado"/>
-        <bpmn2:dataOutput id="DataOutput_4" itemSubjectRef="ItemDefinition_1" name="corrector"/>
-        <bpmn2:dataOutput id="DataOutput_5" itemSubjectRef="ItemDefinition_1" name="nombreDocumentoAprobado"/>
-        <bpmn2:dataOutput id="DataOutput_2" itemSubjectRef="ItemDefinition_1" name="observaciones"/>
+        <bpmn2:dataInput id="DataInput_10" itemSubjectRef="faltaCompetencia.bpmn#ItemDefinition_1" name="radicado"/>
+        <bpmn2:dataInput id="DataInput_11" itemSubjectRef="faltaCompetencia.bpmn#ItemDefinition_1" name="fecha_radicado"/>
+        <bpmn2:dataInput id="DataInput_12" itemSubjectRef="faltaCompetencia.bpmn#ItemDefinition_1" name="expediente"/>
+        <bpmn2:dataInput id="DataInput_13" itemSubjectRef="faltaCompetencia.bpmn#ItemDefinition_1" name="empresa"/>
+        <bpmn2:dataInput id="DataInput_14" itemSubjectRef="faltaCompetencia.bpmn#ItemDefinition_1" name="asunto"/>
+        <bpmn2:dataInput id="DataInput_15" itemSubjectRef="faltaCompetencia.bpmn#ItemDefinition_1" name="tipo_documento"/>
+        <bpmn2:dataInput id="DataInput_16" itemSubjectRef="faltaCompetencia.bpmn#ItemDefinition_1" name="corrector"/>
+        <bpmn2:dataInput id="DataInput_17" itemSubjectRef="faltaCompetencia.bpmn#ItemDefinition_1" name="tramite"/>
+        <bpmn2:dataInput id="DataInput_18" itemSubjectRef="faltaCompetencia.bpmn#ItemDefinition_1" name="revisor"/>
+        <bpmn2:dataInput id="DataInput_19" itemSubjectRef="ItemDefinition_1" name="nombreDocumentoRevision"/>
+        <bpmn2:dataInput id="DataInput_20" itemSubjectRef="faltaCompetencia.bpmn#ItemDefinition_1" name="correctorInicial"/>
+        <bpmn2:dataInput id="DataInput_21" itemSubjectRef="faltaCompetencia.bpmn#ItemDefinition_1" name="plantillaDocumento"/>
+        <bpmn2:dataInput id="DataInput_22" itemSubjectRef="faltaCompetencia.bpmn#ItemDefinition_1" name="rolCorrigeDocumento"/>
+        <bpmn2:dataInput id="DataInput_23" itemSubjectRef="faltaCompetencia.bpmn#ItemDefinition_1" name="correctorActual"/>
+        <bpmn2:dataInput id="DataInput_24" itemSubjectRef="faltaCompetencia.bpmn#ItemDefinition_1" name="versionActual"/>
+        <bpmn2:dataInput id="DataInput_25" itemSubjectRef="faltaCompetencia.bpmn#ItemDefinition_1" name="versionamientoDocumento"/>
+        <bpmn2:dataInput id="DataInput_26" itemSubjectRef="faltaCompetencia.bpmn#ItemDefinition_1" name="direccion_cliente"/>
+        <bpmn2:dataInput id="DataInput_27" itemSubjectRef="faltaCompetencia.bpmn#ItemDefinition_1" name="correo_cliente"/>
+        <bpmn2:dataInput id="DataInput_28" itemSubjectRef="faltaCompetencia.bpmn#ItemDefinition_1" name="cliente"/>
+        <bpmn2:dataInput id="DataInput_29" itemSubjectRef="faltaCompetencia.bpmn#ItemDefinition_1" name="remitente"/>
+        <bpmn2:dataInput id="DataInput_30" itemSubjectRef="ItemDefinition_574" name="idempresa"/>
+        <bpmn2:dataInput id="DataInput_31" itemSubjectRef="ItemDefinition_1455" name="fechaRadicacionAnteEmpresa"/>
+        <bpmn2:dataOutput id="DataOutput_1" itemSubjectRef="faltaCompetencia.bpmn#ItemDefinition_3" name="aprobado"/>
+        <bpmn2:dataOutput id="DataOutput_2" itemSubjectRef="faltaCompetencia.bpmn#ItemDefinition_1" name="corrector"/>
+        <bpmn2:dataOutput id="DataOutput_3" itemSubjectRef="faltaCompetencia.bpmn#ItemDefinition_1" name="nombreDocumentoAprobado"/>
+        <bpmn2:dataOutput id="DataOutput_4" itemSubjectRef="faltaCompetencia.bpmn#ItemDefinition_1" name="observaciones"/>
         <bpmn2:inputSet id="InputSet_1" name="Input Set 1">
           <bpmn2:dataInputRefs>DataInput_10</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_11</bpmn2:dataInputRefs>
@@ -164,28 +160,27 @@
           <bpmn2:dataInputRefs>DataInput_14</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_15</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_16</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_17</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_18</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_19</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_20</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_21</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_22</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_23</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_24</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_27</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_17</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_19</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_25</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_26</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_27</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_28</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_29</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_30</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_31</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_32</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_33</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_35</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
         <bpmn2:outputSet id="OutputSet_2" name="Output Set 2">
           <bpmn2:dataOutputRefs>DataOutput_1</bpmn2:dataOutputRefs>
+          <bpmn2:dataOutputRefs>DataOutput_2</bpmn2:dataOutputRefs>
           <bpmn2:dataOutputRefs>DataOutput_3</bpmn2:dataOutputRefs>
           <bpmn2:dataOutputRefs>DataOutput_4</bpmn2:dataOutputRefs>
-          <bpmn2:dataOutputRefs>DataOutput_5</bpmn2:dataOutputRefs>
-          <bpmn2:dataOutputRefs>DataOutput_2</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
       <bpmn2:dataInputAssociation id="DataInputAssociation_10">
@@ -216,198 +211,147 @@
         <bpmn2:sourceRef>proyectista</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_16</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_18">
+      <bpmn2:dataInputAssociation id="DataInputAssociation_17">
         <bpmn2:sourceRef>tramite</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_17</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_18">
+        <bpmn2:sourceRef>revisor</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_18</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_21">
-        <bpmn2:sourceRef>revisor</bpmn2:sourceRef>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_19">
+        <bpmn2:sourceRef>nombreArchivoImprocedencia</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_19</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_20">
+        <bpmn2:sourceRef>proyectista</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_20</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_22">
-        <bpmn2:sourceRef>nombreArchivoFaltaCompetencia</bpmn2:sourceRef>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_21">
         <bpmn2:targetRef>DataInput_21</bpmn2:targetRef>
+        <bpmn2:assignment id="Assignment_10">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_20">PLANTILLA_IMPROCEDENCIA</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_21">DataInput_24</bpmn2:to>
+        </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_24">
+      <bpmn2:dataInputAssociation id="DataInputAssociation_22">
+        <bpmn2:targetRef>DataInput_22</bpmn2:targetRef>
+        <bpmn2:assignment id="Assignment_11">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_22">rolProyectista</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_23">DataInput_27</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_23">
         <bpmn2:sourceRef>proyectista</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_23</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_25">
+      <bpmn2:dataInputAssociation id="DataInputAssociation_24">
         <bpmn2:targetRef>DataInput_24</bpmn2:targetRef>
-        <bpmn2:assignment id="Assignment_7">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_18">PLANTILLA_FALTACOM</bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_14">DataInput_24</bpmn2:to>
+        <bpmn2:assignment id="Assignment_12">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_24">0</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_25">DataInput_19</bpmn2:to>
         </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_25">
+        <bpmn2:targetRef>DataInput_25</bpmn2:targetRef>
+        <bpmn2:assignment id="Assignment_13">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_26">-</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_27">DataInput_25</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_26">
+        <bpmn2:sourceRef>direccion_cliente</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_26</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataInputAssociation id="DataInputAssociation_27">
+        <bpmn2:sourceRef>correo_cliente</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_27</bpmn2:targetRef>
-        <bpmn2:assignment id="Assignment_9">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_22">rolProyectista</bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_20">DataInput_27</bpmn2:to>
-        </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_17">
-        <bpmn2:sourceRef>proyectista</bpmn2:sourceRef>
-        <bpmn2:targetRef>DataInput_17</bpmn2:targetRef>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_28">
+        <bpmn2:sourceRef>cliente</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_28</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_19">
-        <bpmn2:targetRef>DataInput_19</bpmn2:targetRef>
-        <bpmn2:assignment id="Assignment_3">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_7">0</bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_5">DataInput_19</bpmn2:to>
-        </bpmn2:assignment>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_20">
-        <bpmn2:targetRef>DataInput_25</bpmn2:targetRef>
-        <bpmn2:assignment id="Assignment_4">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_10">-</bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_8">DataInput_25</bpmn2:to>
-        </bpmn2:assignment>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_30">
-        <bpmn2:sourceRef>direccion_cliente</bpmn2:sourceRef>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_29">
+        <bpmn2:sourceRef>remitente</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_29</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_31">
-        <bpmn2:sourceRef>correo_cliente</bpmn2:sourceRef>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_30">
+        <bpmn2:sourceRef>idempresa</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_30</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_32">
-        <bpmn2:sourceRef>cliente</bpmn2:sourceRef>
-        <bpmn2:targetRef>DataInput_31</bpmn2:targetRef>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_33">
-        <bpmn2:sourceRef>remitente</bpmn2:sourceRef>
-        <bpmn2:targetRef>DataInput_32</bpmn2:targetRef>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_34">
-        <bpmn2:sourceRef>idempresa</bpmn2:sourceRef>
-        <bpmn2:targetRef>DataInput_33</bpmn2:targetRef>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_35">
+      <bpmn2:dataInputAssociation id="DataInputAssociation_31">
         <bpmn2:sourceRef>fechaRadicacionAnteEmpresa</bpmn2:sourceRef>
-        <bpmn2:targetRef>DataInput_35</bpmn2:targetRef>
+        <bpmn2:targetRef>DataInput_31</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataOutputAssociation id="DataOutputAssociation_1">
         <bpmn2:sourceRef>DataOutput_1</bpmn2:sourceRef>
-        <bpmn2:targetRef>rechazadoTramiteSeleccionado</bpmn2:targetRef>
-      </bpmn2:dataOutputAssociation>
-      <bpmn2:dataOutputAssociation id="DataOutputAssociation_3">
-        <bpmn2:sourceRef>DataOutput_3</bpmn2:sourceRef>
         <bpmn2:targetRef>aprobado</bpmn2:targetRef>
-      </bpmn2:dataOutputAssociation>
-      <bpmn2:dataOutputAssociation id="DataOutputAssociation_4">
-        <bpmn2:sourceRef>DataOutput_4</bpmn2:sourceRef>
-        <bpmn2:targetRef>proyectista</bpmn2:targetRef>
-      </bpmn2:dataOutputAssociation>
-      <bpmn2:dataOutputAssociation id="DataOutputAssociation_5">
-        <bpmn2:sourceRef>DataOutput_5</bpmn2:sourceRef>
-        <bpmn2:targetRef>nombreDocumentoAprobado</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
       <bpmn2:dataOutputAssociation id="DataOutputAssociation_2">
         <bpmn2:sourceRef>DataOutput_2</bpmn2:sourceRef>
+        <bpmn2:targetRef>proyectista</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+      <bpmn2:dataOutputAssociation id="DataOutputAssociation_3">
+        <bpmn2:sourceRef>DataOutput_3</bpmn2:sourceRef>
+        <bpmn2:targetRef>nombreDocumentoAprobado</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+      <bpmn2:dataOutputAssociation id="DataOutputAssociation_4">
+        <bpmn2:sourceRef>DataOutput_4</bpmn2:sourceRef>
         <bpmn2:targetRef>observacionesRevision</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
     </bpmn2:callActivity>
-    <bpmn2:sequenceFlow id="SequenceFlow_4" tns:priority="1" sourceRef="UserTask_1" targetRef="CallActivity_1"/>
-    <bpmn2:exclusiveGateway id="ExclusiveGateway_1" name="Rechazado porque no es falta de competencia" gatewayDirection="Diverging">
-      <bpmn2:incoming>SequenceFlow_6</bpmn2:incoming>
-      <bpmn2:outgoing>SequenceFlow_2</bpmn2:outgoing>
-      <bpmn2:outgoing>SequenceFlow_12</bpmn2:outgoing>
-    </bpmn2:exclusiveGateway>
-    <bpmn2:sequenceFlow id="SequenceFlow_6" tns:priority="1" sourceRef="CallActivity_1" targetRef="ExclusiveGateway_1"/>
-    <bpmn2:endEvent id="EndEvent_4" name="Fin">
+    <bpmn2:sequenceFlow id="SequenceFlow_2" tns:priority="1" sourceRef="UserTask_1" targetRef="CallActivity_1"/>
+    <bpmn2:endEvent id="EndEvent_1" name="Fin">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
           <tns:metaValue><![CDATA[Fin]]></tns:metaValue>
         </tns:metaData>
       </bpmn2:extensionElements>
-      <bpmn2:incoming>SequenceFlow_2</bpmn2:incoming>
+      <bpmn2:incoming>SequenceFlow_3</bpmn2:incoming>
     </bpmn2:endEvent>
-    <bpmn2:sequenceFlow id="SequenceFlow_2" tns:priority="1" name="SI" sourceRef="ExclusiveGateway_1" targetRef="EndEvent_4">
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_6" language="http://www.java.com/java">return KieFunctions.isTrue(rechazadoTramiteSeleccionado);</bpmn2:conditionExpression>
-    </bpmn2:sequenceFlow>
-    <bpmn2:endEvent id="EndEvent_5" name="Fin">
-      <bpmn2:extensionElements>
-        <tns:metaData name="elementname">
-          <tns:metaValue><![CDATA[Fin]]></tns:metaValue>
-        </tns:metaData>
-      </bpmn2:extensionElements>
-      <bpmn2:incoming>SequenceFlow_12</bpmn2:incoming>
-    </bpmn2:endEvent>
-    <bpmn2:sequenceFlow id="SequenceFlow_12" tns:priority="1" name="NO" sourceRef="ExclusiveGateway_1" targetRef="EndEvent_5">
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_34" language="http://www.java.com/java">return KieFunctions.isFalse(rechazadoTramiteSeleccionado);</bpmn2:conditionExpression>
-    </bpmn2:sequenceFlow>
+    <bpmn2:sequenceFlow id="SequenceFlow_3" tns:priority="1" sourceRef="CallActivity_1" targetRef="EndEvent_1"/>
   </bpmn2:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
-    <bpmndi:BPMNPlane id="BPMNPlane_Process_1" bpmnElement="faltaCompetencia">
+    <bpmndi:BPMNPlane id="BPMNPlane_Process_1" bpmnElement="improcedencia">
       <bpmndi:BPMNShape id="BPMNShape_StartEvent_1" bpmnElement="_1">
         <dc:Bounds height="36.0" width="36.0" x="45.0" y="45.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_1"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_UserTask_1" bpmnElement="UserTask_1" isExpanded="true">
-        <dc:Bounds height="50.0" width="255.0" x="186.0" y="38.0"/>
+        <dc:Bounds height="50.0" width="110.0" x="186.0" y="38.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_2">
-          <dc:Bounds height="34.0" width="206.0" x="210.0" y="46.0"/>
+          <dc:Bounds height="34.0" width="96.0" x="193.0" y="46.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_CallActivity_1" bpmnElement="CallActivity_1" isExpanded="true">
-        <dc:Bounds height="50.0" width="110.0" x="546.0" y="38.0"/>
+        <dc:Bounds height="50.0" width="110.0" x="380.0" y="38.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_3">
-          <dc:Bounds height="34.0" width="76.0" x="563.0" y="46.0"/>
+          <dc:Bounds height="34.0" width="76.0" x="397.0" y="46.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_ExclusiveGateway_1" bpmnElement="ExclusiveGateway_1" isMarkerVisible="true">
-        <dc:Bounds height="50.0" width="50.0" x="678.0" y="138.0"/>
+      <bpmndi:BPMNShape id="BPMNShape_EndEvent_1" bpmnElement="EndEvent_1">
+        <dc:Bounds height="36.0" width="36.0" x="558.0" y="45.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_4">
-          <dc:Bounds height="102.0" width="87.0" x="660.0" y="188.0"/>
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_EndEvent_4" bpmnElement="EndEvent_4">
-        <dc:Bounds height="36.0" width="36.0" x="685.0" y="353.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_7">
-          <dc:Bounds height="17.0" width="20.0" x="693.0" y="389.0"/>
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_EndEvent_5" bpmnElement="EndEvent_5">
-        <dc:Bounds height="36.0" width="36.0" x="796.0" y="145.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_5">
-          <dc:Bounds height="17.0" width="20.0" x="804.0" y="181.0"/>
+          <dc:Bounds height="17.0" width="20.0" x="566.0" y="81.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_1" bpmnElement="SequenceFlow_1" sourceElement="BPMNShape_StartEvent_1" targetElement="BPMNShape_UserTask_1">
         <di:waypoint xsi:type="dc:Point" x="81.0" y="63.0"/>
         <di:waypoint xsi:type="dc:Point" x="133.0" y="63.0"/>
         <di:waypoint xsi:type="dc:Point" x="186.0" y="63.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_8"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_5"/>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_4" bpmnElement="SequenceFlow_4" sourceElement="BPMNShape_UserTask_1" targetElement="BPMNShape_CallActivity_1">
-        <di:waypoint xsi:type="dc:Point" x="441.0" y="63.0"/>
-        <di:waypoint xsi:type="dc:Point" x="493.0" y="63.0"/>
-        <di:waypoint xsi:type="dc:Point" x="546.0" y="63.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_9"/>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_2" bpmnElement="SequenceFlow_2" sourceElement="BPMNShape_UserTask_1" targetElement="BPMNShape_CallActivity_1">
+        <di:waypoint xsi:type="dc:Point" x="296.0" y="63.0"/>
+        <di:waypoint xsi:type="dc:Point" x="338.0" y="63.0"/>
+        <di:waypoint xsi:type="dc:Point" x="380.0" y="63.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_6"/>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_6" bpmnElement="SequenceFlow_6" sourceElement="BPMNShape_CallActivity_1" targetElement="BPMNShape_ExclusiveGateway_1">
-        <di:waypoint xsi:type="dc:Point" x="656.0" y="63.0"/>
-        <di:waypoint xsi:type="dc:Point" x="703.0" y="63.0"/>
-        <di:waypoint xsi:type="dc:Point" x="703.0" y="138.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_10"/>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_2" bpmnElement="SequenceFlow_2" sourceElement="BPMNShape_ExclusiveGateway_1" targetElement="BPMNShape_EndEvent_4">
-        <di:waypoint xsi:type="dc:Point" x="703.0" y="188.0"/>
-        <di:waypoint xsi:type="dc:Point" x="703.0" y="270.0"/>
-        <di:waypoint xsi:type="dc:Point" x="703.0" y="353.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_6">
-          <dc:Bounds height="17.0" width="13.0" x="697.0" y="272.0"/>
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_12" bpmnElement="SequenceFlow_12" sourceElement="BPMNShape_ExclusiveGateway_1" targetElement="BPMNShape_EndEvent_5">
-        <di:waypoint xsi:type="dc:Point" x="728.0" y="163.0"/>
-        <di:waypoint xsi:type="dc:Point" x="762.0" y="163.0"/>
-        <di:waypoint xsi:type="dc:Point" x="796.0" y="163.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_11">
-          <dc:Bounds height="17.0" width="22.0" x="752.0" y="164.0"/>
-        </bpmndi:BPMNLabel>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_3" bpmnElement="SequenceFlow_3" sourceElement="BPMNShape_CallActivity_1" targetElement="BPMNShape_EndEvent_1">
+        <di:waypoint xsi:type="dc:Point" x="490.0" y="63.0"/>
+        <di:waypoint xsi:type="dc:Point" x="524.0" y="63.0"/>
+        <di:waypoint xsi:type="dc:Point" x="558.0" y="63.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_7"/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
