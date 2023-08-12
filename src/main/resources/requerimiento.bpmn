@@ -6,7 +6,7 @@
   <bpmn2:itemDefinition id="ItemDefinition_3" isCollection="false" structureRef="java.lang.Boolean"/>
   <bpmn2:itemDefinition id="ItemDefinition_497" isCollection="false" structureRef="java.lang.Long"/>
   <bpmn2:itemDefinition id="ItemDefinition_1228" isCollection="false" structureRef="java.lang.Object"/>
-  <bpmn2:process id="requerimiento" tns:packageName="defaultPackage" name="Tramite Falta de competencia" isExecutable="true" processType="Private">
+  <bpmn2:process id="requerimiento" tns:packageName="defaultPackage" name="Tramite de Requerimiento" isExecutable="true" processType="Private">
     <bpmn2:property id="radicado" itemSubjectRef="ItemDefinition_1" name="radicado"/>
     <bpmn2:property id="expediente" itemSubjectRef="ItemDefinition_1" name="expediente"/>
     <bpmn2:property id="fecha_radicado" itemSubjectRef="ItemDefinition_1" name="fecha_radicado"/>
@@ -315,23 +315,23 @@
     <bpmndi:BPMNPlane id="BPMNPlane_Process_1" bpmnElement="requerimiento">
       <bpmndi:BPMNShape id="BPMNShape_StartEvent_1" bpmnElement="_1">
         <dc:Bounds height="36.0" width="36.0" x="45.0" y="45.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_1"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_UserTask_1" bpmnElement="UserTask_1" isExpanded="true">
         <dc:Bounds height="50.0" width="110.0" x="186.0" y="38.0"/>
-        <bpmndi:BPMNLabel>
+        <bpmndi:BPMNLabel id="BPMNLabel_2">
           <dc:Bounds height="34.0" width="95.0" x="193.0" y="46.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_CallActivity_4" bpmnElement="CallActivity_4" isExpanded="true">
         <dc:Bounds height="50.0" width="110.0" x="390.0" y="38.0"/>
-        <bpmndi:BPMNLabel>
+        <bpmndi:BPMNLabel id="BPMNLabel_3">
           <dc:Bounds height="34.0" width="76.0" x="407.0" y="46.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_EndEvent_1" bpmnElement="EndEvent_1">
         <dc:Bounds height="36.0" width="36.0" x="568.0" y="45.0"/>
-        <bpmndi:BPMNLabel>
+        <bpmndi:BPMNLabel id="BPMNLabel_4">
           <dc:Bounds height="17.0" width="20.0" x="576.0" y="81.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
@@ -339,19 +339,19 @@
         <di:waypoint xsi:type="dc:Point" x="81.0" y="63.0"/>
         <di:waypoint xsi:type="dc:Point" x="133.0" y="63.0"/>
         <di:waypoint xsi:type="dc:Point" x="186.0" y="63.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_5"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_5" bpmnElement="SequenceFlow_5" sourceElement="BPMNShape_UserTask_1" targetElement="BPMNShape_CallActivity_4">
         <di:waypoint xsi:type="dc:Point" x="296.0" y="63.0"/>
         <di:waypoint xsi:type="dc:Point" x="343.0" y="63.0"/>
         <di:waypoint xsi:type="dc:Point" x="390.0" y="63.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_6"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_6" bpmnElement="SequenceFlow_6" sourceElement="BPMNShape_CallActivity_4" targetElement="BPMNShape_EndEvent_1">
         <di:waypoint xsi:type="dc:Point" x="500.0" y="63.0"/>
         <di:waypoint xsi:type="dc:Point" x="534.0" y="63.0"/>
         <di:waypoint xsi:type="dc:Point" x="568.0" y="63.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_7"/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

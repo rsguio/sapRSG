@@ -331,7 +331,7 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_CallActivity_1" bpmnElement="CallActivity_1" isExpanded="true">
         <dc:Bounds height="50.0" width="110.0" x="350.0" y="38.0"/>
-        <bpmndi:BPMNLabel>
+        <bpmndi:BPMNLabel id="BPMNLabel_4">
           <dc:Bounds height="34.0" width="76.0" x="367.0" y="46.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
@@ -345,13 +345,13 @@
         <di:waypoint xsi:type="dc:Point" x="296.0" y="63.0"/>
         <di:waypoint xsi:type="dc:Point" x="323.0" y="63.0"/>
         <di:waypoint xsi:type="dc:Point" x="350.0" y="63.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_5"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_3" bpmnElement="SequenceFlow_3" sourceElement="BPMNShape_CallActivity_1" targetElement="BPMNShape_EndEvent_1">
         <di:waypoint xsi:type="dc:Point" x="460.0" y="63.0"/>
         <di:waypoint xsi:type="dc:Point" x="494.0" y="63.0"/>
         <di:waypoint xsi:type="dc:Point" x="528.0" y="63.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_6"/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
