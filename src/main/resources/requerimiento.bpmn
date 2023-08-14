@@ -31,6 +31,7 @@
     <bpmn2:property id="observacionesRevision" itemSubjectRef="ItemDefinition_1" name="observacionesRevision"/>
     <bpmn2:property id="rechazadoTramiteSeleccionado" itemSubjectRef="ItemDefinition_3" name="rechazadoTramiteSeleccionado"/>
     <bpmn2:property id="documentoEnviado" itemSubjectRef="ItemDefinition_3" name="documentoEnviado"/>
+    <bpmn2:property id="existeRespuestaUsuario" itemSubjectRef="ItemDefinition_3" name="existeRespuestaUsuario"/>
     <bpmn2:startEvent id="_1">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
@@ -760,7 +761,9 @@
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_31</bpmn2:incoming>
     </bpmn2:endEvent>
-    <bpmn2:sequenceFlow id="SequenceFlow_31" tns:priority="1" name="Si" sourceRef="ExclusiveGateway_7" targetRef="EndEvent_9"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_31" tns:priority="1" name="Si" sourceRef="ExclusiveGateway_7" targetRef="EndEvent_9">
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_17" language="http://www.java.com/java">return KieFunctions.isTrue(existeRespuestaUsuario);</bpmn2:conditionExpression>
+    </bpmn2:sequenceFlow>
     <bpmn2:callActivity id="CallActivity_2" tns:waitForCompletion="true" tns:independent="false" name="Desestimiento Tacito" calledElement="desestimientoTacito">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
@@ -770,7 +773,9 @@
       <bpmn2:incoming>SequenceFlow_32</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_33</bpmn2:outgoing>
     </bpmn2:callActivity>
-    <bpmn2:sequenceFlow id="SequenceFlow_32" tns:priority="1" name="No" sourceRef="ExclusiveGateway_7" targetRef="CallActivity_2"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_32" tns:priority="1" name="No" sourceRef="ExclusiveGateway_7" targetRef="CallActivity_2">
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_18" language="http://www.java.com/java">return KieFunctions.isFalse(existeRespuestaUsuario);</bpmn2:conditionExpression>
+    </bpmn2:sequenceFlow>
     <bpmn2:endEvent id="EndEvent_10" name="Fin">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
