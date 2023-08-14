@@ -24,7 +24,7 @@
     <bpmn2:property id="fechaRadicacionAnteEmpresa" itemSubjectRef="ItemDefinition_1469" name="fechaRadicacionAnteEmpresa"/>
     <bpmn2:property id="tramite" itemSubjectRef="ItemDefinition_1" name="tramite"/>
     <bpmn2:property id="revisor" itemSubjectRef="ItemDefinition_1" name="revisor"/>
-    <bpmn2:property id="nombreArchivoAutoApertura" itemSubjectRef="ItemDefinition_1" name="nombreArchivoAutoApertura"/>
+    <bpmn2:property id="nombreArchivoRadicado" itemSubjectRef="ItemDefinition_1" name="nombreArchivoRadicado"/>
     <bpmn2:property id="aprobado" itemSubjectRef="ItemDefinition_3" name="aprobado"/>
     <bpmn2:property id="nombreDocumentoAprobado" itemSubjectRef="ItemDefinition_1" name="nombreDocumentoAprobado"/>
     <bpmn2:property id="observacionesRevision" itemSubjectRef="ItemDefinition_1" name="observacionesRevision"/>
@@ -223,7 +223,7 @@
         <bpmn2:targetRef>DataInput_18</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataInputAssociation id="DataInputAssociation_19">
-        <bpmn2:sourceRef>nombreArchivoAutoApertura</bpmn2:sourceRef>
+        <bpmn2:sourceRef>nombreArchivoRadicado</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_19</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataInputAssociation id="DataInputAssociation_20">
@@ -359,7 +359,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_32">
         <bpmn2:targetRef>DataInput_32</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_9">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_20">Task Name</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_20">12_radicarRtaAutoApertura</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_21">DataInput_32</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -399,8 +399,15 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_40">
         <bpmn2:targetRef>DataInput_40</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
+      <bpmn2:potentialOwner id="PotentialOwner_2" name="Potential Owner 2">
+        <bpmn2:resourceAssignmentExpression id="ResourceAssignmentExpression_2">
+          <bpmn2:formalExpression id="FormalExpression_24">#{proyectista}</bpmn2:formalExpression>
+        </bpmn2:resourceAssignmentExpression>
+      </bpmn2:potentialOwner>
     </bpmn2:userTask>
-    <bpmn2:sequenceFlow id="SequenceFlow_3" tns:priority="1" sourceRef="ExclusiveGateway_1" targetRef="UserTask_2"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_3" tns:priority="1" name="No" sourceRef="ExclusiveGateway_1" targetRef="UserTask_2">
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_18" language="http://www.java.com/java">return KieFunctions.isFalse(rechazadoTramiteSeleccionado);</bpmn2:conditionExpression>
+    </bpmn2:sequenceFlow>
     <bpmn2:userTask id="UserTask_3" name="Validar Firma Documento">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
@@ -435,7 +442,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_41">
         <bpmn2:targetRef>DataInput_41</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_18">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_38">Task Name</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_38">13_validarFirmaAp</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_39">DataInput_41</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -501,7 +508,7 @@
     <bpmndi:BPMNPlane id="BPMNPlane_Process_1" bpmnElement="autoApertura">
       <bpmndi:BPMNShape id="BPMNShape_StartEvent_1" bpmnElement="_1">
         <dc:Bounds height="36.0" width="36.0" x="45.0" y="45.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_1"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_1" labelStyle="BPMNLabelStyle_1"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_UserTask_1" bpmnElement="UserTask_1" isExpanded="true">
         <dc:Bounds height="50.0" width="110.0" x="186.0" y="38.0"/>
@@ -517,13 +524,13 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_ExclusiveGateway_1" bpmnElement="ExclusiveGateway_1" isMarkerVisible="true">
         <dc:Bounds height="50.0" width="50.0" x="561.0" y="38.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_3">
-          <dc:Bounds height="68.0" width="79.0" x="547.0" y="88.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_3" labelStyle="BPMNLabelStyle_1">
+          <dc:Bounds height="60.0" width="80.0" x="546.0" y="88.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_EndEvent_3" bpmnElement="EndEvent_3">
         <dc:Bounds height="36.0" width="36.0" x="568.0" y="253.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_6">
+        <bpmndi:BPMNLabel id="BPMNLabel_6" labelStyle="BPMNLabelStyle_1">
           <dc:Bounds height="17.0" width="20.0" x="576.0" y="289.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
@@ -547,7 +554,7 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_EndEvent_1" bpmnElement="EndEvent_1">
         <dc:Bounds height="36.0" width="36.0" x="790.0" y="368.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_9">
+        <bpmndi:BPMNLabel id="BPMNLabel_9" labelStyle="BPMNLabelStyle_1">
           <dc:Bounds height="17.0" width="20.0" x="798.0" y="404.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
@@ -581,7 +588,9 @@
         <di:waypoint xsi:type="dc:Point" x="611.0" y="63.0"/>
         <di:waypoint xsi:type="dc:Point" x="650.0" y="63.0"/>
         <di:waypoint xsi:type="dc:Point" x="690.0" y="63.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_10"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_10">
+          <dc:Bounds height="15.0" width="16.0" x="644.0" y="64.0"/>
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_7" bpmnElement="SequenceFlow_7" sourceElement="BPMNShape_UserTask_2" targetElement="BPMNShape_UserTask_3">
         <di:waypoint xsi:type="dc:Point" x="807.0" y="88.0"/>
@@ -602,5 +611,8 @@
         <bpmndi:BPMNLabel id="BPMNLabel_13"/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
+    <bpmndi:BPMNLabelStyle id="BPMNLabelStyle_1">
+      <dc:Font name="arial" size="9.0"/>
+    </bpmndi:BPMNLabelStyle>
   </bpmndi:BPMNDiagram>
 </bpmn2:definitions>
