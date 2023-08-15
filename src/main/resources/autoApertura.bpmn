@@ -482,6 +482,11 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_49">
         <bpmn2:targetRef>DataInput_49</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
+      <bpmn2:potentialOwner id="PotentialOwner_3" name="Potential Owner 3">
+        <bpmn2:resourceAssignmentExpression id="ResourceAssignmentExpression_3">
+          <bpmn2:formalExpression id="FormalExpression_25">#{proyectista}</bpmn2:formalExpression>
+        </bpmn2:resourceAssignmentExpression>
+      </bpmn2:potentialOwner>
     </bpmn2:userTask>
     <bpmn2:sequenceFlow id="SequenceFlow_7" tns:priority="1" sourceRef="UserTask_2" targetRef="UserTask_3"/>
     <bpmn2:callActivity id="CallActivity_2" tns:waitForCompletion="true" tns:independent="false" name="Notificar" calledElement="notificar">
