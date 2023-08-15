@@ -482,6 +482,11 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_94">
         <bpmn2:targetRef>DataInput_94</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
+      <bpmn2:potentialOwner id="PotentialOwner_7" name="Potential Owner 7">
+        <bpmn2:resourceAssignmentExpression id="ResourceAssignmentExpression_7">
+          <bpmn2:formalExpression id="FormalExpression_20">#{proyectista}</bpmn2:formalExpression>
+        </bpmn2:resourceAssignmentExpression>
+      </bpmn2:potentialOwner>
     </bpmn2:userTask>
     <bpmn2:userTask id="UserTask_9" name="Radicar documento (radicado) de respuesta.">
       <bpmn2:extensionElements>
