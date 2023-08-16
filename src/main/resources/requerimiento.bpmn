@@ -488,10 +488,10 @@
         </bpmn2:resourceAssignmentExpression>
       </bpmn2:potentialOwner>
     </bpmn2:userTask>
-    <bpmn2:userTask id="UserTask_9" name="Radicar documento (radicado) de respuesta requerimiento">
+    <bpmn2:userTask id="UserTask_9" name="Radicar documento requerimiento (radicado) de respuesta ">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
-          <tns:metaValue><![CDATA[Radicar documento (radicado) de respuesta requerimiento]]></tns:metaValue>
+          <tns:metaValue><![CDATA[Radicar documento requerimiento (radicado) de respuesta ]]></tns:metaValue>
         </tns:metaData>
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_26</bpmn2:incoming>
@@ -836,7 +836,7 @@
       <bpmndi:BPMNShape id="BPMNShape_UserTask_9" bpmnElement="UserTask_9" isExpanded="true">
         <dc:Bounds height="50.0" width="233.0" x="520.0" y="159.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_8">
-          <dc:Bounds height="30.0" width="194.0" x="539.0" y="169.0"/>
+          <dc:Bounds height="30.0" width="201.0" x="536.0" y="169.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_UserTask_10" bpmnElement="UserTask_10" isExpanded="true">
