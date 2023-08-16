@@ -902,7 +902,7 @@
       </bpmn2:extensionElements>
       <bpmn2:outgoing>SequenceFlow_7</bpmn2:outgoing>
       <bpmn2:timerEventDefinition id="TimerEventDefinition_1">
-        <bpmn2:timeDuration xsi:type="bpmn2:tFormalExpression" id="FormalExpression_48">PT30D</bpmn2:timeDuration>
+        <bpmn2:timeDuration xsi:type="bpmn2:tFormalExpression" id="FormalExpression_48">#{fechaTimer}</bpmn2:timeDuration>
       </bpmn2:timerEventDefinition>
     </bpmn2:boundaryEvent>
     <bpmn2:scriptTask id="ScriptTask_1" name="Termino Tiempo espera">
