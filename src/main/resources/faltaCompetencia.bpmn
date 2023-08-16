@@ -411,10 +411,10 @@
     <bpmn2:sequenceFlow id="SequenceFlow_3" tns:priority="1" name="No" sourceRef="ExclusiveGateway_1" targetRef="UserTask_2">
       <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_27" language="http://www.java.com/java">return KieFunctions.isFalse(rechazadoTramiteSeleccionado);</bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
-    <bpmn2:userTask id="UserTask_3" name="Registrar Constancia Envio">
+    <bpmn2:userTask id="UserTask_3" name="Verificar Envio Documento">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
-          <tns:metaValue><![CDATA[Registrar Constancia Envio]]></tns:metaValue>
+          <tns:metaValue><![CDATA[Verificar Envio Documento]]></tns:metaValue>
         </tns:metaData>
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_5</bpmn2:incoming>
@@ -445,7 +445,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_41">
         <bpmn2:targetRef>DataInput_41</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_18">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_38">09_registrarContanciaEnvioFC</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_38">09_verificarEnvioDocumentoFC</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_39">DataInput_41</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -692,7 +692,7 @@
       <bpmndi:BPMNShape id="BPMNShape_UserTask_1" bpmnElement="UserTask_1" isExpanded="true">
         <dc:Bounds height="50.0" width="255.0" x="310.0" y="38.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_2">
-          <dc:Bounds height="15.0" width="233.0" x="321.0" y="55.0"/>
+          <dc:Bounds height="34.0" width="206.0" x="334.0" y="46.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_CallActivity_1" bpmnElement="CallActivity_1" isExpanded="true">
@@ -722,13 +722,13 @@
       <bpmndi:BPMNShape id="BPMNShape_UserTask_3" bpmnElement="UserTask_3" isExpanded="true">
         <dc:Bounds height="50.0" width="110.0" x="848.0" y="250.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_6">
-          <dc:Bounds height="30.0" width="99.0" x="853.0" y="260.0"/>
+          <dc:Bounds height="34.0" width="105.0" x="850.0" y="258.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_ExclusiveGateway_2" bpmnElement="ExclusiveGateway_2" isMarkerVisible="true">
         <dc:Bounds height="50.0" width="50.0" x="1018.0" y="250.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_8" labelStyle="BPMNLabelStyle_1">
-          <dc:Bounds height="30.0" width="75.0" x="1006.0" y="300.0"/>
+          <dc:Bounds height="51.0" width="49.0" x="1018.0" y="300.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_EndEvent_1" bpmnElement="EndEvent_1">
@@ -740,13 +740,13 @@
       <bpmndi:BPMNShape id="BPMNShape_UserTask_4" bpmnElement="UserTask_4" isExpanded="true">
         <dc:Bounds height="50.0" width="110.0" x="988.0" y="373.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_10">
-          <dc:Bounds height="30.0" width="90.0" x="998.0" y="383.0"/>
+          <dc:Bounds height="34.0" width="106.0" x="990.0" y="381.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_UserTask_5" bpmnElement="UserTask_5" isExpanded="true">
         <dc:Bounds height="50.0" width="209.0" x="938.0" y="470.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_11">
-          <dc:Bounds height="30.0" width="195.0" x="945.0" y="480.0"/>
+          <dc:Bounds height="34.0" width="180.0" x="952.0" y="478.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_EndEvent_2" bpmnElement="EndEvent_2">
@@ -815,7 +815,7 @@
         <di:waypoint xsi:type="dc:Point" x="1043.0" y="336.0"/>
         <di:waypoint xsi:type="dc:Point" x="1043.0" y="373.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_15">
-          <dc:Bounds height="15.0" width="16.0" x="1036.0" y="338.0"/>
+          <dc:Bounds height="17.0" width="18.0" x="1035.0" y="338.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_10" bpmnElement="SequenceFlow_10" sourceElement="BPMNShape_UserTask_4" targetElement="BPMNShape_UserTask_5">
