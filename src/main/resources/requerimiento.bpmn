@@ -769,10 +769,10 @@
     <bpmn2:sequenceFlow id="SequenceFlow_31" tns:priority="1" name="Si" sourceRef="ExclusiveGateway_7" targetRef="EndEvent_9">
       <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_17" language="http://www.java.com/java">return KieFunctions.isTrue(existeRespuestaUsuario);</bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
-    <bpmn2:callActivity id="CallActivity_2" tns:waitForCompletion="true" tns:independent="false" name="Desestimiento Tacito" calledElement="desestimientoTacito">
+    <bpmn2:callActivity id="CallActivity_2" tns:waitForCompletion="true" tns:independent="false" name="Desistimiento Tacito" calledElement="desistimientoTacito">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
-          <tns:metaValue><![CDATA[Desestimiento Tacito]]></tns:metaValue>
+          <tns:metaValue><![CDATA[Desistimiento Tacito]]></tns:metaValue>
         </tns:metaData>
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_32</bpmn2:incoming>
@@ -1091,7 +1091,7 @@
       <bpmndi:BPMNShape id="BPMNShape_CallActivity_2" bpmnElement="CallActivity_2" isExpanded="true">
         <dc:Bounds height="50.0" width="110.0" x="1434.0" y="553.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_15">
-          <dc:Bounds height="34.0" width="102.0" x="1438.0" y="561.0"/>
+          <dc:Bounds height="34.0" width="97.0" x="1440.0" y="561.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_EndEvent_10" bpmnElement="EndEvent_10">
@@ -1106,13 +1106,13 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_ScriptTask_1" bpmnElement="ScriptTask_1">
         <dc:Bounds height="50.0" width="110.0" x="1064.0" y="499.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_18">
+        <bpmndi:BPMNLabel id="BPMNLabel_18" labelStyle="BPMNLabelStyle_1">
           <dc:Bounds height="34.0" width="100.0" x="1069.0" y="507.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_ExclusiveGateway_2" bpmnElement="ExclusiveGateway_2" isMarkerVisible="true">
         <dc:Bounds height="50.0" width="50.0" x="1310.0" y="386.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_19"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_19" labelStyle="BPMNLabelStyle_1"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_UserTask_2" bpmnElement="UserTask_2" isExpanded="true">
         <dc:Bounds height="50.0" width="110.0" x="1279.0" y="499.0"/>

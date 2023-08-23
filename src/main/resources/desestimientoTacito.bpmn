@@ -6,7 +6,7 @@
   <bpmn2:itemDefinition id="ItemDefinition_770" isCollection="false" structureRef="java.lang.Long"/>
   <bpmn2:itemDefinition id="ItemDefinition_1165" isCollection="false" structureRef="java.lang.Short"/>
   <bpmn2:itemDefinition id="ItemDefinition_1913" isCollection="false" structureRef="java.lang.Object"/>
-  <bpmn2:process id="desestimientoTacito" tns:packageName="defaultPackage" name="Tramite de Desestimiento Tacito" isExecutable="true" processType="Private">
+  <bpmn2:process id="desistimientoTacito" tns:packageName="defaultPackage" name="Tramite de Desistimiento Tacito" isExecutable="true" processType="Private">
     <bpmn2:property id="rechazadoTramiteSeleccionado" itemSubjectRef="ItemDefinition_81" name="rechazadoTramiteSeleccionado"/>
     <bpmn2:property id="radicado" itemSubjectRef="ItemDefinition_8" name="radicado"/>
     <bpmn2:property id="expediente" itemSubjectRef="ItemDefinition_8" name="expediente"/>
@@ -206,7 +206,7 @@
         </bpmn2:resourceAssignmentExpression>
       </bpmn2:potentialOwner>
     </bpmn2:userTask>
-    <bpmn2:exclusiveGateway id="ExclusiveGateway_3" name="Rechazado porque no es improcedencia" gatewayDirection="Diverging">
+    <bpmn2:exclusiveGateway id="ExclusiveGateway_3" name="Rechazado porque no es desistimiento" gatewayDirection="Diverging">
       <bpmn2:incoming>SequenceFlow_10</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_2</bpmn2:outgoing>
       <bpmn2:outgoing>SequenceFlow_3</bpmn2:outgoing>
@@ -510,7 +510,7 @@
     <bpmn2:sequenceFlow id="SequenceFlow_10" tns:priority="1" sourceRef="CallActivity_2" targetRef="ExclusiveGateway_3"/>
   </bpmn2:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
-    <bpmndi:BPMNPlane id="BPMNPlane_Process_1" bpmnElement="desestimientoTacito">
+    <bpmndi:BPMNPlane id="BPMNPlane_Process_1" bpmnElement="desistimientoTacito">
       <bpmndi:BPMNShape id="BPMNShape_StartEvent_3" bpmnElement="StartEvent_3">
         <dc:Bounds height="36.0" width="36.0" x="90.0" y="122.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_1" labelStyle="BPMNLabelStyle_1"/>
@@ -536,7 +536,7 @@
       <bpmndi:BPMNShape id="BPMNShape_ExclusiveGateway_3" bpmnElement="ExclusiveGateway_3" isMarkerVisible="true">
         <dc:Bounds height="50.0" width="50.0" x="550.0" y="114.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_5" labelStyle="BPMNLabelStyle_1">
-          <dc:Bounds height="85.0" width="96.0" x="527.0" y="164.0"/>
+          <dc:Bounds height="85.0" width="89.0" x="531.0" y="164.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_CallActivity_5" bpmnElement="CallActivity_4" isExpanded="true">
@@ -559,7 +559,7 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_CallActivity_2" bpmnElement="CallActivity_2" isExpanded="true">
         <dc:Bounds height="50.0" width="110.0" x="400.0" y="115.0"/>
-        <bpmndi:BPMNLabel>
+        <bpmndi:BPMNLabel id="BPMNLabel_9">
           <dc:Bounds height="34.0" width="76.0" x="417.0" y="123.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
@@ -607,13 +607,13 @@
         <di:waypoint xsi:type="dc:Point" x="361.0" y="139.0"/>
         <di:waypoint xsi:type="dc:Point" x="380.0" y="140.0"/>
         <di:waypoint xsi:type="dc:Point" x="400.0" y="140.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_16"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_10" bpmnElement="SequenceFlow_10" sourceElement="BPMNShape_CallActivity_2" targetElement="BPMNShape_ExclusiveGateway_3">
         <di:waypoint xsi:type="dc:Point" x="510.0" y="140.0"/>
         <di:waypoint xsi:type="dc:Point" x="530.0" y="139.0"/>
         <di:waypoint xsi:type="dc:Point" x="550.0" y="139.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_17"/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
     <bpmndi:BPMNLabelStyle id="BPMNLabelStyle_1">
