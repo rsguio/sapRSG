@@ -34,6 +34,7 @@
     <bpmn2:property id="idempresa" itemSubjectRef="ItemDefinition_2078" name="idempresa"/>
     <bpmn2:property id="fechaRadicacionAnteEmpresa" itemSubjectRef="ItemDefinition_24" name="fechaRadicacionAnteEmpresa"/>
     <bpmn2:property id="correoCorrector" itemSubjectRef="ItemDefinition_1" name="correoCorrector"/>
+    <bpmn2:property id="validarTramiteErrado" itemSubjectRef="ItemDefinition_3" name="validarTramiteErrado"/>
     <bpmn2:task id="Task_6" tns:taskName="VersionesDocumentoWIH" name="Versionar Documento">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
