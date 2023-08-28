@@ -934,7 +934,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_90">
         <bpmn2:targetRef>DataInput_90</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_24">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_62">&quot;02a_proyectarFaltaCompetenciaESP&quot;</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_62">02a_proyectarFaltaCompetenciaESP</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_65">DataInput_90</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -994,7 +994,9 @@
       <bpmn2:outgoing>SequenceFlow_28</bpmn2:outgoing>
       <bpmn2:script>System.out.println(&quot;continuar&quot;);</bpmn2:script>
     </bpmn2:scriptTask>
-    <bpmn2:sequenceFlow id="SequenceFlow_27" tns:priority="1" sourceRef="ExclusiveGateway_3" targetRef="ScriptTask_1"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_27" tns:priority="1" sourceRef="ExclusiveGateway_3" targetRef="ScriptTask_1">
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_93" language="http://www.java.com/java">return KieFunctions.isFalse(esParaTraslado);</bpmn2:conditionExpression>
+    </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="SequenceFlow_28" tns:priority="1" sourceRef="ScriptTask_1" targetRef="ParallelGateway_2"/>
     <bpmn2:sequenceFlow id="SequenceFlow_29" tns:priority="1" sourceRef="ParallelGateway_1" targetRef="UserTask_1"/>
   </bpmn2:process>
