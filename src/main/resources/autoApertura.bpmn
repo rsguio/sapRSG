@@ -697,7 +697,7 @@
         <bpmn2:targetRef>DataInput_92</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
     </bpmn2:callActivity>
-    <bpmn2:callActivity id="CallActivity_4" tns:waitForCompletion="true" tns:independent="false" name="Fallo" calledElement="trasladoPruebas">
+    <bpmn2:callActivity id="CallActivity_4" tns:waitForCompletion="true" tns:independent="false" name="Fallo" calledElement="fallo">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
           <tns:metaValue><![CDATA[Fallo]]></tns:metaValue>
@@ -808,7 +808,7 @@
       </bpmn2:dataInputAssociation>
     </bpmn2:callActivity>
     <bpmn2:sequenceFlow id="SequenceFlow_9" tns:priority="1" sourceRef="CallActivity_3" targetRef="CallActivity_4"/>
-    <bpmn2:callActivity id="CallActivity_5" tns:waitForCompletion="true" tns:independent="false" name="Tramite de Pruebas" calledElement="trasladoPruebas">
+    <bpmn2:callActivity id="CallActivity_5" tns:waitForCompletion="true" tns:independent="false" name="Tramite de Pruebas" calledElement="pruebas">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
           <tns:metaValue><![CDATA[Tramite de Pruebas]]></tns:metaValue>
