@@ -317,10 +317,10 @@
       </bpmn2:dataOutputAssociation>
     </bpmn2:callActivity>
     <bpmn2:sequenceFlow id="SequenceFlow_2" tns:priority="1" sourceRef="UserTask_1" targetRef="CallActivity_1"/>
-    <bpmn2:userTask id="UserTask_2" name="Generar radicado de respuesta">
+    <bpmn2:userTask id="UserTask_2" name="Generar radicado de respuesta autoPruebas">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
-          <tns:metaValue><![CDATA[Generar radicado de respuesta]]></tns:metaValue>
+          <tns:metaValue><![CDATA[Generar radicado de respuesta autoPruebas]]></tns:metaValue>
         </tns:metaData>
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_5</bpmn2:incoming>
@@ -351,7 +351,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_32">
         <bpmn2:targetRef>DataInput_32</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_3">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_7">09_validarFirma</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_7">05_radicarDocumento</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_8">DataInput_32</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -440,7 +440,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_41">
         <bpmn2:targetRef>DataInput_41</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_18">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_38">20_validarFirmaImprocedencia</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_38">09_validarFirma</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_39">DataInput_41</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -520,7 +520,7 @@
       <bpmndi:BPMNShape id="BPMNShape_UserTask_2" bpmnElement="UserTask_2" isExpanded="true">
         <dc:Bounds height="50.0" width="241.0" x="580.0" y="38.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_5">
-          <dc:Bounds height="17.0" width="202.0" x="599.0" y="54.0"/>
+          <dc:Bounds height="34.0" width="221.0" x="590.0" y="46.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_CallActivity_2" bpmnElement="CallActivity_2" isExpanded="true">
