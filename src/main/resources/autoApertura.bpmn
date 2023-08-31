@@ -927,10 +927,14 @@
       <bpmn2:incoming>SequenceFlow_18</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_19</bpmn2:outgoing>
     </bpmn2:exclusiveGateway>
-    <bpmn2:sequenceFlow id="SequenceFlow_17" tns:priority="1" sourceRef="ExclusiveGateway_2" targetRef="ExclusiveGateway_4"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_17" tns:priority="1" sourceRef="ExclusiveGateway_2" targetRef="ExclusiveGateway_4">
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_32" language="http://www.java.com/java">return KieFunctions.isFalse(pidieronNuevasPruebas);</bpmn2:conditionExpression>
+    </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="SequenceFlow_18" tns:priority="1" sourceRef="CallActivity_5" targetRef="ExclusiveGateway_4"/>
     <bpmn2:sequenceFlow id="SequenceFlow_19" tns:priority="1" sourceRef="ExclusiveGateway_4" targetRef="CallActivity_3"/>
-    <bpmn2:sequenceFlow id="SequenceFlow_20" tns:priority="1" name="Si" sourceRef="ExclusiveGateway_2" targetRef="CallActivity_5"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_20" tns:priority="1" name="Si" sourceRef="ExclusiveGateway_2" targetRef="CallActivity_5">
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_33" language="http://www.java.com/java">return KieFunctions.isTrue(pidieronNuevasPruebas);</bpmn2:conditionExpression>
+    </bpmn2:sequenceFlow>
   </bpmn2:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_Process_1" bpmnElement="autoApertura">
