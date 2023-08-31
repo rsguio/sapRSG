@@ -360,7 +360,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_32">
         <bpmn2:targetRef>DataInput_32</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_9">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_20">12_radicarRtaAutoApertura</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_20">05_radicarDocumento</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_21">DataInput_32</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -443,7 +443,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_41">
         <bpmn2:targetRef>DataInput_41</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_18">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_38">13_validarFirmaAp</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_38">09_validarFirma</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_39">DataInput_41</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -534,7 +534,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_50">
         <bpmn2:targetRef>DataInput_50</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_11">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_26">Task Name</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_26">11_validarNuevasPruebas</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_27">DataInput_50</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -574,6 +574,11 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_58">
         <bpmn2:targetRef>DataInput_58</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
+      <bpmn2:potentialOwner id="PotentialOwner_4" name="Potential Owner 4">
+        <bpmn2:resourceAssignmentExpression id="ResourceAssignmentExpression_4">
+          <bpmn2:formalExpression id="FormalExpression_36">#{proyectista}</bpmn2:formalExpression>
+        </bpmn2:resourceAssignmentExpression>
+      </bpmn2:potentialOwner>
     </bpmn2:userTask>
     <bpmn2:sequenceFlow id="SequenceFlow_5" tns:priority="1" sourceRef="CallActivity_2" targetRef="UserTask_4"/>
     <bpmn2:exclusiveGateway id="ExclusiveGateway_2" name="¿Se pidieron nuevas pruebas?" gatewayDirection="Diverging">

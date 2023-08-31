@@ -71,7 +71,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_1">
         <bpmn2:targetRef>DataInput_1</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_1">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_1">06_Proyectar_Improcedencia</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_1">02_proyectarDocumento</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_2">DataInput_1</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -345,7 +345,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_32">
         <bpmn2:targetRef>DataInput_32</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_3">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_7">19_radicarRtaImprocedencia</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_7">05_radicarDocumento</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_8">DataInput_32</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -434,7 +434,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_41">
         <bpmn2:targetRef>DataInput_41</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_18">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_38">20_validarFirmaImprocedencia</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_38">09_validarFirma</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_39">DataInput_41</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -569,7 +569,7 @@
         <di:waypoint xsi:type="dc:Point" x="490.0" y="63.0"/>
         <di:waypoint xsi:type="dc:Point" x="530.0" y="63.0"/>
         <di:waypoint xsi:type="dc:Point" x="570.0" y="63.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_4"/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
     <bpmndi:BPMNLabelStyle id="BPMNLabelStyle_1">

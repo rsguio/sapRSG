@@ -363,7 +363,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_77">
         <bpmn2:targetRef>DataInput_77</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_42">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_86">15_verificarEnvioDocumentoReq</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_86">06_verificarEnvio</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_87">DataInput_41</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -443,7 +443,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_95">
         <bpmn2:targetRef>DataInput_95</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_55">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_112">14_radicarRtaRequerimiento</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_112">05_radicarDocumento</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_113">DataInput_22</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -541,7 +541,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_113">
         <bpmn2:targetRef>DataInput_113</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_68">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_138">18_validarRtaReq</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_138">10_validarRtaReq</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_139">DataInput_113</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -792,7 +792,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_10">
         <bpmn2:targetRef>DataInput_10</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_3">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_19">18A_validarRtaReq</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_19">10A_validarRtaReq</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_21">DataInput_10</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>

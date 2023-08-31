@@ -160,7 +160,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_81">
         <bpmn2:targetRef>DataInput_81</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_26">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_55">22_generarRadicadoRtaDesestimiento</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_55">05_radicarDocumento</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_56">DataInput_32</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -262,7 +262,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_90">
         <bpmn2:targetRef>DataInput_90</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_30">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_63">23_validarFirmaDesestimiento</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_63">09_validarFirma</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_64">DataInput_41</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>

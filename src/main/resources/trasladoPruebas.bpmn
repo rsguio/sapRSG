@@ -73,7 +73,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_1">
         <bpmn2:targetRef>DataInput_1</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_1">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_1">02_proyectarFaltaCompetencia</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_1">02_proyectarDocumento</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_2">DataInput_1</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -346,7 +346,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_23">
         <bpmn2:targetRef>DataInput_22</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_5">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_9">08_radicar_rta_faltaCompetencia</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_9">05_radicarDocumento</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_13">DataInput_22</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -426,7 +426,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_41">
         <bpmn2:targetRef>DataInput_41</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_18">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_38">09_verificarEnvioDocumentoFC</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_38">06_verificarEnvio</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_39">DataInput_41</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>

@@ -63,7 +63,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_1">
         <bpmn2:targetRef>DataInput_1</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_1">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_1">10_publicarPaginaWebFC</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_1">07_publicarPaginaWeb</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_2">DataInput_50</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -143,7 +143,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_10">
         <bpmn2:targetRef>DataInput_10</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_5">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_10">11_actualizarExpedienteFC</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_10">08_actualizarConstanciaPublicacion</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_11">DataInput_59</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -205,23 +205,23 @@
     <bpmndi:BPMNPlane id="BPMNPlane_Process_1" bpmnElement="publicacionPaginaWeb">
       <bpmndi:BPMNShape id="BPMNShape_StartEvent_1" bpmnElement="_1">
         <dc:Bounds height="36.0" width="36.0" x="50.0" y="45.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_1"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_UserTask_1" bpmnElement="UserTask_1" isExpanded="true">
         <dc:Bounds height="50.0" width="110.0" x="150.0" y="38.0"/>
-        <bpmndi:BPMNLabel>
+        <bpmndi:BPMNLabel id="BPMNLabel_2">
           <dc:Bounds height="34.0" width="106.0" x="152.0" y="46.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_UserTask_2" bpmnElement="UserTask_2" isExpanded="true">
         <dc:Bounds height="50.0" width="209.0" x="320.0" y="38.0"/>
-        <bpmndi:BPMNLabel>
+        <bpmndi:BPMNLabel id="BPMNLabel_3">
           <dc:Bounds height="34.0" width="180.0" x="334.0" y="46.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_EndEvent_1" bpmnElement="EndEvent_1">
         <dc:Bounds height="36.0" width="36.0" x="597.0" y="45.0"/>
-        <bpmndi:BPMNLabel>
+        <bpmndi:BPMNLabel id="BPMNLabel_4">
           <dc:Bounds height="17.0" width="20.0" x="605.0" y="81.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
@@ -229,19 +229,19 @@
         <di:waypoint xsi:type="dc:Point" x="86.0" y="63.0"/>
         <di:waypoint xsi:type="dc:Point" x="118.0" y="63.0"/>
         <di:waypoint xsi:type="dc:Point" x="150.0" y="63.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_5"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_2" bpmnElement="SequenceFlow_2" sourceElement="BPMNShape_UserTask_1" targetElement="BPMNShape_UserTask_2">
         <di:waypoint xsi:type="dc:Point" x="260.0" y="63.0"/>
         <di:waypoint xsi:type="dc:Point" x="290.0" y="63.0"/>
         <di:waypoint xsi:type="dc:Point" x="320.0" y="63.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_6"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_3" bpmnElement="SequenceFlow_3" sourceElement="BPMNShape_UserTask_2" targetElement="BPMNShape_EndEvent_1">
         <di:waypoint xsi:type="dc:Point" x="529.0" y="63.0"/>
         <di:waypoint xsi:type="dc:Point" x="563.0" y="63.0"/>
         <di:waypoint xsi:type="dc:Point" x="597.0" y="63.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_7"/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
