@@ -35,6 +35,7 @@
     <bpmn2:property id="documentosEstanCompletos" itemSubjectRef="ItemDefinition_3" name="documentosEstanCompletos"/>
     <bpmn2:property id="existeMerito" itemSubjectRef="ItemDefinition_3" name="existeMerito"/>
     <bpmn2:property id="esParaTraslado" itemSubjectRef="ItemDefinition_3" name="esParaTraslado"/>
+    <bpmn2:property id="enviarRequerimientoA" itemSubjectRef="ItemDefinition_1" name="enviarRequerimientoA"/>
     <bpmn2:startEvent id="_1">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
@@ -311,6 +312,7 @@
         <bpmn2:dataInput id="DataInput_33" itemSubjectRef="ItemDefinition_1" name="proyectista"/>
         <bpmn2:dataInput id="DataInput_40" itemSubjectRef="ItemDefinition_9" name="fechaRadicacionAnteEmpresa"/>
         <bpmn2:dataInput id="DataInput_42" itemSubjectRef="ItemDefinition_1" name="tramite"/>
+        <bpmn2:dataInput id="DataInput_76" itemSubjectRef="ItemDefinition_1" name="enviarRequerimientoA"/>
         <bpmn2:dataOutput id="DataOutput_2" itemSubjectRef="ItemDefinition_1" name="proyectista"/>
         <bpmn2:inputSet id="InputSet_1" name="Input Set 1">
           <bpmn2:dataInputRefs>DataInput_14</bpmn2:dataInputRefs>
@@ -329,6 +331,7 @@
           <bpmn2:dataInputRefs>DataInput_40</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_41</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_42</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_76</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
         <bpmn2:outputSet id="OutputSet_2" name="Output Set 2">
           <bpmn2:dataOutputRefs>DataOutput_2</bpmn2:dataOutputRefs>
@@ -397,6 +400,10 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_42">
         <bpmn2:sourceRef>tramite</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_42</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_76">
+        <bpmn2:sourceRef>enviarRequerimientoA</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_76</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataOutputAssociation id="DataOutputAssociation_2">
         <bpmn2:sourceRef>DataOutput_2</bpmn2:sourceRef>
