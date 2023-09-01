@@ -1586,7 +1586,7 @@
     <bpmn2:sequenceFlow id="SequenceFlow_45" tns:priority="1" sourceRef="UserTask_4" targetRef="UserTask_5"/>
     <bpmn2:sequenceFlow id="SequenceFlow_46" tns:priority="1" sourceRef="UserTask_5" targetRef="ExclusiveGateway_11"/>
     <bpmn2:sequenceFlow id="SequenceFlow_48" tns:priority="1" sourceRef="ExclusiveGateway_11" targetRef="CallActivity_3">
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_84" language="http://www.java.com/java">return KieFunctions.isFalse(documentoEnviado);</bpmn2:conditionExpression>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_84" language="http://www.java.com/java">return KieFunctions.isFalse(documentoEnviadoESP);</bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="SequenceFlow_50" tns:priority="1" sourceRef="CallActivity_5" targetRef="ExclusiveGateway_10"/>
     <bpmn2:sequenceFlow id="SequenceFlow_52" tns:priority="1" name="Si" sourceRef="ExclusiveGateway_5" targetRef="ExclusiveGateway_4">
@@ -1594,7 +1594,7 @@
     </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="SequenceFlow_53" tns:priority="1" sourceRef="CallActivity_1" targetRef="ExclusiveGateway_4"/>
     <bpmn2:sequenceFlow id="SequenceFlow_54" tns:priority="1" name="Si" sourceRef="ExclusiveGateway_11" targetRef="ExclusiveGateway_9">
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_94" language="http://www.java.com/java">return KieFunctions.isTrue(documentoEnviado);</bpmn2:conditionExpression>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_94" language="http://www.java.com/java">return KieFunctions.isTrue(documentoEnviadoESP);</bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="SequenceFlow_56" tns:priority="1" sourceRef="CallActivity_3" targetRef="ExclusiveGateway_9"/>
   </bpmn2:process>
