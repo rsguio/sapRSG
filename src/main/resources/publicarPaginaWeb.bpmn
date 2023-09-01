@@ -21,6 +21,7 @@
     <bpmn2:property id="direccion_cliente" itemSubjectRef="ItemDefinition_9" name="direccion_cliente"/>
     <bpmn2:property id="correo_cliente" itemSubjectRef="ItemDefinition_9" name="correo_cliente"/>
     <bpmn2:property id="fechaRadicacionAnteEmpresa" itemSubjectRef="ItemDefinition_2406" name="fechaRadicacionAnteEmpresa"/>
+    <bpmn2:property id="numeroRadicadoSalida" itemSubjectRef="ItemDefinition_9" name="numeroRadicadoSalida"/>
     <bpmn2:startEvent id="_1">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
