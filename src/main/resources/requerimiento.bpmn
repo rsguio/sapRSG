@@ -337,10 +337,10 @@
     <bpmn2:sequenceFlow id="SequenceFlow_2" tns:priority="1" name="SI" sourceRef="ExclusiveGateway_1" targetRef="EndEvent_3">
       <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_5" language="http://www.java.com/java">return KieFunctions.isTrue(rechazadoTramiteSeleccionado);</bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
-    <bpmn2:userTask id="UserTask_7" name="Verificar Envio Documento">
+    <bpmn2:userTask id="UserTask_7" name="Verificar Envio Requerimiento Cliente">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
-          <tns:metaValue><![CDATA[Verificar Envio Documento]]></tns:metaValue>
+          <tns:metaValue><![CDATA[Verificar Envio Requerimiento Cliente]]></tns:metaValue>
         </tns:metaData>
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_28</bpmn2:incoming>
@@ -417,10 +417,10 @@
         </bpmn2:resourceAssignmentExpression>
       </bpmn2:potentialOwner>
     </bpmn2:userTask>
-    <bpmn2:userTask id="UserTask_9" name="Radicar documento requerimiento (radicado) de respuesta ">
+    <bpmn2:userTask id="UserTask_9" name="Radicar documento requerimiento al Cliente">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
-          <tns:metaValue><![CDATA[Radicar documento requerimiento (radicado) de respuesta ]]></tns:metaValue>
+          <tns:metaValue><![CDATA[Radicar documento requerimiento al Cliente]]></tns:metaValue>
         </tns:metaData>
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_25</bpmn2:incoming>
@@ -1297,7 +1297,7 @@
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_39</bpmn2:incoming>
     </bpmn2:endEvent>
-    <bpmn2:userTask id="UserTask_4" name="Radicar documento requerimiento ESP de respuesta ">
+    <bpmn2:userTask id="UserTask_4" name="Radicar documento requerimiento a ESP">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
           <tns:metaValue><![CDATA[Radicar documento requerimiento (radicado) de respuesta ]]></tns:metaValue>
@@ -1377,7 +1377,7 @@
         </bpmn2:resourceAssignmentExpression>
       </bpmn2:potentialOwner>
     </bpmn2:userTask>
-    <bpmn2:userTask id="UserTask_5" name="Verificar Envio Documento ESP">
+    <bpmn2:userTask id="UserTask_5" name="Verificar Envio Requerimiento ESP">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
           <tns:metaValue><![CDATA[Verificar Envio Documento]]></tns:metaValue>
@@ -1632,13 +1632,13 @@
       <bpmndi:BPMNShape id="BPMNShape_UserTask_7" bpmnElement="UserTask_7" isExpanded="true">
         <dc:Bounds height="50.0" width="110.0" x="1256.0" y="28.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_5">
-          <dc:Bounds height="34.0" width="105.0" x="1258.0" y="36.0"/>
+          <dc:Bounds height="51.0" width="105.0" x="1258.0" y="28.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_UserTask_9" bpmnElement="UserTask_9" isExpanded="true">
         <dc:Bounds height="50.0" width="233.0" x="933.0" y="28.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_8">
-          <dc:Bounds height="51.0" width="196.0" x="951.0" y="28.0"/>
+          <dc:Bounds height="34.0" width="164.0" x="967.0" y="36.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_ExclusiveGateway_5" bpmnElement="ExclusiveGateway_5" isMarkerVisible="true">
@@ -1758,13 +1758,13 @@
       <bpmndi:BPMNShape id="BPMNShape_UserTask_4" bpmnElement="UserTask_4" isExpanded="true">
         <dc:Bounds height="50.0" width="233.0" x="934.0" y="592.0"/>
         <bpmndi:BPMNLabel>
-          <dc:Bounds height="51.0" width="160.0" x="970.0" y="592.0"/>
+          <dc:Bounds height="34.0" width="142.0" x="979.0" y="600.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_UserTask_5" bpmnElement="UserTask_5" isExpanded="true">
         <dc:Bounds height="50.0" width="154.0" x="1230.0" y="592.0"/>
         <bpmndi:BPMNLabel>
-          <dc:Bounds height="34.0" width="110.0" x="1252.0" y="600.0"/>
+          <dc:Bounds height="34.0" width="129.0" x="1242.0" y="600.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_ExclusiveGateway_11" bpmnElement="ExclusiveGateway_11" isMarkerVisible="true">
