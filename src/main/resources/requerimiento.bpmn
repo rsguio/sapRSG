@@ -42,6 +42,7 @@
     <bpmn2:property id="observacionesRevisionDocESP" itemSubjectRef="ItemDefinition_1" name="observacionesRevisionDocESP"/>
     <bpmn2:property id="numeroRadicadoSalida" itemSubjectRef="ItemDefinition_1" name="numeroRadicadoSalida"/>
     <bpmn2:property id="numeroRadicadoSalidaESP" itemSubjectRef="ItemDefinition_1" name="numeroRadicadoSalidaESP"/>
+    <bpmn2:property id="documentoEnviadoESP" itemSubjectRef="ItemDefinition_3" name="documentoEnviadoESP"/>
     <bpmn2:startEvent id="_1">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
