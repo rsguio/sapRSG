@@ -1271,11 +1271,17 @@
     </bpmn2:exclusiveGateway>
     <bpmn2:sequenceFlow id="SequenceFlow_17" tns:priority="1" sourceRef="ExclusiveGateway_9" targetRef="ParallelGateway_2"/>
     <bpmn2:sequenceFlow id="SequenceFlow_24" tns:priority="1" sourceRef="CallActivity_4" targetRef="ExclusiveGateway_1"/>
-    <bpmn2:sequenceFlow id="SequenceFlow_25" tns:priority="1" sourceRef="ExclusiveGateway_1" targetRef="UserTask_9"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_25" tns:priority="1" name="No" sourceRef="ExclusiveGateway_1" targetRef="UserTask_9">
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_95" language="http://www.java.com/java">return KieFunctions.isFalse(rechazadoTramiteSeleccionado);</bpmn2:conditionExpression>
+    </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="SequenceFlow_28" tns:priority="1" sourceRef="UserTask_9" targetRef="UserTask_7"/>
     <bpmn2:sequenceFlow id="SequenceFlow_30" tns:priority="1" sourceRef="UserTask_7" targetRef="ExclusiveGateway_5"/>
-    <bpmn2:sequenceFlow id="SequenceFlow_35" tns:priority="1" sourceRef="ExclusiveGateway_8" targetRef="ExclusiveGateway_4"/>
-    <bpmn2:sequenceFlow id="SequenceFlow_36" tns:priority="1" sourceRef="ExclusiveGateway_3" targetRef="ExclusiveGateway_9"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_35" tns:priority="1" sourceRef="ExclusiveGateway_8" targetRef="ExclusiveGateway_4">
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_98" language="http://www.java.com/java">return KieFunctions.equalsTo(enviarRequerimientoA,&quot;ESP&quot;)</bpmn2:conditionExpression>
+    </bpmn2:sequenceFlow>
+    <bpmn2:sequenceFlow id="SequenceFlow_36" tns:priority="1" sourceRef="ExclusiveGateway_3" targetRef="ExclusiveGateway_9">
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_97" language="http://www.java.com/java">return KieFunctions.equalsTo(enviarRequerimientoA,&quot;Cliente&quot;);</bpmn2:conditionExpression>
+    </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="SequenceFlow_38" tns:priority="1" sourceRef="ParallelGateway_2" targetRef="UserTask_11"/>
     <bpmn2:exclusiveGateway id="ExclusiveGateway_10" name="Rechazado porque no es requerimiento" gatewayDirection="Diverging">
       <bpmn2:incoming>SequenceFlow_50</bpmn2:incoming>
@@ -1480,7 +1486,6 @@
         <bpmn2:dataInput id="DataInput_163" itemSubjectRef="ItemDefinition_1228" name="fechaRadicacionAnteEmpresa"/>
         <bpmn2:dataInput id="DataInput_164" itemSubjectRef="ItemDefinition_1" name="idcliente"/>
         <bpmn2:dataInput id="DataInput_165" itemSubjectRef="ItemDefinition_1" name="idremitente"/>
-        <bpmn2:dataInput id="DataInput_166" itemSubjectRef="ItemDefinition_1" name="input1"/>
         <bpmn2:dataInput id="DataInput_167" itemSubjectRef="ItemDefinition_1" name="numeroRadicadoSalida"/>
         <bpmn2:inputSet id="InputSet_9" name="Input Set 1">
           <bpmn2:dataInputRefs>DataInput_127</bpmn2:dataInputRefs>
@@ -1499,7 +1504,6 @@
           <bpmn2:dataInputRefs>DataInput_163</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_164</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_165</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_166</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_167</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
         <bpmn2:outputSet id="OutputSet_13" name="Output Set 2"/>
@@ -1568,10 +1572,6 @@
         <bpmn2:sourceRef>idremitente</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_165</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_166">
-        <bpmn2:sourceRef>nombreArchivoRadicado</bpmn2:sourceRef>
-        <bpmn2:targetRef>DataInput_166</bpmn2:targetRef>
-      </bpmn2:dataInputAssociation>
       <bpmn2:dataInputAssociation id="DataInputAssociation_167">
         <bpmn2:sourceRef>numeroRadicadoSalidaESP</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_167</bpmn2:targetRef>
@@ -1580,7 +1580,9 @@
     <bpmn2:sequenceFlow id="SequenceFlow_39" tns:priority="1" name="SI" sourceRef="ExclusiveGateway_10" targetRef="EndEvent_1">
       <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_82" language="http://www.java.com/java">return KieFunctions.isTrue(rechazadoTramiteSeleccionado);</bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
-    <bpmn2:sequenceFlow id="SequenceFlow_43" tns:priority="1" sourceRef="ExclusiveGateway_10" targetRef="UserTask_4"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_43" tns:priority="1" name="No" sourceRef="ExclusiveGateway_10" targetRef="UserTask_4">
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_96" language="http://www.java.com/java">return KieFunctions.isFalse(rechazadoTramiteSeleccionado);</bpmn2:conditionExpression>
+    </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="SequenceFlow_45" tns:priority="1" sourceRef="UserTask_4" targetRef="UserTask_5"/>
     <bpmn2:sequenceFlow id="SequenceFlow_46" tns:priority="1" sourceRef="UserTask_5" targetRef="ExclusiveGateway_11"/>
     <bpmn2:sequenceFlow id="SequenceFlow_48" tns:priority="1" sourceRef="ExclusiveGateway_11" targetRef="CallActivity_3">
@@ -1910,7 +1912,9 @@
         <di:waypoint xsi:type="dc:Point" x="840.0" y="52.0"/>
         <di:waypoint xsi:type="dc:Point" x="886.0" y="52.0"/>
         <di:waypoint xsi:type="dc:Point" x="933.0" y="53.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="17.0" width="18.0" x="879.0" y="53.0"/>
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_28" bpmnElement="SequenceFlow_28" sourceElement="BPMNShape_UserTask_9" targetElement="BPMNShape_UserTask_7">
         <di:waypoint xsi:type="dc:Point" x="1166.0" y="53.0"/>
@@ -1954,7 +1958,9 @@
         <di:waypoint xsi:type="dc:Point" x="858.0" y="616.0"/>
         <di:waypoint xsi:type="dc:Point" x="896.0" y="616.0"/>
         <di:waypoint xsi:type="dc:Point" x="934.0" y="617.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="17.0" width="18.0" x="888.0" y="617.0"/>
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_45" bpmnElement="SequenceFlow_45" sourceElement="BPMNShape_UserTask_4" targetElement="BPMNShape_UserTask_5">
         <di:waypoint xsi:type="dc:Point" x="1167.0" y="617.0"/>
