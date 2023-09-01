@@ -135,7 +135,7 @@
         </tns:metaData>
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_5</bpmn2:incoming>
-      <bpmn2:outgoing>SequenceFlow_35</bpmn2:outgoing>
+      <bpmn2:outgoing>SequenceFlow_40</bpmn2:outgoing>
       <bpmn2:ioSpecification id="InputOutputSpecification_4">
         <bpmn2:dataInput id="DataInput_48" itemSubjectRef="ItemDefinition_1" name="radicado"/>
         <bpmn2:dataInput id="DataInput_49" itemSubjectRef="ItemDefinition_1" name="fecha_radicado"/>
@@ -965,14 +965,14 @@
       <bpmn2:outgoing>SequenceFlow_20</bpmn2:outgoing>
     </bpmn2:parallelGateway>
     <bpmn2:sequenceFlow id="SequenceFlow_12" tns:priority="1" sourceRef="_1" targetRef="ParallelGateway_1"/>
-    <bpmn2:exclusiveGateway id="ExclusiveGateway_3" name="Enviar Requerimiento a ESP?" gatewayDirection="Diverging">
+    <bpmn2:exclusiveGateway id="ExclusiveGateway_3" name="Enviar Requerimiento a ESP?" gatewayDirection="Converging">
       <bpmn2:incoming>SequenceFlow_14</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_19</bpmn2:outgoing>
     </bpmn2:exclusiveGateway>
     <bpmn2:sequenceFlow id="SequenceFlow_14" tns:priority="1" sourceRef="ParallelGateway_1" targetRef="ExclusiveGateway_3"/>
     <bpmn2:parallelGateway id="ParallelGateway_2" gatewayDirection="Converging">
-      <bpmn2:incoming>SequenceFlow_35</bpmn2:incoming>
-      <bpmn2:incoming>SequenceFlow_36</bpmn2:incoming>
+      <bpmn2:incoming>SequenceFlow_40</bpmn2:incoming>
+      <bpmn2:incoming>SequenceFlow_41</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_34</bpmn2:outgoing>
     </bpmn2:parallelGateway>
     <bpmn2:userTask id="UserTask_3" name="Proyectar documento requerimiento ESP">
@@ -1061,7 +1061,7 @@
         </tns:metaData>
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_1</bpmn2:incoming>
-      <bpmn2:outgoing>SequenceFlow_36</bpmn2:outgoing>
+      <bpmn2:outgoing>SequenceFlow_41</bpmn2:outgoing>
       <bpmn2:ioSpecification id="InputOutputSpecification_9">
         <bpmn2:dataInput id="DataInput_132" itemSubjectRef="ItemDefinition_1" name="radicado"/>
         <bpmn2:dataInput id="DataInput_133" itemSubjectRef="ItemDefinition_1" name="fecha_radicado"/>
@@ -1247,7 +1247,7 @@
       </bpmn2:dataOutputAssociation>
     </bpmn2:callActivity>
     <bpmn2:sequenceFlow id="SequenceFlow_1" tns:priority="1" sourceRef="UserTask_3" targetRef="CallActivity_5"/>
-    <bpmn2:exclusiveGateway id="ExclusiveGateway_8" name="Enviar Requerimiento al Cliente?" gatewayDirection="Diverging">
+    <bpmn2:exclusiveGateway id="ExclusiveGateway_8" name="Enviar Requerimiento al Cliente?" gatewayDirection="Converging">
       <bpmn2:incoming>SequenceFlow_20</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_23</bpmn2:outgoing>
     </bpmn2:exclusiveGateway>
@@ -1257,8 +1257,8 @@
            KieFunctions.equalsTo(enviarRequerimientoA,&quot;Ambos&quot;);</bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="SequenceFlow_34" tns:priority="1" sourceRef="ParallelGateway_2" targetRef="ExclusiveGateway_1"/>
-    <bpmn2:sequenceFlow id="SequenceFlow_35" tns:priority="1" sourceRef="CallActivity_4" targetRef="ParallelGateway_2"/>
-    <bpmn2:sequenceFlow id="SequenceFlow_36" tns:priority="1" sourceRef="CallActivity_5" targetRef="ParallelGateway_2"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_40" tns:priority="1" sourceRef="CallActivity_4" targetRef="ParallelGateway_2"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_41" tns:priority="1" sourceRef="CallActivity_5" targetRef="ParallelGateway_2"/>
   </bpmn2:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_Process_1" bpmnElement="requerimiento">
@@ -1558,15 +1558,15 @@
         <di:waypoint xsi:type="dc:Point" x="699.0" y="316.0"/>
         <bpmndi:BPMNLabel/>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_35" bpmnElement="SequenceFlow_35" sourceElement="BPMNShape_CallActivity_4" targetElement="BPMNShape_ParallelGateway_2">
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_40" bpmnElement="SequenceFlow_40" sourceElement="BPMNShape_CallActivity_4" targetElement="BPMNShape_ParallelGateway_2">
         <di:waypoint xsi:type="dc:Point" x="400.0" y="133.0"/>
         <di:waypoint xsi:type="dc:Point" x="400.0" y="212.0"/>
         <di:waypoint xsi:type="dc:Point" x="400.0" y="292.0"/>
         <bpmndi:BPMNLabel/>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_36" bpmnElement="SequenceFlow_36" sourceElement="BPMNShape_CallActivity_5" targetElement="BPMNShape_ParallelGateway_2">
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_41" bpmnElement="SequenceFlow_41" sourceElement="BPMNShape_CallActivity_5" targetElement="BPMNShape_ParallelGateway_2">
         <di:waypoint xsi:type="dc:Point" x="399.0" y="508.0"/>
-        <di:waypoint xsi:type="dc:Point" x="399.0" y="425.0"/>
+        <di:waypoint xsi:type="dc:Point" x="400.0" y="425.0"/>
         <di:waypoint xsi:type="dc:Point" x="400.0" y="342.0"/>
         <bpmndi:BPMNLabel/>
       </bpmndi:BPMNEdge>
