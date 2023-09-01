@@ -965,14 +965,17 @@
       <bpmn2:outgoing>SequenceFlow_20</bpmn2:outgoing>
     </bpmn2:parallelGateway>
     <bpmn2:sequenceFlow id="SequenceFlow_12" tns:priority="1" sourceRef="_1" targetRef="ParallelGateway_1"/>
-    <bpmn2:exclusiveGateway id="ExclusiveGateway_3" name="Enviar Requerimiento a ESP?" gatewayDirection="Converging">
+    <bpmn2:exclusiveGateway id="ExclusiveGateway_3" name="Enviar Requerimiento a ESP?" gatewayDirection="Diverging">
       <bpmn2:incoming>SequenceFlow_14</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_19</bpmn2:outgoing>
+      <bpmn2:outgoing>SequenceFlow_44</bpmn2:outgoing>
     </bpmn2:exclusiveGateway>
     <bpmn2:sequenceFlow id="SequenceFlow_14" tns:priority="1" sourceRef="ParallelGateway_1" targetRef="ExclusiveGateway_3"/>
     <bpmn2:parallelGateway id="ParallelGateway_2" gatewayDirection="Converging">
       <bpmn2:incoming>SequenceFlow_40</bpmn2:incoming>
       <bpmn2:incoming>SequenceFlow_41</bpmn2:incoming>
+      <bpmn2:incoming>SequenceFlow_42</bpmn2:incoming>
+      <bpmn2:incoming>SequenceFlow_44</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_34</bpmn2:outgoing>
     </bpmn2:parallelGateway>
     <bpmn2:userTask id="UserTask_3" name="Proyectar documento requerimiento ESP">
@@ -1247,9 +1250,10 @@
       </bpmn2:dataOutputAssociation>
     </bpmn2:callActivity>
     <bpmn2:sequenceFlow id="SequenceFlow_1" tns:priority="1" sourceRef="UserTask_3" targetRef="CallActivity_5"/>
-    <bpmn2:exclusiveGateway id="ExclusiveGateway_8" name="Enviar Requerimiento al Cliente?" gatewayDirection="Converging">
+    <bpmn2:exclusiveGateway id="ExclusiveGateway_8" name="Enviar Requerimiento al Cliente?" gatewayDirection="Diverging">
       <bpmn2:incoming>SequenceFlow_20</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_23</bpmn2:outgoing>
+      <bpmn2:outgoing>SequenceFlow_42</bpmn2:outgoing>
     </bpmn2:exclusiveGateway>
     <bpmn2:sequenceFlow id="SequenceFlow_20" tns:priority="1" sourceRef="ParallelGateway_1" targetRef="ExclusiveGateway_8"/>
     <bpmn2:sequenceFlow id="SequenceFlow_23" tns:priority="1" name="Si" sourceRef="ExclusiveGateway_8" targetRef="UserTask_1">
@@ -1259,6 +1263,12 @@
     <bpmn2:sequenceFlow id="SequenceFlow_34" tns:priority="1" sourceRef="ParallelGateway_2" targetRef="ExclusiveGateway_1"/>
     <bpmn2:sequenceFlow id="SequenceFlow_40" tns:priority="1" sourceRef="CallActivity_4" targetRef="ParallelGateway_2"/>
     <bpmn2:sequenceFlow id="SequenceFlow_41" tns:priority="1" sourceRef="CallActivity_5" targetRef="ParallelGateway_2"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_42" tns:priority="1" name="No" sourceRef="ExclusiveGateway_8" targetRef="ParallelGateway_2">
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_33" language="http://www.java.com/java">return KieFunctions.equalsTo(enviarRequerimientoA,&quot;ESP&quot;);</bpmn2:conditionExpression>
+    </bpmn2:sequenceFlow>
+    <bpmn2:sequenceFlow id="SequenceFlow_44" tns:priority="1" name="No" sourceRef="ExclusiveGateway_3" targetRef="ParallelGateway_2">
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_34" language="http://www.java.com/java">return KieFunctions.equalsTo(enviarRequerimientoA,&quot;Cliente&quot;)</bpmn2:conditionExpression>
+    </bpmn2:sequenceFlow>
   </bpmn2:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_Process_1" bpmnElement="requerimiento">
@@ -1569,6 +1579,24 @@
         <di:waypoint xsi:type="dc:Point" x="400.0" y="425.0"/>
         <di:waypoint xsi:type="dc:Point" x="400.0" y="342.0"/>
         <bpmndi:BPMNLabel/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_42" bpmnElement="SequenceFlow_42" sourceElement="BPMNShape_ExclusiveGateway_8" targetElement="BPMNShape_ParallelGateway_2">
+        <di:waypoint xsi:type="dc:Point" x="216.0" y="190.0"/>
+        <di:waypoint xsi:type="dc:Point" x="295.0" y="190.0"/>
+        <di:waypoint xsi:type="dc:Point" x="295.0" y="317.0"/>
+        <di:waypoint xsi:type="dc:Point" x="375.0" y="317.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="17.0" width="18.0" x="287.0" y="255.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_44" bpmnElement="SequenceFlow_44" sourceElement="BPMNShape_ExclusiveGateway_3" targetElement="BPMNShape_ParallelGateway_2">
+        <di:waypoint xsi:type="dc:Point" x="215.0" y="452.0"/>
+        <di:waypoint xsi:type="dc:Point" x="295.0" y="452.0"/>
+        <di:waypoint xsi:type="dc:Point" x="295.0" y="317.0"/>
+        <di:waypoint xsi:type="dc:Point" x="375.0" y="317.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="17.0" width="18.0" x="287.0" y="386.0"/>
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
     <bpmndi:BPMNLabelStyle id="BPMNLabelStyle_1">
