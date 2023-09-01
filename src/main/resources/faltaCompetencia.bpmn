@@ -36,6 +36,9 @@
     <bpmn2:property id="nombreDocumentoAprobadoESP" itemSubjectRef="ItemDefinition_1" name="nombreDocumentoAprobadoESP"/>
     <bpmn2:property id="aprobadoESP" itemSubjectRef="ItemDefinition_3" name="aprobadoESP"/>
     <bpmn2:property id="observacionesRevisionDocESP" itemSubjectRef="ItemDefinition_1" name="observacionesRevisionDocESP"/>
+    <bpmn2:property id="nombreArchivoRadicadoDocESP" itemSubjectRef="ItemDefinition_1" name="nombreArchivoRadicadoDocESP"/>
+    <bpmn2:property id="revisorDocESP" itemSubjectRef="ItemDefinition_1" name="revisorDocESP"/>
+    <bpmn2:property id="observacionesDocESP" itemSubjectRef="ItemDefinition_1" name="observacionesDocESP"/>
     <bpmn2:startEvent id="_1">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
@@ -631,11 +634,11 @@
         <bpmn2:targetRef>DataInput_75</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataInputAssociation id="DataInputAssociation_76">
-        <bpmn2:sourceRef>revisor</bpmn2:sourceRef>
+        <bpmn2:sourceRef>revisorDocESP</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_76</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataInputAssociation id="DataInputAssociation_77">
-        <bpmn2:sourceRef>nombreArchivoRadicado</bpmn2:sourceRef>
+        <bpmn2:sourceRef>nombreArchivoRadicadoDocESP</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_77</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataInputAssociation id="DataInputAssociation_78">
@@ -1033,11 +1036,11 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_ParallelGateway_3" bpmnElement="ParallelGateway_3" isMarkerVisible="true">
         <dc:Bounds height="50.0" width="50.0" x="780.0" y="162.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_12"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_ExclusiveGateway_5" bpmnElement="ExclusiveGateway_5" isMarkerVisible="true">
         <dc:Bounds height="50.0" width="50.0" x="493.0" y="163.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_16"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_4" bpmnElement="SequenceFlow_4" sourceElement="BPMNShape_UserTask_1" targetElement="BPMNShape_CallActivity_1">
         <di:waypoint xsi:type="dc:Point" x="637.0" y="62.0"/>
@@ -1129,19 +1132,19 @@
         <di:waypoint xsi:type="dc:Point" x="805.0" y="88.0"/>
         <di:waypoint xsi:type="dc:Point" x="805.0" y="125.0"/>
         <di:waypoint xsi:type="dc:Point" x="805.0" y="162.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_18"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_18" bpmnElement="SequenceFlow_18" sourceElement="BPMNShape_ParallelGateway_3" targetElement="BPMNShape_ExclusiveGateway_1">
         <di:waypoint xsi:type="dc:Point" x="830.0" y="187.0"/>
         <di:waypoint xsi:type="dc:Point" x="898.0" y="187.0"/>
         <di:waypoint xsi:type="dc:Point" x="966.0" y="186.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_21"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_32" bpmnElement="SequenceFlow_32" sourceElement="BPMNShape_ExclusiveGateway_3" targetElement="BPMNShape_ExclusiveGateway_5">
         <di:waypoint xsi:type="dc:Point" x="205.0" y="189.0"/>
         <di:waypoint xsi:type="dc:Point" x="349.0" y="189.0"/>
         <di:waypoint xsi:type="dc:Point" x="493.0" y="188.0"/>
-        <bpmndi:BPMNLabel>
+        <bpmndi:BPMNLabel id="BPMNLabel_22">
           <dc:Bounds height="17.0" width="18.0" x="341.0" y="190.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
@@ -1149,13 +1152,13 @@
         <di:waypoint xsi:type="dc:Point" x="543.0" y="188.0"/>
         <di:waypoint xsi:type="dc:Point" x="661.0" y="188.0"/>
         <di:waypoint xsi:type="dc:Point" x="780.0" y="187.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_23"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_34" bpmnElement="SequenceFlow_34" sourceElement="BPMNShape_CallActivity_2" targetElement="BPMNShape_ExclusiveGateway_5">
         <di:waypoint xsi:type="dc:Point" x="518.0" y="275.0"/>
         <di:waypoint xsi:type="dc:Point" x="518.0" y="244.0"/>
         <di:waypoint xsi:type="dc:Point" x="518.0" y="213.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_26"/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
     <bpmndi:BPMNLabelStyle id="BPMNLabelStyle_1">
