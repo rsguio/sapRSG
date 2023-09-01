@@ -47,10 +47,10 @@
       </bpmn2:extensionElements>
       <bpmn2:outgoing>SequenceFlow_12</bpmn2:outgoing>
     </bpmn2:startEvent>
-    <bpmn2:userTask id="UserTask_1" name="Proyectar documento falta de competencia al prestador" implementation="Java">
+    <bpmn2:userTask id="UserTask_1" name="Proyectar documento falta de competencia al Cliente" implementation="Java">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
-          <tns:metaValue><![CDATA[Proyectar documento falta de competencia al prestador]]></tns:metaValue>
+          <tns:metaValue><![CDATA[Proyectar documento falta de competencia al Cliente]]></tns:metaValue>
         </tns:metaData>
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_29</bpmn2:incoming>
@@ -127,10 +127,10 @@
         </bpmn2:resourceAssignmentExpression>
       </bpmn2:potentialOwner>
     </bpmn2:userTask>
-    <bpmn2:callActivity id="CallActivity_1" tns:waitForCompletion="true" tns:independent="false" name="Revision Documento prestador" calledElement="revisionDocumentos">
+    <bpmn2:callActivity id="CallActivity_1" tns:waitForCompletion="true" tns:independent="false" name="Revision Documento Cliente" calledElement="revisionDocumentos">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
-          <tns:metaValue><![CDATA[Revision Documento prestador]]></tns:metaValue>
+          <tns:metaValue><![CDATA[Revision Documento Cliente]]></tns:metaValue>
         </tns:metaData>
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_4</bpmn2:incoming>
@@ -961,7 +961,7 @@
       <bpmndi:BPMNShape id="BPMNShape_CallActivity_1" bpmnElement="CallActivity_1" isExpanded="true">
         <dc:Bounds height="50.0" width="161.0" x="725.0" y="38.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_3">
-          <dc:Bounds height="34.0" width="144.0" x="733.0" y="46.0"/>
+          <dc:Bounds height="34.0" width="148.0" x="731.0" y="46.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_ExclusiveGateway_1" bpmnElement="ExclusiveGateway_1" isMarkerVisible="true">
