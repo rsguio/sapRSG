@@ -1078,8 +1078,7 @@
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_23</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_24</bpmn2:outgoing>
-      <bpmn2:script>Integer i = kcontext.getVariable(&quot;i&quot;);
-kcontext.setVariable(&quot;numeroRadicadoSalida&quot;+ Integer.toString(i+1), kcontext.getVariable(&quot;numeroRadicadoSalida&quot;).toString());
+      <bpmn2:script>kcontext.setVariable(&quot;numeroRadicadoSalida&quot;+ Integer.toString(i+1), kcontext.getVariable(&quot;numeroRadicadoSalida&quot;).toString());
 kcontext.setVariable(&quot;i&quot;, i+1);</bpmn2:script>
     </bpmn2:scriptTask>
     <bpmn2:sequenceFlow id="SequenceFlow_23" tns:priority="1" name="No" sourceRef="ExclusiveGateway_3" targetRef="ScriptTask_1">
