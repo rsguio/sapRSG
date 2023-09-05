@@ -129,10 +129,10 @@
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_2</bpmn2:incoming>
     </bpmn2:endEvent>
-    <bpmn2:userTask id="UserTask_5" name="Generar radicado de respuesta">
+    <bpmn2:userTask id="UserTask_5" name="Generar resolucion desistimiento tacito">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
-          <tns:metaValue><![CDATA[Generar radicado de respuesta]]></tns:metaValue>
+          <tns:metaValue><![CDATA[Generar resolucion desistimiento tacito]]></tns:metaValue>
         </tns:metaData>
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_13</bpmn2:incoming>
@@ -206,6 +206,11 @@
       <bpmn2:potentialOwner id="PotentialOwner_1" name="Potential Owner 1">
         <bpmn2:resourceAssignmentExpression id="ResourceAssignmentExpression_1">
           <bpmn2:formalExpression id="FormalExpression_18">#{proyectista}</bpmn2:formalExpression>
+        </bpmn2:resourceAssignmentExpression>
+      </bpmn2:potentialOwner>
+      <bpmn2:potentialOwner id="PotentialOwner_4" name="Potential Owner 4">
+        <bpmn2:resourceAssignmentExpression id="ResourceAssignmentExpression_4">
+          <bpmn2:formalExpression id="FormalExpression_1">#{revisor}</bpmn2:formalExpression>
         </bpmn2:resourceAssignmentExpression>
       </bpmn2:potentialOwner>
     </bpmn2:userTask>
@@ -689,7 +694,7 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
       <bpmndi:BPMNShape id="BPMNShape_UserTask_7" bpmnElement="UserTask_5" isExpanded="true">
         <dc:Bounds height="50.0" width="156.0" x="762.0" y="114.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_4">
-          <dc:Bounds height="34.0" width="146.0" x="767.0" y="122.0"/>
+          <dc:Bounds height="34.0" width="134.0" x="773.0" y="122.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_ExclusiveGateway_3" bpmnElement="ExclusiveGateway_3" isMarkerVisible="true">
@@ -740,7 +745,7 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_ScriptTask_2" bpmnElement="ScriptTask_2" isExpanded="true">
         <dc:Bounds height="50.0" width="110.0" x="100.0" y="114.0"/>
-        <bpmndi:BPMNLabel labelStyle="BPMNLabelStyle_1">
+        <bpmndi:BPMNLabel id="BPMNLabel_13" labelStyle="BPMNLabelStyle_1">
           <dc:Bounds height="17.0" width="33.0" x="138.0" y="130.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
@@ -819,13 +824,13 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
         <di:waypoint xsi:type="dc:Point" x="76.0" y="139.0"/>
         <di:waypoint xsi:type="dc:Point" x="88.0" y="139.0"/>
         <di:waypoint xsi:type="dc:Point" x="100.0" y="139.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_23"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_5" bpmnElement="SequenceFlow_5" sourceElement="BPMNShape_ScriptTask_2" targetElement="BPMNShape_UserTask_6">
         <di:waypoint xsi:type="dc:Point" x="210.0" y="139.0"/>
         <di:waypoint xsi:type="dc:Point" x="223.0" y="139.0"/>
         <di:waypoint xsi:type="dc:Point" x="237.0" y="139.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_24"/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
     <bpmndi:BPMNLabelStyle id="BPMNLabelStyle_1">

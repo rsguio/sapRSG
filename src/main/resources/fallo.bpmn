@@ -393,6 +393,11 @@
           <bpmn2:formalExpression id="FormalExpression_13">#{proyectista}</bpmn2:formalExpression>
         </bpmn2:resourceAssignmentExpression>
       </bpmn2:potentialOwner>
+      <bpmn2:potentialOwner id="PotentialOwner_5" name="Potential Owner 5">
+        <bpmn2:resourceAssignmentExpression id="ResourceAssignmentExpression_5">
+          <bpmn2:formalExpression id="FormalExpression_43">#{revisor}</bpmn2:formalExpression>
+        </bpmn2:resourceAssignmentExpression>
+      </bpmn2:potentialOwner>
     </bpmn2:userTask>
     <bpmn2:userTask id="UserTask_3" name="Validar Firma Documento">
       <bpmn2:extensionElements>
@@ -947,7 +952,7 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_ScriptTask_2" bpmnElement="ScriptTask_2" isExpanded="true">
         <dc:Bounds height="50.0" width="110.0" x="90.0" y="38.0"/>
-        <bpmndi:BPMNLabel labelStyle="BPMNLabelStyle_1">
+        <bpmndi:BPMNLabel id="BPMNLabel_15" labelStyle="BPMNLabelStyle_1">
           <dc:Bounds height="17.0" width="33.0" x="128.0" y="54.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
@@ -1036,13 +1041,13 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
         <di:waypoint xsi:type="dc:Point" x="60.0" y="63.0"/>
         <di:waypoint xsi:type="dc:Point" x="75.0" y="63.0"/>
         <di:waypoint xsi:type="dc:Point" x="90.0" y="63.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_26"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_11" bpmnElement="SequenceFlow_11" sourceElement="BPMNShape_ScriptTask_2" targetElement="BPMNShape_UserTask_1">
         <di:waypoint xsi:type="dc:Point" x="200.0" y="63.0"/>
         <di:waypoint xsi:type="dc:Point" x="216.0" y="63.0"/>
         <di:waypoint xsi:type="dc:Point" x="233.0" y="63.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_27"/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
     <bpmndi:BPMNLabelStyle id="BPMNLabelStyle_1">
