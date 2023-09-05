@@ -39,7 +39,7 @@
           <tns:metaValue><![CDATA[]]></tns:metaValue>
         </tns:metaData>
       </bpmn2:extensionElements>
-      <bpmn2:outgoing>SequenceFlow_1</bpmn2:outgoing>
+      <bpmn2:outgoing>SequenceFlow_10</bpmn2:outgoing>
     </bpmn2:startEvent>
     <bpmn2:userTask id="UserTask_1" name="proyectar fallo." implementation="Java">
       <bpmn2:extensionElements>
@@ -47,7 +47,7 @@
           <tns:metaValue><![CDATA[proyectar fallo.]]></tns:metaValue>
         </tns:metaData>
       </bpmn2:extensionElements>
-      <bpmn2:incoming>SequenceFlow_1</bpmn2:incoming>
+      <bpmn2:incoming>SequenceFlow_11</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_2</bpmn2:outgoing>
       <bpmn2:ioSpecification id="InputOutputSpecification_1">
         <bpmn2:dataInput id="DataInput_1" itemSubjectRef="ItemDefinition_1" name="TaskName"/>
@@ -121,7 +121,6 @@
         </bpmn2:resourceAssignmentExpression>
       </bpmn2:potentialOwner>
     </bpmn2:userTask>
-    <bpmn2:sequenceFlow id="SequenceFlow_1" tns:priority="1" sourceRef="_1" targetRef="UserTask_1"/>
     <bpmn2:callActivity id="CallActivity_1" tns:waitForCompletion="true" tns:independent="false" name="Revision Documento" calledElement="revisionDocumentos">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
@@ -850,17 +849,29 @@ kcontext.setVariable(&quot;i&quot;, i+1);</bpmn2:script>
     </bpmn2:callActivity>
     <bpmn2:sequenceFlow id="SequenceFlow_17" tns:priority="1" sourceRef="UserTask_3" targetRef="CallActivity_4"/>
     <bpmn2:sequenceFlow id="SequenceFlow_18" tns:priority="1" sourceRef="CallActivity_4" targetRef="ExclusiveGateway_3"/>
+    <bpmn2:scriptTask id="ScriptTask_2" name="Inicio" scriptFormat="http://www.java.com/java">
+      <bpmn2:extensionElements>
+        <tns:metaData name="elementname">
+          <tns:metaValue><![CDATA[Inicio]]></tns:metaValue>
+        </tns:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_10</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_11</bpmn2:outgoing>
+      <bpmn2:script>kcontext.setVariable(&quot;i&quot;, 0);</bpmn2:script>
+    </bpmn2:scriptTask>
+    <bpmn2:sequenceFlow id="SequenceFlow_10" tns:priority="1" sourceRef="_1" targetRef="ScriptTask_2"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_11" tns:priority="1" sourceRef="ScriptTask_2" targetRef="UserTask_1"/>
   </bpmn2:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_Process_1" bpmnElement="fallo">
       <bpmndi:BPMNShape id="BPMNShape_StartEvent_1" bpmnElement="_1">
-        <dc:Bounds height="36.0" width="36.0" x="45.0" y="45.0"/>
+        <dc:Bounds height="36.0" width="36.0" x="24.0" y="45.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_1" labelStyle="BPMNLabelStyle_1"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_UserTask_1" bpmnElement="UserTask_1" isExpanded="true">
-        <dc:Bounds height="50.0" width="110.0" x="186.0" y="38.0"/>
+        <dc:Bounds height="50.0" width="110.0" x="233.0" y="38.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_2">
-          <dc:Bounds height="17.0" width="95.0" x="193.0" y="54.0"/>
+          <dc:Bounds height="17.0" width="95.0" x="240.0" y="54.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_CallActivity_1" bpmnElement="CallActivity_1" isExpanded="true">
@@ -895,7 +906,7 @@ kcontext.setVariable(&quot;i&quot;, i+1);</bpmn2:script>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_EndEvent_1" bpmnElement="EndEvent_1">
         <dc:Bounds height="36.0" width="36.0" x="1094.0" y="477.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_9">
+        <bpmndi:BPMNLabel id="BPMNLabel_9" labelStyle="BPMNLabelStyle_1">
           <dc:Bounds height="17.0" width="20.0" x="1102.0" y="513.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
@@ -907,7 +918,7 @@ kcontext.setVariable(&quot;i&quot;, i+1);</bpmn2:script>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_EndEvent_2" bpmnElement="EndEvent_2">
         <dc:Bounds height="36.0" width="36.0" x="1105.0" y="627.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_11">
+        <bpmndi:BPMNLabel id="BPMNLabel_11" labelStyle="BPMNLabelStyle_1">
           <dc:Bounds height="17.0" width="20.0" x="1113.0" y="663.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
@@ -923,7 +934,7 @@ kcontext.setVariable(&quot;i&quot;, i+1);</bpmn2:script>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_ScriptTask_1" bpmnElement="ScriptTask_1" isExpanded="true">
         <dc:Bounds height="50.0" width="110.0" x="899.0" y="70.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_13">
+        <bpmndi:BPMNLabel id="BPMNLabel_13" labelStyle="BPMNLabelStyle_1">
           <dc:Bounds height="34.0" width="108.0" x="900.0" y="78.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
@@ -933,15 +944,15 @@ kcontext.setVariable(&quot;i&quot;, i+1);</bpmn2:script>
           <dc:Bounds height="17.0" width="53.0" x="683.0" y="228.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_1" bpmnElement="SequenceFlow_1" sourceElement="BPMNShape_StartEvent_1" targetElement="BPMNShape_UserTask_1">
-        <di:waypoint xsi:type="dc:Point" x="81.0" y="63.0"/>
-        <di:waypoint xsi:type="dc:Point" x="133.0" y="63.0"/>
-        <di:waypoint xsi:type="dc:Point" x="186.0" y="63.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_5"/>
-      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="BPMNShape_ScriptTask_2" bpmnElement="ScriptTask_2" isExpanded="true">
+        <dc:Bounds height="50.0" width="110.0" x="90.0" y="38.0"/>
+        <bpmndi:BPMNLabel labelStyle="BPMNLabelStyle_1">
+          <dc:Bounds height="17.0" width="33.0" x="128.0" y="54.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_2" bpmnElement="SequenceFlow_2" sourceElement="BPMNShape_UserTask_1" targetElement="BPMNShape_CallActivity_1">
-        <di:waypoint xsi:type="dc:Point" x="296.0" y="63.0"/>
-        <di:waypoint xsi:type="dc:Point" x="338.0" y="63.0"/>
+        <di:waypoint xsi:type="dc:Point" x="343.0" y="63.0"/>
+        <di:waypoint xsi:type="dc:Point" x="361.0" y="63.0"/>
         <di:waypoint xsi:type="dc:Point" x="380.0" y="63.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_6"/>
       </bpmndi:BPMNEdge>
@@ -1019,6 +1030,18 @@ kcontext.setVariable(&quot;i&quot;, i+1);</bpmn2:script>
         <di:waypoint xsi:type="dc:Point" x="847.0" y="237.0"/>
         <di:waypoint xsi:type="dc:Point" x="929.0" y="236.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_25"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_10" bpmnElement="SequenceFlow_10" sourceElement="BPMNShape_StartEvent_1" targetElement="BPMNShape_ScriptTask_2">
+        <di:waypoint xsi:type="dc:Point" x="60.0" y="63.0"/>
+        <di:waypoint xsi:type="dc:Point" x="75.0" y="63.0"/>
+        <di:waypoint xsi:type="dc:Point" x="90.0" y="63.0"/>
+        <bpmndi:BPMNLabel/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_11" bpmnElement="SequenceFlow_11" sourceElement="BPMNShape_ScriptTask_2" targetElement="BPMNShape_UserTask_1">
+        <di:waypoint xsi:type="dc:Point" x="200.0" y="63.0"/>
+        <di:waypoint xsi:type="dc:Point" x="216.0" y="63.0"/>
+        <di:waypoint xsi:type="dc:Point" x="233.0" y="63.0"/>
+        <bpmndi:BPMNLabel/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
     <bpmndi:BPMNLabelStyle id="BPMNLabelStyle_1">
