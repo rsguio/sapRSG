@@ -732,7 +732,7 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
       <bpmn2:dataInputAssociation id="DataInputAssociation_18">
         <bpmn2:targetRef>DataInput_18</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_1">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_6">20_verificarRecurso</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_6">12_verificarPresentoRecurso</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_7">DataInput_18</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
