@@ -40,6 +40,8 @@
     <bpmn2:property id="numeroAviso" itemSubjectRef="ItemDefinition_9" name="numeroAviso"/>
     <bpmn2:property id="sePresentoNotificado" itemSubjectRef="ItemDefinition_2074" name="sePresentoNotificado"/>
     <bpmn2:property id="fechaEsperarAviso" itemSubjectRef="ItemDefinition_9" name="fechaEsperarAviso"/>
+    <bpmn2:property id="fechaNotificacion" itemSubjectRef="ItemDefinition_1718" name="fechaNotificacion"/>
+    <bpmn2:property id="fechaMaxInterponerRecurso" itemSubjectRef="ItemDefinition_9" name="fechaMaxInterponerRecurso"/>
     <bpmn2:startEvent id="StartEvent_4">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
@@ -501,6 +503,8 @@
         <bpmn2:dataInput id="DataInput_358" itemSubjectRef="ItemDefinition_9" name="numeroRadicadoSalida"/>
         <bpmn2:dataInput id="DataInput_20" itemSubjectRef="ItemDefinition_9" name="numeroAviso"/>
         <bpmn2:dataInput id="DataInput_21" itemSubjectRef="ItemDefinition_9" name="numeroCitacion"/>
+        <bpmn2:dataOutput id="DataOutput_1" itemSubjectRef="ItemDefinition_1718" name="fechaNotificacion"/>
+        <bpmn2:dataOutput id="DataOutput_2" itemSubjectRef="ItemDefinition_9" name="fechaMaxInterponerRecurso"/>
         <bpmn2:inputSet id="InputSet_34" name="Input Set 1">
           <bpmn2:dataInputRefs>DataInput_342</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_343</bpmn2:dataInputRefs>
@@ -522,7 +526,10 @@
           <bpmn2:dataInputRefs>DataInput_20</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_21</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="OutputSet_34" name="Output Set 2"/>
+        <bpmn2:outputSet id="OutputSet_34" name="Output Set 2">
+          <bpmn2:dataOutputRefs>DataOutput_1</bpmn2:dataOutputRefs>
+          <bpmn2:dataOutputRefs>DataOutput_2</bpmn2:dataOutputRefs>
+        </bpmn2:outputSet>
       </bpmn2:ioSpecification>
       <bpmn2:dataInputAssociation id="DataInputAssociation_346">
         <bpmn2:sourceRef>radicado</bpmn2:sourceRef>
@@ -600,6 +607,14 @@
         <bpmn2:sourceRef>numeroCitacion</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_21</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
+      <bpmn2:dataOutputAssociation id="DataOutputAssociation_1">
+        <bpmn2:sourceRef>DataOutput_1</bpmn2:sourceRef>
+        <bpmn2:targetRef>fechaNotificacion</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+      <bpmn2:dataOutputAssociation id="DataOutputAssociation_2">
+        <bpmn2:sourceRef>DataOutput_2</bpmn2:sourceRef>
+        <bpmn2:targetRef>fechaMaxInterponerRecurso</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
     </bpmn2:callActivity>
     <bpmn2:endEvent id="EndEvent_7" name="Fin Notificacion X Publicacion">
       <bpmn2:extensionElements>
@@ -1117,7 +1132,7 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_ScriptTask_1" bpmnElement="ScriptTask_1" isExpanded="true">
         <dc:Bounds height="50.0" width="110.0" x="1001.0" y="491.0"/>
-        <bpmndi:BPMNLabel labelStyle="BPMNLabelStyle_1">
+        <bpmndi:BPMNLabel id="BPMNLabel_26" labelStyle="BPMNLabelStyle_1">
           <dc:Bounds height="17.0" width="91.0" x="1010.0" y="507.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
@@ -1289,13 +1304,13 @@
         <di:waypoint xsi:type="dc:Point" x="928.0" y="475.0"/>
         <di:waypoint xsi:type="dc:Point" x="928.0" y="516.0"/>
         <di:waypoint xsi:type="dc:Point" x="1001.0" y="516.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_47"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_4" bpmnElement="SequenceFlow_4" sourceElement="BPMNShape_ScriptTask_1" targetElement="BPMNShape_ExclusiveGateway_5">
         <di:waypoint xsi:type="dc:Point" x="1056.0" y="491.0"/>
         <di:waypoint xsi:type="dc:Point" x="1056.0" y="474.0"/>
         <di:waypoint xsi:type="dc:Point" x="1056.0" y="456.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_48"/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
     <bpmndi:BPMNLabelStyle id="BPMNLabelStyle_1">

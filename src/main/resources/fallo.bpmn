@@ -29,10 +29,13 @@
     <bpmn2:property id="nombreDocumentoAprobado" itemSubjectRef="ItemDefinition_1" name="nombreDocumentoAprobado"/>
     <bpmn2:property id="observacionesRevision" itemSubjectRef="ItemDefinition_1" name="observacionesRevision"/>
     <bpmn2:property id="rechazadoTramiteSeleccionado" itemSubjectRef="ItemDefinition_3" name="rechazadoTramiteSeleccionado"/>
-    <bpmn2:property id="hayRecursoReposicion" itemSubjectRef="ItemDefinition_3" name="hayRecursoReposicion"/>
     <bpmn2:property id="autorizadoTramiteNotificacion" itemSubjectRef="ItemDefinition_3" name="autorizadoTramiteNotificacion"/>
     <bpmn2:property id="numeroRadicadoSalida" itemSubjectRef="ItemDefinition_1" name="numeroRadicadoSalida"/>
     <bpmn2:property id="i" itemSubjectRef="ItemDefinition_2" name="i"/>
+    <bpmn2:property id="fechaNotificacion" itemSubjectRef="ItemDefinition_1455" name="fechaNotificacion"/>
+    <bpmn2:property id="fechaMaxInterponerRecurso" itemSubjectRef="ItemDefinition_1" name="fechaMaxInterponerRecurso"/>
+    <bpmn2:property id="hayRecursoReposicion" itemSubjectRef="ItemDefinition_3" name="hayRecursoReposicion"/>
+    <bpmn2:property id="notificador" itemSubjectRef="ItemDefinition_1" name="notificador"/>
     <bpmn2:startEvent id="_1">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
@@ -480,225 +483,6 @@
       </bpmn2:potentialOwner>
     </bpmn2:userTask>
     <bpmn2:sequenceFlow id="SequenceFlow_9" tns:priority="1" sourceRef="UserTask_2" targetRef="UserTask_3"/>
-    <bpmn2:userTask id="UserTask_4" name="Validar si se presento recurso">
-      <bpmn2:extensionElements>
-        <tns:metaData name="elementname">
-          <tns:metaValue><![CDATA[Validar si se presento recurso]]></tns:metaValue>
-        </tns:metaData>
-      </bpmn2:extensionElements>
-      <bpmn2:incoming>SequenceFlow_16</bpmn2:incoming>
-      <bpmn2:outgoing>SequenceFlow_8</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="InputOutputSpecification_6">
-        <bpmn2:dataInput id="DataInput_51" itemSubjectRef="ItemDefinition_1" name="TaskName"/>
-        <bpmn2:dataInput id="DataInput_52" itemSubjectRef="ItemDefinition_2" name="Priority"/>
-        <bpmn2:dataInput id="DataInput_53" itemSubjectRef="ItemDefinition_1" name="Comment"/>
-        <bpmn2:dataInput id="DataInput_54" itemSubjectRef="ItemDefinition_1" name="Description"/>
-        <bpmn2:dataInput id="DataInput_55" itemSubjectRef="ItemDefinition_1" name="GroupId"/>
-        <bpmn2:dataInput id="DataInput_56" itemSubjectRef="ItemDefinition_3" name="Skippable"/>
-        <bpmn2:dataInput id="DataInput_57" itemSubjectRef="ItemDefinition_1" name="Content"/>
-        <bpmn2:dataInput id="DataInput_58" itemSubjectRef="ItemDefinition_1" name="Locale"/>
-        <bpmn2:dataInput id="DataInput_59" itemSubjectRef="ItemDefinition_1" name="CreatedBy"/>
-        <bpmn2:inputSet id="_InputSet_37">
-          <bpmn2:dataInputRefs>DataInput_51</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_52</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_53</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_54</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_55</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_56</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_57</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_58</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_59</bpmn2:dataInputRefs>
-        </bpmn2:inputSet>
-        <bpmn2:outputSet id="OutputSet_6" name="Output Set"/>
-      </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_51">
-        <bpmn2:targetRef>DataInput_51</bpmn2:targetRef>
-        <bpmn2:assignment id="Assignment_7">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_29">12_verificarPresentoRecurso</bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_32">DataInput_51</bpmn2:to>
-        </bpmn2:assignment>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_52">
-        <bpmn2:targetRef>DataInput_52</bpmn2:targetRef>
-        <bpmn2:assignment id="Assignment_9">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_33">1</bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_36">DataInput_52</bpmn2:to>
-        </bpmn2:assignment>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_53">
-        <bpmn2:targetRef>DataInput_53</bpmn2:targetRef>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_54">
-        <bpmn2:targetRef>DataInput_54</bpmn2:targetRef>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_55">
-        <bpmn2:targetRef>DataInput_55</bpmn2:targetRef>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_56">
-        <bpmn2:targetRef>DataInput_56</bpmn2:targetRef>
-        <bpmn2:assignment id="Assignment_21">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_47">true</bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_50">DataInput_56</bpmn2:to>
-        </bpmn2:assignment>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_57">
-        <bpmn2:targetRef>DataInput_57</bpmn2:targetRef>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_58">
-        <bpmn2:targetRef>DataInput_58</bpmn2:targetRef>
-        <bpmn2:assignment id="Assignment_24">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_55">en-UK</bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_56">DataInput_58</bpmn2:to>
-        </bpmn2:assignment>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_59">
-        <bpmn2:targetRef>DataInput_59</bpmn2:targetRef>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:potentialOwner id="PotentialOwner_4" name="Potential Owner 4">
-        <bpmn2:resourceAssignmentExpression id="ResourceAssignmentExpression_4">
-          <bpmn2:formalExpression id="FormalExpression_18">#{proyectista}</bpmn2:formalExpression>
-        </bpmn2:resourceAssignmentExpression>
-      </bpmn2:potentialOwner>
-    </bpmn2:userTask>
-    <bpmn2:exclusiveGateway id="ExclusiveGateway_1" name="¿Hay recurso de reposición?" gatewayDirection="Diverging">
-      <bpmn2:incoming>SequenceFlow_8</bpmn2:incoming>
-      <bpmn2:outgoing>SequenceFlow_12</bpmn2:outgoing>
-      <bpmn2:outgoing>SequenceFlow_13</bpmn2:outgoing>
-    </bpmn2:exclusiveGateway>
-    <bpmn2:sequenceFlow id="SequenceFlow_8" tns:priority="1" sourceRef="UserTask_4" targetRef="ExclusiveGateway_1"/>
-    <bpmn2:endEvent id="EndEvent_1" name="Fin">
-      <bpmn2:extensionElements>
-        <tns:metaData name="elementname">
-          <tns:metaValue><![CDATA[Fin]]></tns:metaValue>
-        </tns:metaData>
-      </bpmn2:extensionElements>
-      <bpmn2:incoming>SequenceFlow_12</bpmn2:incoming>
-    </bpmn2:endEvent>
-    <bpmn2:sequenceFlow id="SequenceFlow_12" tns:priority="1" sourceRef="ExclusiveGateway_1" targetRef="EndEvent_1">
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_5" language="http://www.java.com/java">return KieFunctions.isFalse(hayRecursoReposicion);</bpmn2:conditionExpression>
-    </bpmn2:sequenceFlow>
-    <bpmn2:callActivity id="CallActivity_3" tns:waitForCompletion="true" tns:independent="false" name="Resolver Recurso Reposicion" calledElement="recursoReposicion">
-      <bpmn2:extensionElements>
-        <tns:metaData name="elementname">
-          <tns:metaValue><![CDATA[Resolver Recurso Reposicion]]></tns:metaValue>
-        </tns:metaData>
-      </bpmn2:extensionElements>
-      <bpmn2:incoming>SequenceFlow_13</bpmn2:incoming>
-      <bpmn2:outgoing>SequenceFlow_14</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="InputOutputSpecification_7">
-        <bpmn2:dataInput id="DataInput_60" itemSubjectRef="ItemDefinition_1" name="radicado"/>
-        <bpmn2:dataInput id="DataInput_61" itemSubjectRef="ItemDefinition_1" name="fecha_radicado"/>
-        <bpmn2:dataInput id="DataInput_62" itemSubjectRef="ItemDefinition_1" name="expediente"/>
-        <bpmn2:dataInput id="DataInput_63" itemSubjectRef="ItemDefinition_1" name="empresa"/>
-        <bpmn2:dataInput id="DataInput_64" itemSubjectRef="ItemDefinition_1" name="asunto"/>
-        <bpmn2:dataInput id="DataInput_65" itemSubjectRef="ItemDefinition_1" name="tipo_documento"/>
-        <bpmn2:dataInput id="DataInput_66" itemSubjectRef="ItemDefinition_1" name="proyectista"/>
-        <bpmn2:dataInput id="DataInput_67" itemSubjectRef="ItemDefinition_1" name="tramite"/>
-        <bpmn2:dataInput id="DataInput_68" itemSubjectRef="ItemDefinition_1" name="direccion_cliente"/>
-        <bpmn2:dataInput id="DataInput_69" itemSubjectRef="ItemDefinition_1" name="correo_cliente"/>
-        <bpmn2:dataInput id="DataInput_70" itemSubjectRef="ItemDefinition_1" name="cliente"/>
-        <bpmn2:dataInput id="DataInput_71" itemSubjectRef="ItemDefinition_1" name="remitente"/>
-        <bpmn2:dataInput id="DataInput_72" itemSubjectRef="ItemDefinition_574" name="idempresa"/>
-        <bpmn2:dataInput id="DataInput_73" itemSubjectRef="ItemDefinition_1455" name="fechaRadicacionAnteEmpresa"/>
-        <bpmn2:dataInput id="DataInput_74" itemSubjectRef="ItemDefinition_1" name="idcliente"/>
-        <bpmn2:dataInput id="DataInput_75" itemSubjectRef="ItemDefinition_1" name="idremitente"/>
-        <bpmn2:inputSet id="InputSet_3" name="Input Set 1">
-          <bpmn2:dataInputRefs>DataInput_60</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_61</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_62</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_63</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_64</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_65</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_66</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_67</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_68</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_69</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_70</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_71</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_72</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_73</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_74</bpmn2:dataInputRefs>
-          <bpmn2:dataInputRefs>DataInput_75</bpmn2:dataInputRefs>
-        </bpmn2:inputSet>
-        <bpmn2:outputSet id="OutputSet_7" name="Output Set 2"/>
-      </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_60">
-        <bpmn2:sourceRef>radicado</bpmn2:sourceRef>
-        <bpmn2:targetRef>DataInput_60</bpmn2:targetRef>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_61">
-        <bpmn2:sourceRef>fecha_radicado</bpmn2:sourceRef>
-        <bpmn2:targetRef>DataInput_61</bpmn2:targetRef>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_62">
-        <bpmn2:sourceRef>expediente</bpmn2:sourceRef>
-        <bpmn2:targetRef>DataInput_62</bpmn2:targetRef>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_63">
-        <bpmn2:sourceRef>empresa</bpmn2:sourceRef>
-        <bpmn2:targetRef>DataInput_63</bpmn2:targetRef>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_64">
-        <bpmn2:sourceRef>asunto</bpmn2:sourceRef>
-        <bpmn2:targetRef>DataInput_64</bpmn2:targetRef>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_65">
-        <bpmn2:sourceRef>tipo_documento</bpmn2:sourceRef>
-        <bpmn2:targetRef>DataInput_65</bpmn2:targetRef>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_66">
-        <bpmn2:sourceRef>proyectista</bpmn2:sourceRef>
-        <bpmn2:targetRef>DataInput_66</bpmn2:targetRef>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_67">
-        <bpmn2:sourceRef>tramite</bpmn2:sourceRef>
-        <bpmn2:targetRef>DataInput_67</bpmn2:targetRef>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_68">
-        <bpmn2:sourceRef>direccion_cliente</bpmn2:sourceRef>
-        <bpmn2:targetRef>DataInput_68</bpmn2:targetRef>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_69">
-        <bpmn2:sourceRef>correo_cliente</bpmn2:sourceRef>
-        <bpmn2:targetRef>DataInput_69</bpmn2:targetRef>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_70">
-        <bpmn2:sourceRef>cliente</bpmn2:sourceRef>
-        <bpmn2:targetRef>DataInput_70</bpmn2:targetRef>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_71">
-        <bpmn2:sourceRef>remitente</bpmn2:sourceRef>
-        <bpmn2:targetRef>DataInput_71</bpmn2:targetRef>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_72">
-        <bpmn2:sourceRef>idempresa</bpmn2:sourceRef>
-        <bpmn2:targetRef>DataInput_72</bpmn2:targetRef>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_73">
-        <bpmn2:sourceRef>fechaRadicacionAnteEmpresa</bpmn2:sourceRef>
-        <bpmn2:targetRef>DataInput_73</bpmn2:targetRef>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_74">
-        <bpmn2:sourceRef>idcliente</bpmn2:sourceRef>
-        <bpmn2:targetRef>DataInput_74</bpmn2:targetRef>
-      </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="DataInputAssociation_75">
-        <bpmn2:sourceRef>idremitente</bpmn2:sourceRef>
-        <bpmn2:targetRef>DataInput_75</bpmn2:targetRef>
-      </bpmn2:dataInputAssociation>
-    </bpmn2:callActivity>
-    <bpmn2:sequenceFlow id="SequenceFlow_13" tns:priority="1" sourceRef="ExclusiveGateway_1" targetRef="CallActivity_3">
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_6" language="http://www.java.com/java">return KieFunctions.isTrue(hayRecursoReposicion);</bpmn2:conditionExpression>
-    </bpmn2:sequenceFlow>
-    <bpmn2:endEvent id="EndEvent_2" name="Fin">
-      <bpmn2:extensionElements>
-        <tns:metaData name="elementname">
-          <tns:metaValue><![CDATA[Fin]]></tns:metaValue>
-        </tns:metaData>
-      </bpmn2:extensionElements>
-      <bpmn2:incoming>SequenceFlow_14</bpmn2:incoming>
-    </bpmn2:endEvent>
-    <bpmn2:sequenceFlow id="SequenceFlow_14" tns:priority="1" sourceRef="CallActivity_3" targetRef="EndEvent_2"/>
     <bpmn2:exclusiveGateway id="ExclusiveGateway_2" gatewayDirection="Converging">
       <bpmn2:incoming>SequenceFlow_3</bpmn2:incoming>
       <bpmn2:incoming>SequenceFlow_15</bpmn2:incoming>
@@ -709,7 +493,7 @@
     <bpmn2:exclusiveGateway id="ExclusiveGateway_3" name="¿Autorizado el trámite de notificacion?" gatewayDirection="Diverging">
       <bpmn2:incoming>SequenceFlow_18</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_6</bpmn2:outgoing>
-      <bpmn2:outgoing>SequenceFlow_16</bpmn2:outgoing>
+      <bpmn2:outgoing>SequenceFlow_1</bpmn2:outgoing>
     </bpmn2:exclusiveGateway>
     <bpmn2:scriptTask id="ScriptTask_1" name="Dejar Historico Variables " scriptFormat="http://www.java.com/java">
       <bpmn2:extensionElements>
@@ -727,9 +511,6 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
       <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_37" language="http://www.java.com/java">return KieFunctions.isFalse(autorizadoTramiteNotificacion);</bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="SequenceFlow_15" tns:priority="1" sourceRef="ScriptTask_1" targetRef="ExclusiveGateway_2"/>
-    <bpmn2:sequenceFlow id="SequenceFlow_16" tns:priority="1" sourceRef="ExclusiveGateway_3" targetRef="UserTask_4">
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_42" language="http://www.java.com/java">return KieFunctions.isTrue(autorizadoTramiteNotificacion);</bpmn2:conditionExpression>
-    </bpmn2:sequenceFlow>
     <bpmn2:callActivity id="CallActivity_4" tns:waitForCompletion="true" tns:independent="false" name="Notificar" calledElement="notificar">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
@@ -757,6 +538,9 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
         <bpmn2:dataInput id="DataInput_91" itemSubjectRef="ItemDefinition_1455" name="fechaRadicacionAnteEmpresa"/>
         <bpmn2:dataInput id="DataInput_92" itemSubjectRef="ItemDefinition_1" name="radicadoNotificar"/>
         <bpmn2:dataOutput id="DataOutput_5" itemSubjectRef="ItemDefinition_3" name="autorizadoTramiteNotificacion"/>
+        <bpmn2:dataOutput id="DataOutput_6" itemSubjectRef="ItemDefinition_1455" name="fechaNotificacion"/>
+        <bpmn2:dataOutput id="DataOutput_7" itemSubjectRef="ItemDefinition_1" name="fechaMaxInterponerRecurso"/>
+        <bpmn2:dataOutput id="DataOutput_8" itemSubjectRef="ItemDefinition_1" name="notificador"/>
         <bpmn2:inputSet id="InputSet_4" name="Input Set 5">
           <bpmn2:dataInputRefs>DataInput_76</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_77</bpmn2:dataInputRefs>
@@ -778,6 +562,9 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
         </bpmn2:inputSet>
         <bpmn2:outputSet id="OutputSet_8" name="Output Set 6">
           <bpmn2:dataOutputRefs>DataOutput_5</bpmn2:dataOutputRefs>
+          <bpmn2:dataOutputRefs>DataOutput_6</bpmn2:dataOutputRefs>
+          <bpmn2:dataOutputRefs>DataOutput_7</bpmn2:dataOutputRefs>
+          <bpmn2:dataOutputRefs>DataOutput_8</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
       <bpmn2:dataInputAssociation id="DataInputAssociation_76">
@@ -852,6 +639,18 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
         <bpmn2:sourceRef>DataOutput_5</bpmn2:sourceRef>
         <bpmn2:targetRef>autorizadoTramiteNotificacion</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
+      <bpmn2:dataOutputAssociation id="DataOutputAssociation_6">
+        <bpmn2:sourceRef>DataOutput_6</bpmn2:sourceRef>
+        <bpmn2:targetRef>fechaNotificacion</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+      <bpmn2:dataOutputAssociation id="DataOutputAssociation_7">
+        <bpmn2:sourceRef>DataOutput_7</bpmn2:sourceRef>
+        <bpmn2:targetRef>fechaMaxInterponerRecurso</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+      <bpmn2:dataOutputAssociation id="DataOutputAssociation_8">
+        <bpmn2:sourceRef>DataOutput_8</bpmn2:sourceRef>
+        <bpmn2:targetRef>notificador</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
     </bpmn2:callActivity>
     <bpmn2:sequenceFlow id="SequenceFlow_17" tns:priority="1" sourceRef="UserTask_3" targetRef="CallActivity_4"/>
     <bpmn2:sequenceFlow id="SequenceFlow_18" tns:priority="1" sourceRef="CallActivity_4" targetRef="ExclusiveGateway_3"/>
@@ -867,6 +666,248 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
     </bpmn2:scriptTask>
     <bpmn2:sequenceFlow id="SequenceFlow_10" tns:priority="1" sourceRef="_1" targetRef="ScriptTask_2"/>
     <bpmn2:sequenceFlow id="SequenceFlow_11" tns:priority="1" sourceRef="ScriptTask_2" targetRef="UserTask_1"/>
+    <bpmn2:intermediateCatchEvent id="IntermediateCatchEvent_1" name="Esperar 10 días hábiles desde el proceso de notificación.">
+      <bpmn2:extensionElements>
+        <tns:metaData name="elementname">
+          <tns:metaValue><![CDATA[Esperar 10 días hábiles desde el proceso de notificación.]]></tns:metaValue>
+        </tns:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_1</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_5</bpmn2:outgoing>
+      <bpmn2:timerEventDefinition id="TimerEventDefinition_1">
+        <bpmn2:timeDate xsi:type="bpmn2:tFormalExpression" id="FormalExpression_44">#{fechaMaxInterponerRecurso}</bpmn2:timeDate>
+      </bpmn2:timerEventDefinition>
+    </bpmn2:intermediateCatchEvent>
+    <bpmn2:sequenceFlow id="SequenceFlow_1" tns:priority="1" sourceRef="ExclusiveGateway_3" targetRef="IntermediateCatchEvent_1">
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_5" language="http://www.java.com/java">return KieFunctions.isTrue(autorizadoTramiteNotificacion);</bpmn2:conditionExpression>
+    </bpmn2:sequenceFlow>
+    <bpmn2:userTask id="UserTask_5" name="Verificar Recurso">
+      <bpmn2:extensionElements>
+        <tns:metaData name="elementname">
+          <tns:metaValue><![CDATA[Verificar Recurso]]></tns:metaValue>
+        </tns:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_5</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_21</bpmn2:outgoing>
+      <bpmn2:ioSpecification id="InputOutputSpecification_4">
+        <bpmn2:dataInput id="DataInput_93" itemSubjectRef="ItemDefinition_1" name="TaskName"/>
+        <bpmn2:dataInput id="DataInput_94" itemSubjectRef="ItemDefinition_2" name="Priority"/>
+        <bpmn2:dataInput id="DataInput_95" itemSubjectRef="ItemDefinition_1" name="Comment"/>
+        <bpmn2:dataInput id="DataInput_96" itemSubjectRef="ItemDefinition_1" name="Description"/>
+        <bpmn2:dataInput id="DataInput_97" itemSubjectRef="ItemDefinition_1" name="GroupId"/>
+        <bpmn2:dataInput id="DataInput_98" itemSubjectRef="ItemDefinition_3" name="Skippable"/>
+        <bpmn2:dataInput id="DataInput_99" itemSubjectRef="ItemDefinition_1" name="Content"/>
+        <bpmn2:dataInput id="DataInput_100" itemSubjectRef="ItemDefinition_1" name="Locale"/>
+        <bpmn2:dataInput id="DataInput_101" itemSubjectRef="ItemDefinition_1" name="CreatedBy"/>
+        <bpmn2:inputSet id="_InputSet_52">
+          <bpmn2:dataInputRefs>DataInput_93</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_94</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_95</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_96</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_97</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_98</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_99</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_100</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_101</bpmn2:dataInputRefs>
+        </bpmn2:inputSet>
+        <bpmn2:outputSet id="OutputSet_4" name="Output Set"/>
+      </bpmn2:ioSpecification>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_93">
+        <bpmn2:targetRef>DataInput_93</bpmn2:targetRef>
+        <bpmn2:assignment id="Assignment_15">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_45">20_verificarRecurso</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_46">DataInput_93</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_94">
+        <bpmn2:targetRef>DataInput_94</bpmn2:targetRef>
+        <bpmn2:assignment id="Assignment_17">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_51">1</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_54">DataInput_94</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_95">
+        <bpmn2:targetRef>DataInput_95</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_96">
+        <bpmn2:targetRef>DataInput_96</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_97">
+        <bpmn2:targetRef>DataInput_97</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_98">
+        <bpmn2:targetRef>DataInput_98</bpmn2:targetRef>
+        <bpmn2:assignment id="Assignment_27">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_63">true</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_64">DataInput_98</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_99">
+        <bpmn2:targetRef>DataInput_99</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_100">
+        <bpmn2:targetRef>DataInput_100</bpmn2:targetRef>
+        <bpmn2:assignment id="Assignment_29">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_67">en-UK</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_68">DataInput_100</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_101">
+        <bpmn2:targetRef>DataInput_101</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:potentialOwner id="PotentialOwner_6" name="Potential Owner 6">
+        <bpmn2:resourceAssignmentExpression id="ResourceAssignmentExpression_6">
+          <bpmn2:formalExpression id="FormalExpression_71">#{notificador}</bpmn2:formalExpression>
+        </bpmn2:resourceAssignmentExpression>
+      </bpmn2:potentialOwner>
+    </bpmn2:userTask>
+    <bpmn2:sequenceFlow id="SequenceFlow_5" tns:priority="1" sourceRef="IntermediateCatchEvent_1" targetRef="UserTask_5"/>
+    <bpmn2:exclusiveGateway id="ExclusiveGateway_4" name="¿Hay recurso de reposición?" gatewayDirection="Diverging">
+      <bpmn2:incoming>SequenceFlow_21</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_7</bpmn2:outgoing>
+      <bpmn2:outgoing>SequenceFlow_19</bpmn2:outgoing>
+    </bpmn2:exclusiveGateway>
+    <bpmn2:callActivity id="CallActivity_2" tns:waitForCompletion="true" tns:independent="false" name="Tramite Recurso Reposicion" calledElement="recursoReposicion">
+      <bpmn2:extensionElements>
+        <tns:metaData name="elementname">
+          <tns:metaValue><![CDATA[Tramite Recurso Reposicion]]></tns:metaValue>
+        </tns:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_19</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_20</bpmn2:outgoing>
+      <bpmn2:ioSpecification id="InputOutputSpecification_9">
+        <bpmn2:dataInput id="DataInput_102" itemSubjectRef="ItemDefinition_1" name="radicado"/>
+        <bpmn2:dataInput id="DataInput_103" itemSubjectRef="ItemDefinition_1" name="fecha_radicado"/>
+        <bpmn2:dataInput id="DataInput_104" itemSubjectRef="ItemDefinition_1" name="expediente"/>
+        <bpmn2:dataInput id="DataInput_105" itemSubjectRef="ItemDefinition_574" name="idempresa"/>
+        <bpmn2:dataInput id="DataInput_106" itemSubjectRef="ItemDefinition_1" name="empresa"/>
+        <bpmn2:dataInput id="DataInput_107" itemSubjectRef="ItemDefinition_1" name="asunto"/>
+        <bpmn2:dataInput id="DataInput_108" itemSubjectRef="ItemDefinition_1" name="tipo_documento"/>
+        <bpmn2:dataInput id="DataInput_109" itemSubjectRef="ItemDefinition_1" name="tramite"/>
+        <bpmn2:dataInput id="DataInput_110" itemSubjectRef="ItemDefinition_1" name="idremitente"/>
+        <bpmn2:dataInput id="DataInput_111" itemSubjectRef="ItemDefinition_1" name="remitente"/>
+        <bpmn2:dataInput id="DataInput_112" itemSubjectRef="ItemDefinition_1" name="idcliente"/>
+        <bpmn2:dataInput id="DataInput_113" itemSubjectRef="ItemDefinition_1" name="cliente"/>
+        <bpmn2:dataInput id="DataInput_114" itemSubjectRef="ItemDefinition_1" name="direccion_cliente"/>
+        <bpmn2:dataInput id="DataInput_115" itemSubjectRef="ItemDefinition_1" name="correo_cliente"/>
+        <bpmn2:dataInput id="DataInput_116" itemSubjectRef="ItemDefinition_1455" name="fechaRadicacionAnteEmpresa"/>
+        <bpmn2:dataInput id="DataInput_117" itemSubjectRef="ItemDefinition_1" name="proyectista"/>
+        <bpmn2:dataOutput id="DataOutput_9" itemSubjectRef="ItemDefinition_3" name="hayRecursoReposicion"/>
+        <bpmn2:inputSet id="InputSet_2" name="Input Set 3">
+          <bpmn2:dataInputRefs>DataInput_102</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_103</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_104</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_105</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_106</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_107</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_108</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_109</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_110</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_111</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_112</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_113</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_114</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_115</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_116</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_117</bpmn2:dataInputRefs>
+        </bpmn2:inputSet>
+        <bpmn2:outputSet id="OutputSet_9" name="Output Set 6">
+          <bpmn2:dataOutputRefs>DataOutput_9</bpmn2:dataOutputRefs>
+        </bpmn2:outputSet>
+      </bpmn2:ioSpecification>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_102">
+        <bpmn2:sourceRef>radicado</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_102</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_103">
+        <bpmn2:sourceRef>fecha_radicado</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_103</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_104">
+        <bpmn2:sourceRef>expediente</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_104</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_105">
+        <bpmn2:sourceRef>idempresa</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_105</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_106">
+        <bpmn2:sourceRef>empresa</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_106</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_107">
+        <bpmn2:sourceRef>asunto</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_107</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_108">
+        <bpmn2:sourceRef>tipo_documento</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_108</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_109">
+        <bpmn2:sourceRef>tramite</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_109</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_110">
+        <bpmn2:sourceRef>idremitente</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_110</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_111">
+        <bpmn2:sourceRef>remitente</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_111</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_112">
+        <bpmn2:sourceRef>idcliente</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_112</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_113">
+        <bpmn2:sourceRef>cliente</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_113</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_114">
+        <bpmn2:sourceRef>direccion_cliente</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_114</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_115">
+        <bpmn2:sourceRef>correo_cliente</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_115</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_116">
+        <bpmn2:sourceRef>fechaRadicacionAnteEmpresa</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_116</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_117">
+        <bpmn2:sourceRef>proyectista</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_117</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataOutputAssociation id="DataOutputAssociation_9">
+        <bpmn2:sourceRef>DataOutput_9</bpmn2:sourceRef>
+        <bpmn2:targetRef>hayRecursoReposicion</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+    </bpmn2:callActivity>
+    <bpmn2:endEvent id="EndEvent_3" name="Fin Resolvio Recurso">
+      <bpmn2:extensionElements>
+        <tns:metaData name="elementname">
+          <tns:metaValue><![CDATA[Fin Resolvio Recurso]]></tns:metaValue>
+        </tns:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_20</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:endEvent id="EndEvent_4" name="No presento Recurso">
+      <bpmn2:extensionElements>
+        <tns:metaData name="elementname">
+          <tns:metaValue><![CDATA[No presento Recurso]]></tns:metaValue>
+        </tns:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_7</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:sequenceFlow id="SequenceFlow_7" tns:priority="1" sourceRef="ExclusiveGateway_4" targetRef="EndEvent_4">
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_72" language="http://www.java.com/java">return KieFunctions.isFalse(hayRecursoReposicion);</bpmn2:conditionExpression>
+    </bpmn2:sequenceFlow>
+    <bpmn2:sequenceFlow id="SequenceFlow_19" tns:priority="1" sourceRef="ExclusiveGateway_4" targetRef="CallActivity_2">
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_73" language="http://www.java.com/java">return KieFunctions.isTrue(hayRecursoReposicion);</bpmn2:conditionExpression>
+    </bpmn2:sequenceFlow>
+    <bpmn2:sequenceFlow id="SequenceFlow_20" tns:priority="1" sourceRef="CallActivity_2" targetRef="EndEvent_3"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_21" tns:priority="1" sourceRef="UserTask_5" targetRef="ExclusiveGateway_4"/>
   </bpmn2:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_Process_1" bpmnElement="fallo">
@@ -898,36 +939,6 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
           <dc:Bounds height="34.0" width="98.0" x="661.0" y="131.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_UserTask_4" bpmnElement="UserTask_4" isExpanded="true">
-        <dc:Bounds height="50.0" width="191.0" x="860.0" y="380.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_4">
-          <dc:Bounds height="34.0" width="150.0" x="880.0" y="388.0"/>
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_ExclusiveGateway_1" bpmnElement="ExclusiveGateway_1" isMarkerVisible="true">
-        <dc:Bounds height="50.0" width="50.0" x="931.0" y="470.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_6">
-          <dc:Bounds height="68.0" width="77.0" x="918.0" y="520.0"/>
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_EndEvent_1" bpmnElement="EndEvent_1">
-        <dc:Bounds height="36.0" width="36.0" x="1094.0" y="477.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_9" labelStyle="BPMNLabelStyle_1">
-          <dc:Bounds height="17.0" width="20.0" x="1102.0" y="513.0"/>
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_CallActivity_3" bpmnElement="CallActivity_3" isExpanded="true">
-        <dc:Bounds height="50.0" width="161.0" x="876.0" y="620.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_10">
-          <dc:Bounds height="34.0" width="130.0" x="891.0" y="628.0"/>
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_EndEvent_2" bpmnElement="EndEvent_2">
-        <dc:Bounds height="36.0" width="36.0" x="1105.0" y="627.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_11" labelStyle="BPMNLabelStyle_1">
-          <dc:Bounds height="17.0" width="20.0" x="1113.0" y="663.0"/>
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_ExclusiveGateway_2" bpmnElement="ExclusiveGateway_2" isMarkerVisible="true">
         <dc:Bounds height="50.0" width="50.0" x="520.0" y="38.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_7"/>
@@ -956,6 +967,42 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
           <dc:Bounds height="17.0" width="33.0" x="128.0" y="54.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_IntermediateCatchEvent_1" bpmnElement="IntermediateCatchEvent_1">
+        <dc:Bounds height="36.0" width="36.0" x="937.0" y="360.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_4">
+          <dc:Bounds height="119.0" width="79.0" x="916.0" y="396.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_UserTask_5" bpmnElement="UserTask_5" isExpanded="true">
+        <dc:Bounds height="50.0" width="110.0" x="1078.0" y="353.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_6">
+          <dc:Bounds height="34.0" width="61.0" x="1102.0" y="361.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_ExclusiveGateway_4" bpmnElement="ExclusiveGateway_4" isMarkerVisible="true">
+        <dc:Bounds height="50.0" width="50.0" x="1279.0" y="353.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_9">
+          <dc:Bounds height="68.0" width="77.0" x="1266.0" y="403.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_CallActivity_2" bpmnElement="CallActivity_2" isExpanded="true">
+        <dc:Bounds height="50.0" width="211.0" x="1370.0" y="353.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_10">
+          <dc:Bounds height="17.0" width="187.0" x="1382.0" y="369.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_EndEvent_3" bpmnElement="EndEvent_3">
+        <dc:Bounds height="36.0" width="36.0" x="1662.0" y="360.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_11">
+          <dc:Bounds height="51.0" width="64.0" x="1648.0" y="396.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_EndEvent_4" bpmnElement="EndEvent_4">
+        <dc:Bounds height="36.0" width="36.0" x="1286.0" y="501.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_16">
+          <dc:Bounds height="51.0" width="67.0" x="1271.0" y="537.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_2" bpmnElement="SequenceFlow_2" sourceElement="BPMNShape_UserTask_1" targetElement="BPMNShape_CallActivity_1">
         <di:waypoint xsi:type="dc:Point" x="343.0" y="63.0"/>
         <di:waypoint xsi:type="dc:Point" x="361.0" y="63.0"/>
@@ -967,30 +1014,6 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
         <di:waypoint xsi:type="dc:Point" x="710.0" y="105.0"/>
         <di:waypoint xsi:type="dc:Point" x="710.0" y="123.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_11"/>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_8" bpmnElement="SequenceFlow_8" sourceElement="BPMNShape_UserTask_4" targetElement="BPMNShape_ExclusiveGateway_1">
-        <di:waypoint xsi:type="dc:Point" x="955.0" y="430.0"/>
-        <di:waypoint xsi:type="dc:Point" x="955.0" y="450.0"/>
-        <di:waypoint xsi:type="dc:Point" x="956.0" y="470.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_15"/>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_12" bpmnElement="SequenceFlow_12" sourceElement="BPMNShape_ExclusiveGateway_1" targetElement="BPMNShape_EndEvent_1">
-        <di:waypoint xsi:type="dc:Point" x="981.0" y="495.0"/>
-        <di:waypoint xsi:type="dc:Point" x="1037.0" y="495.0"/>
-        <di:waypoint xsi:type="dc:Point" x="1094.0" y="495.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_16"/>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_13" bpmnElement="SequenceFlow_13" sourceElement="BPMNShape_ExclusiveGateway_1" targetElement="BPMNShape_CallActivity_3">
-        <di:waypoint xsi:type="dc:Point" x="956.0" y="520.0"/>
-        <di:waypoint xsi:type="dc:Point" x="956.0" y="570.0"/>
-        <di:waypoint xsi:type="dc:Point" x="956.0" y="620.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_17"/>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_14" bpmnElement="SequenceFlow_14" sourceElement="BPMNShape_CallActivity_3" targetElement="BPMNShape_EndEvent_2">
-        <di:waypoint xsi:type="dc:Point" x="1037.0" y="645.0"/>
-        <di:waypoint xsi:type="dc:Point" x="1071.0" y="645.0"/>
-        <di:waypoint xsi:type="dc:Point" x="1105.0" y="645.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_18"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_3" bpmnElement="SequenceFlow_3" sourceElement="BPMNShape_CallActivity_1" targetElement="BPMNShape_ExclusiveGateway_2">
         <di:waypoint xsi:type="dc:Point" x="490.0" y="63.0"/>
@@ -1019,12 +1042,6 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
         <di:waypoint xsi:type="dc:Point" x="545.0" y="38.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_22"/>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_16" bpmnElement="SequenceFlow_16" sourceElement="BPMNShape_ExclusiveGateway_3" targetElement="BPMNShape_UserTask_4">
-        <di:waypoint xsi:type="dc:Point" x="954.0" y="261.0"/>
-        <di:waypoint xsi:type="dc:Point" x="954.0" y="320.0"/>
-        <di:waypoint xsi:type="dc:Point" x="955.0" y="380.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_23"/>
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_17" bpmnElement="SequenceFlow_17" sourceElement="BPMNShape_UserTask_3" targetElement="BPMNShape_CallActivity_4">
         <di:waypoint xsi:type="dc:Point" x="710.0" y="173.0"/>
         <di:waypoint xsi:type="dc:Point" x="710.0" y="192.0"/>
@@ -1048,6 +1065,42 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
         <di:waypoint xsi:type="dc:Point" x="216.0" y="63.0"/>
         <di:waypoint xsi:type="dc:Point" x="233.0" y="63.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_27"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_1" bpmnElement="SequenceFlow_1" sourceElement="BPMNShape_ExclusiveGateway_3" targetElement="BPMNShape_IntermediateCatchEvent_1">
+        <di:waypoint xsi:type="dc:Point" x="954.0" y="261.0"/>
+        <di:waypoint xsi:type="dc:Point" x="955.0" y="310.0"/>
+        <di:waypoint xsi:type="dc:Point" x="955.0" y="360.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_17"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_5" bpmnElement="SequenceFlow_5" sourceElement="BPMNShape_IntermediateCatchEvent_1" targetElement="BPMNShape_UserTask_5">
+        <di:waypoint xsi:type="dc:Point" x="973.0" y="378.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1025.0" y="378.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1078.0" y="378.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_18"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_7" bpmnElement="SequenceFlow_7" sourceElement="BPMNShape_ExclusiveGateway_4" targetElement="BPMNShape_EndEvent_4">
+        <di:waypoint xsi:type="dc:Point" x="1304.0" y="403.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1304.0" y="452.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1304.0" y="501.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_23"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_19" bpmnElement="SequenceFlow_19" sourceElement="BPMNShape_ExclusiveGateway_4" targetElement="BPMNShape_CallActivity_2">
+        <di:waypoint xsi:type="dc:Point" x="1329.0" y="378.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1349.0" y="378.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1370.0" y="378.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_28"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_20" bpmnElement="SequenceFlow_20" sourceElement="BPMNShape_CallActivity_2" targetElement="BPMNShape_EndEvent_3">
+        <di:waypoint xsi:type="dc:Point" x="1581.0" y="378.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1621.0" y="378.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1662.0" y="378.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_29"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_21" bpmnElement="SequenceFlow_21" sourceElement="BPMNShape_UserTask_5" targetElement="BPMNShape_ExclusiveGateway_4">
+        <di:waypoint xsi:type="dc:Point" x="1188.0" y="378.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1233.0" y="378.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1279.0" y="378.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_30"/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
     <bpmndi:BPMNLabelStyle id="BPMNLabelStyle_1">
