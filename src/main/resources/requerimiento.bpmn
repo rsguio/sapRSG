@@ -1174,7 +1174,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_143">
         <bpmn2:targetRef>DataInput_143</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_28">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_66">PLANTILLA_REQUERIMIENTO</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_66">PLANTILLA_REQUERIMIENTO_E</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_67">DataInput_24</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>

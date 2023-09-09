@@ -6,7 +6,7 @@
   <bpmn2:itemDefinition id="ItemDefinition_3" isCollection="false" structureRef="java.lang.Boolean"/>
   <bpmn2:itemDefinition id="ItemDefinition_24" isCollection="false" structureRef="java.lang.Object"/>
   <bpmn2:itemDefinition id="ItemDefinition_2078" isCollection="false" structureRef="java.lang.Long"/>
-  <bpmn2:process id="revisionDocumentos" tns:packageName="defaultPackage" name="Tramite revision documentos" isExecutable="true" processType="Private">
+  <bpmn2:process id="revisionDocumentos" tns:packageName="defaultPackage" name="Tramite Revision Documentos" isExecutable="true" processType="Private">
     <bpmn2:property id="aprobado" itemSubjectRef="ItemDefinition_3" name="aprobado"/>
     <bpmn2:property id="observacionesRevision" itemSubjectRef="ItemDefinition_1" name="observacionesRevision"/>
     <bpmn2:property id="radicado" itemSubjectRef="ItemDefinition_1" name="radicado"/>

@@ -807,7 +807,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_10">
         <bpmn2:targetRef>DataInput_10</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_10">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_21">06_verificarEnvio</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_21">20_verificarEnvioAviso</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_22">DataInput_10</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
