@@ -37,6 +37,8 @@
     <bpmn2:property id="fechaMaxInterponerRecurso" itemSubjectRef="ItemDefinition_8" name="fechaMaxInterponerRecurso"/>
     <bpmn2:property id="hayRecursoReposicion" itemSubjectRef="ItemDefinition_81" name="hayRecursoReposicion"/>
     <bpmn2:property id="notificador" itemSubjectRef="ItemDefinition_8" name="notificador"/>
+    <bpmn2:property id="numeroRadicadoRequerimiento" itemSubjectRef="ItemDefinition_8" name="numeroRadicadoRequerimiento"/>
+    <bpmn2:property id="fechaRadicadoRequerimiento" itemSubjectRef="ItemDefinition_1913" name="fechaRadicadoRequerimiento"/>
     <bpmn2:startEvent id="StartEvent_3">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">

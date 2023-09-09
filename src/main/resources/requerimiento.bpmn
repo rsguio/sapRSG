@@ -43,6 +43,7 @@
     <bpmn2:property id="numeroRadicadoSalida" itemSubjectRef="ItemDefinition_1" name="numeroRadicadoSalida"/>
     <bpmn2:property id="numeroRadicadoSalidaESP" itemSubjectRef="ItemDefinition_1" name="numeroRadicadoSalidaESP"/>
     <bpmn2:property id="documentoEnviadoESP" itemSubjectRef="ItemDefinition_3" name="documentoEnviadoESP"/>
+    <bpmn2:property id="fechaRadicadoSalida" itemSubjectRef="ItemDefinition_1228" name="fechaRadicadoSalida"/>
     <bpmn2:startEvent id="_1">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
@@ -628,6 +629,8 @@
         <bpmn2:dataInput id="DataInput_32" itemSubjectRef="ItemDefinition_1" name="proyectista"/>
         <bpmn2:dataInput id="DataInput_33" itemSubjectRef="ItemDefinition_1228" name="fechaRadicacionAnteEmpresa"/>
         <bpmn2:dataInput id="DataInput_34" itemSubjectRef="ItemDefinition_1" name="tramite"/>
+        <bpmn2:dataInput id="DataInput_166" itemSubjectRef="ItemDefinition_1" name="numeroRadicadoRequerimiento"/>
+        <bpmn2:dataInput id="DataInput_169" itemSubjectRef="ItemDefinition_1228" name="fechaRadicadoRequerimiento"/>
         <bpmn2:inputSet id="InputSet_1" name="Input Set 1">
           <bpmn2:dataInputRefs>DataInput_19</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_20</bpmn2:dataInputRefs>
@@ -645,6 +648,8 @@
           <bpmn2:dataInputRefs>DataInput_32</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_33</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_34</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_166</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_169</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
         <bpmn2:outputSet id="OutputSet_3" name="Output Set 3"/>
       </bpmn2:ioSpecification>
@@ -714,6 +719,14 @@
           <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_27">Desestimiento Tácito</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_24">DataInput_34</bpmn2:to>
         </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_166">
+        <bpmn2:sourceRef>numeroRadicadoSalida</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_166</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_169">
+        <bpmn2:sourceRef>fechaRadicadoSalida</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_169</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
     </bpmn2:callActivity>
     <bpmn2:sequenceFlow id="SequenceFlow_32" tns:priority="1" name="No" sourceRef="ExclusiveGateway_7" targetRef="CallActivity_2">
