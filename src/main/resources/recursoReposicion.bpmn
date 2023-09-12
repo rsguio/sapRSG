@@ -6,7 +6,7 @@
   <bpmn2:itemDefinition id="ItemDefinition_3" isCollection="false" structureRef="java.lang.Boolean"/>
   <bpmn2:itemDefinition id="ItemDefinition_574" isCollection="false" structureRef="java.lang.Long"/>
   <bpmn2:itemDefinition id="ItemDefinition_1455" isCollection="false" structureRef="java.lang.Object"/>
-  <bpmn2:process id="recursoReposicion" tns:packageName="defaultPackage" name="Tramite de Recurso de Reposicion" isExecutable="true" processType="Private">
+  <bpmn2:process id="recursoReposicion" tns:packageName="defaultPackage" name="Trámite de Recurso de Reposición" isExecutable="true" processType="Private">
     <bpmn2:property id="radicado" itemSubjectRef="ItemDefinition_1" name="radicado"/>
     <bpmn2:property id="expediente" itemSubjectRef="ItemDefinition_1" name="expediente"/>
     <bpmn2:property id="fecha_radicado" itemSubjectRef="ItemDefinition_1" name="fecha_radicado"/>
@@ -32,6 +32,7 @@
     <bpmn2:property id="autorizadoTramiteNotificacion" itemSubjectRef="ItemDefinition_3" name="autorizadoTramiteNotificacion"/>
     <bpmn2:property id="numeroRadicadoSalida" itemSubjectRef="ItemDefinition_1" name="numeroRadicadoSalida"/>
     <bpmn2:property id="i" itemSubjectRef="ItemDefinition_2" name="i"/>
+    <bpmn2:property id="resolucionContraProcedeREP" itemSubjectRef="ItemDefinition_1" name="resolucionContraProcedeREP"/>
     <bpmn2:startEvent id="_1">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">

@@ -6,7 +6,7 @@
   <bpmn2:itemDefinition id="ItemDefinition_3" isCollection="false" structureRef="java.lang.Boolean"/>
   <bpmn2:itemDefinition id="ItemDefinition_574" isCollection="false" structureRef="java.lang.Long"/>
   <bpmn2:itemDefinition id="ItemDefinition_1455" isCollection="false" structureRef="java.lang.Object"/>
-  <bpmn2:process id="improcedencia" tns:packageName="defaultPackage" name="Tramite de Improcedencia" isExecutable="true" processType="Private">
+  <bpmn2:process id="improcedencia" tns:packageName="defaultPackage" name="Trámite de Improcedencia" isExecutable="true" processType="Private">
     <bpmn2:property id="radicado" itemSubjectRef="ItemDefinition_1" name="radicado"/>
     <bpmn2:property id="expediente" itemSubjectRef="ItemDefinition_1" name="expediente"/>
     <bpmn2:property id="fecha_radicado" itemSubjectRef="ItemDefinition_1" name="fecha_radicado"/>
@@ -722,6 +722,7 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);	</bpmn2:sc
         <bpmn2:dataInput id="DataInput_80" itemSubjectRef="ItemDefinition_1" name="correo_cliente"/>
         <bpmn2:dataInput id="DataInput_81" itemSubjectRef="ItemDefinition_1455" name="fechaRadicacionAnteEmpresa"/>
         <bpmn2:dataInput id="DataInput_83" itemSubjectRef="ItemDefinition_1" name="proyectista"/>
+        <bpmn2:dataInput id="DataInput_82" itemSubjectRef="ItemDefinition_1" name="resolucionContraProcedeREP"/>
         <bpmn2:dataOutput id="DataOutput_9" itemSubjectRef="ItemDefinition_3" name="hayRecursoReposicion"/>
         <bpmn2:inputSet id="InputSet_3" name="Input Set 3">
           <bpmn2:dataInputRefs>DataInput_67</bpmn2:dataInputRefs>
@@ -740,6 +741,7 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);	</bpmn2:sc
           <bpmn2:dataInputRefs>DataInput_80</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_81</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_83</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_82</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
         <bpmn2:outputSet id="OutputSet_6" name="Output Set 6">
           <bpmn2:dataOutputRefs>DataOutput_9</bpmn2:dataOutputRefs>
@@ -808,6 +810,10 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);	</bpmn2:sc
       <bpmn2:dataInputAssociation id="DataInputAssociation_83">
         <bpmn2:sourceRef>proyectista</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_83</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_82">
+        <bpmn2:sourceRef>numeroRadicadoSalida</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_82</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataOutputAssociation id="DataOutputAssociation_9">
         <bpmn2:sourceRef>DataOutput_9</bpmn2:sourceRef>

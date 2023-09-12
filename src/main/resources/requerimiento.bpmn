@@ -7,7 +7,7 @@
   <bpmn2:itemDefinition id="ItemDefinition_497" isCollection="false" structureRef="java.lang.Long"/>
   <bpmn2:itemDefinition id="ItemDefinition_1228" isCollection="false" structureRef="java.lang.Object"/>
   <bpmn2:itemDefinition id="ItemDefinition_54" isCollection="false" structureRef="java.lang.Byte"/>
-  <bpmn2:process id="requerimiento" tns:packageName="defaultPackage" name="Tramite de Requerimiento" isExecutable="true" processType="Private">
+  <bpmn2:process id="requerimiento" tns:packageName="defaultPackage" name="Trámite de Requerimiento" isExecutable="true" processType="Private">
     <bpmn2:property id="radicado" itemSubjectRef="ItemDefinition_1" name="radicado"/>
     <bpmn2:property id="expediente" itemSubjectRef="ItemDefinition_1" name="expediente"/>
     <bpmn2:property id="fecha_radicado" itemSubjectRef="ItemDefinition_1" name="fecha_radicado"/>

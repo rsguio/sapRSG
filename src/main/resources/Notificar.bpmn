@@ -8,7 +8,7 @@
   <bpmn2:itemDefinition id="ItemDefinition_2074" isCollection="false" structureRef="java.lang.Boolean"/>
   <bpmn2:itemDefinition id="ItemDefinition_2151" isCollection="false" structureRef="java.lang.Byte"/>
   <bpmn2:itemDefinition id="ItemDefinition_3063" isCollection="false" structureRef="java.lang.Integer"/>
-  <bpmn2:process id="notificar" tns:packageName="defaultPackage" name="Notificar Resolucion" isExecutable="true" processType="Private">
+  <bpmn2:process id="notificar" tns:packageName="defaultPackage" name="Notificar Resolución" isExecutable="true" processType="Private">
     <bpmn2:property id="radicado" itemSubjectRef="ItemDefinition_9" name="radicado"/>
     <bpmn2:property id="fecha_radicado" itemSubjectRef="ItemDefinition_9" name="fecha_radicado"/>
     <bpmn2:property id="expediente" itemSubjectRef="ItemDefinition_9" name="expediente"/>
