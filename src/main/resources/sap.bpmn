@@ -36,6 +36,7 @@
     <bpmn2:property id="existeMerito" itemSubjectRef="ItemDefinition_3" name="existeMerito"/>
     <bpmn2:property id="esParaTraslado" itemSubjectRef="ItemDefinition_3" name="esParaTraslado"/>
     <bpmn2:property id="enviarRequerimientoA" itemSubjectRef="ItemDefinition_1" name="enviarRequerimientoA"/>
+    <bpmn2:property id="numeroRadicadoSalida" itemSubjectRef="ItemDefinition_1" name="numeroRadicadoSalida"/>
     <bpmn2:startEvent id="_1">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
@@ -158,6 +159,7 @@
         <bpmn2:dataInput id="DataInput_13" itemSubjectRef="ItemDefinition_9" name="fechaRadicacionAnteEmpresa"/>
         <bpmn2:dataInput id="DataInput_59" itemSubjectRef="ItemDefinition_3" name="esParaTraslado"/>
         <bpmn2:dataOutput id="DataOutput_1" itemSubjectRef="ItemDefinition_1" name="proyectista"/>
+        <bpmn2:dataOutput id="DataOutput_8" itemSubjectRef="ItemDefinition_1" name="numeroRadicadoSalida"/>
         <bpmn2:inputSet id="InputSet_3" name="Input Set 3">
           <bpmn2:dataInputRefs>DataInput_24</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_25</bpmn2:dataInputRefs>
@@ -180,6 +182,7 @@
         </bpmn2:inputSet>
         <bpmn2:outputSet id="OutputSet_4" name="Output Set 4">
           <bpmn2:dataOutputRefs>DataOutput_1</bpmn2:dataOutputRefs>
+          <bpmn2:dataOutputRefs>DataOutput_8</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
       <bpmn2:dataInputAssociation id="DataInputAssociation_10">
@@ -258,6 +261,10 @@
         <bpmn2:sourceRef>DataOutput_1</bpmn2:sourceRef>
         <bpmn2:targetRef>proyectista</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
+      <bpmn2:dataOutputAssociation id="DataOutputAssociation_8">
+        <bpmn2:sourceRef>DataOutput_8</bpmn2:sourceRef>
+        <bpmn2:targetRef>numeroRadicadoSalida</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
     </bpmn2:callActivity>
     <bpmn2:endEvent id="EndEvent_4" name="Fin">
       <bpmn2:extensionElements>
@@ -314,6 +321,7 @@
         <bpmn2:dataInput id="DataInput_42" itemSubjectRef="ItemDefinition_1" name="tramite"/>
         <bpmn2:dataInput id="DataInput_76" itemSubjectRef="ItemDefinition_1" name="enviarRequerimientoA"/>
         <bpmn2:dataOutput id="DataOutput_2" itemSubjectRef="ItemDefinition_1" name="proyectista"/>
+        <bpmn2:dataOutput id="DataOutput_7" itemSubjectRef="ItemDefinition_1" name="numeroRadicadoSalida"/>
         <bpmn2:inputSet id="InputSet_1" name="Input Set 1">
           <bpmn2:dataInputRefs>DataInput_14</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_15</bpmn2:dataInputRefs>
@@ -335,6 +343,7 @@
         </bpmn2:inputSet>
         <bpmn2:outputSet id="OutputSet_2" name="Output Set 2">
           <bpmn2:dataOutputRefs>DataOutput_2</bpmn2:dataOutputRefs>
+          <bpmn2:dataOutputRefs>DataOutput_7</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
       <bpmn2:dataInputAssociation id="DataInputAssociation_27">
@@ -409,6 +418,10 @@
         <bpmn2:sourceRef>DataOutput_2</bpmn2:sourceRef>
         <bpmn2:targetRef>proyectista</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
+      <bpmn2:dataOutputAssociation id="DataOutputAssociation_7">
+        <bpmn2:sourceRef>DataOutput_7</bpmn2:sourceRef>
+        <bpmn2:targetRef>numeroRadicadoSalida</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
     </bpmn2:callActivity>
     <bpmn2:sequenceFlow id="SequenceFlow_12" tns:priority="1" name="No" sourceRef="ExclusiveGateway_1" targetRef="CallActivity_2">
       <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_13" language="http://www.java.com/java">return KieFunctions.isFalse(documentosEstanCompletos);</bpmn2:conditionExpression>
@@ -439,6 +452,7 @@
         <bpmn2:dataInput id="DataInput_57" itemSubjectRef="ItemDefinition_9" name="fechaRadicacionAnteEmpresa"/>
         <bpmn2:dataInput id="DataInput_58" itemSubjectRef="ItemDefinition_1" name="tramite"/>
         <bpmn2:dataOutput id="DataOutput_3" itemSubjectRef="ItemDefinition_1" name="proyectista"/>
+        <bpmn2:dataOutput id="DataOutput_5" itemSubjectRef="ItemDefinition_1" name="numeroRadicadoSalida"/>
         <bpmn2:inputSet id="InputSet_5" name="Input Set 5">
           <bpmn2:dataInputRefs>DataInput_43</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_44</bpmn2:dataInputRefs>
@@ -459,6 +473,7 @@
         </bpmn2:inputSet>
         <bpmn2:outputSet id="OutputSet_6" name="Output Set 6">
           <bpmn2:dataOutputRefs>DataOutput_3</bpmn2:dataOutputRefs>
+          <bpmn2:dataOutputRefs>DataOutput_5</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
       <bpmn2:dataInputAssociation id="DataInputAssociation_43">
@@ -529,6 +544,10 @@
         <bpmn2:sourceRef>DataOutput_3</bpmn2:sourceRef>
         <bpmn2:targetRef>proyectista</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
+      <bpmn2:dataOutputAssociation id="DataOutputAssociation_5">
+        <bpmn2:sourceRef>DataOutput_5</bpmn2:sourceRef>
+        <bpmn2:targetRef>numeroRadicadoSalida</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
     </bpmn2:callActivity>
     <bpmn2:sequenceFlow id="SequenceFlow_13" tns:priority="1" name="No" sourceRef="ExclusiveGateway_4" targetRef="CallActivity_3">
       <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_14" language="http://www.java.com/java">return KieFunctions.isFalse(existeMerito);</bpmn2:conditionExpression>
@@ -568,6 +587,7 @@
         <bpmn2:dataInput id="DataInput_74" itemSubjectRef="ItemDefinition_9" name="fechaRadicacionAnteEmpresa"/>
         <bpmn2:dataInput id="DataInput_75" itemSubjectRef="ItemDefinition_1" name="tramite"/>
         <bpmn2:dataOutput id="DataOutput_4" itemSubjectRef="ItemDefinition_1" name="proyectista"/>
+        <bpmn2:dataOutput id="DataOutput_6" itemSubjectRef="ItemDefinition_1" name="numeroRadicadoSalida"/>
         <bpmn2:inputSet id="InputSet_6" name="Input Set 6">
           <bpmn2:dataInputRefs>DataInput_60</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_61</bpmn2:dataInputRefs>
@@ -588,6 +608,7 @@
         </bpmn2:inputSet>
         <bpmn2:outputSet id="OutputSet_7" name="Output Set 7">
           <bpmn2:dataOutputRefs>DataOutput_4</bpmn2:dataOutputRefs>
+          <bpmn2:dataOutputRefs>DataOutput_6</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
       <bpmn2:dataInputAssociation id="DataInputAssociation_60">
@@ -657,6 +678,10 @@
       <bpmn2:dataOutputAssociation id="DataOutputAssociation_4">
         <bpmn2:sourceRef>DataOutput_4</bpmn2:sourceRef>
         <bpmn2:targetRef>proyectista</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+      <bpmn2:dataOutputAssociation id="DataOutputAssociation_6">
+        <bpmn2:sourceRef>DataOutput_6</bpmn2:sourceRef>
+        <bpmn2:targetRef>numeroRadicadoSalida</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
     </bpmn2:callActivity>
     <bpmn2:sequenceFlow id="SequenceFlow_15" tns:priority="1" sourceRef="ExclusiveGateway_4" targetRef="CallActivity_4">
