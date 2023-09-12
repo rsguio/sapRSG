@@ -739,7 +739,7 @@
     </bpmn2:exclusiveGateway>
     <bpmn2:sequenceFlow id="SequenceFlow_9" tns:priority="1" sourceRef="ExclusiveGateway_2" targetRef="CallActivity_7"/>
     <bpmn2:sequenceFlow id="SequenceFlow_10" tns:priority="1" name="No" sourceRef="ExclusiveGateway_26" targetRef="ExclusiveGateway_2">
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_43" language="http://www.java.com/java">return KieFunctions.isFalse(documentoEnviado);</bpmn2:conditionExpression>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_43" language="http://www.java.com/java">return KieFunctions.isFalse(avisoEnviado);</bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:exclusiveGateway id="ExclusiveGateway_3" name="Correo electronico Certificado Enviado?" gatewayDirection="Diverging">
       <bpmn2:incoming>SequenceFlow_11</bpmn2:incoming>
@@ -770,7 +770,7 @@
       <bpmn2:incoming>SequenceFlow_17</bpmn2:incoming>
     </bpmn2:endEvent>
     <bpmn2:sequenceFlow id="SequenceFlow_17" tns:priority="1" sourceRef="ExclusiveGateway_26" targetRef="EndEvent_2">
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_44" language="http://www.java.com/java">return KieFunctions.isTrue(documentoEnviado);</bpmn2:conditionExpression>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_44" language="http://www.java.com/java">return KieFunctions.isTrue(avisoEnviado);</bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="SequenceFlow_18" tns:priority="1" sourceRef="CallActivity_7" targetRef="EndEvent_7"/>
     <bpmn2:userTask id="UserTask_2" name="Verificar Envio Aviso">
