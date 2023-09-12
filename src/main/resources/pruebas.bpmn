@@ -30,7 +30,6 @@
     <bpmn2:property id="observacionesRevision" itemSubjectRef="ItemDefinition_1" name="observacionesRevision"/>
     <bpmn2:property id="rechazadoTramiteSeleccionado" itemSubjectRef="ItemDefinition_3" name="rechazadoTramiteSeleccionado"/>
     <bpmn2:property id="autorizadoTramiteNotificacion" itemSubjectRef="ItemDefinition_3" name="autorizadoTramiteNotificacion"/>
-    <bpmn2:property id="radicadoNotificar" itemSubjectRef="ItemDefinition_1" name="radicadoNotificar"/>
     <bpmn2:property id="i" itemSubjectRef="ItemDefinition_2" name="i"/>
     <bpmn2:property id="numeroRadicadoSalida" itemSubjectRef="ItemDefinition_1" name="numeroRadicadoSalida"/>
     <bpmn2:startEvent id="_1">
@@ -525,10 +524,10 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
     <bpmn2:sequenceFlow id="SequenceFlow_12" tns:priority="1" sourceRef="ExclusiveGateway_2" targetRef="EndEvent_1">
       <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_6" language="http://www.java.com/java">return KieFunctions.isTrue(autorizadoTramiteNotificacion);</bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
-    <bpmn2:callActivity id="CallActivity_3" tns:waitForCompletion="true" tns:independent="false" name="Notificar" calledElement="comunicar">
+    <bpmn2:callActivity id="CallActivity_3" tns:waitForCompletion="true" tns:independent="false" name="Comunicar" calledElement="comunicar">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
-          <tns:metaValue><![CDATA[Notificar]]></tns:metaValue>
+          <tns:metaValue><![CDATA[Comunicar]]></tns:metaValue>
         </tns:metaData>
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_13</bpmn2:incoming>
@@ -640,7 +639,7 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
         <bpmn2:targetRef>DataInput_66</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataInputAssociation id="DataInputAssociation_67">
-        <bpmn2:sourceRef>radicadoNotificar</bpmn2:sourceRef>
+        <bpmn2:sourceRef>numeroRadicadoSalida</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_67</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataOutputAssociation id="DataOutputAssociation_6">
@@ -718,7 +717,7 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
       <bpmndi:BPMNShape id="BPMNShape_CallActivity_3" bpmnElement="CallActivity_3" isExpanded="true">
         <dc:Bounds height="50.0" width="110.0" x="787.0" y="222.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_10">
-          <dc:Bounds height="17.0" width="53.0" x="815.0" y="238.0"/>
+          <dc:Bounds height="17.0" width="72.0" x="806.0" y="238.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_ScriptTask_2" bpmnElement="ScriptTask_2" isExpanded="true">
