@@ -39,6 +39,7 @@
     <bpmn2:property id="notificador" itemSubjectRef="ItemDefinition_8" name="notificador"/>
     <bpmn2:property id="numeroRadicadoRequerimiento" itemSubjectRef="ItemDefinition_8" name="numeroRadicadoRequerimiento"/>
     <bpmn2:property id="fechaRadicadoRequerimiento" itemSubjectRef="ItemDefinition_1913" name="fechaRadicadoRequerimiento"/>
+    <bpmn2:property id="observacionesDocRadicado" itemSubjectRef="ItemDefinition_8" name="observacionesDocRadicado"/>
     <bpmn2:startEvent id="StartEvent_3">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
@@ -340,6 +341,7 @@
         <bpmn2:dataInput id="DataInput_42" itemSubjectRef="ItemDefinition_8" name="remitente"/>
         <bpmn2:dataInput id="DataInput_43" itemSubjectRef="ItemDefinition_770" name="idempresa"/>
         <bpmn2:dataInput id="DataInput_44" itemSubjectRef="ItemDefinition_1913" name="fechaRadicacionAnteEmpresa"/>
+        <bpmn2:dataInput id="DataInput_66" itemSubjectRef="ItemDefinition_8" name="observacionesRevision"/>
         <bpmn2:dataOutput id="DataOutput_5" itemSubjectRef="ItemDefinition_81" name="aprobado"/>
         <bpmn2:dataOutput id="DataOutput_6" itemSubjectRef="ItemDefinition_8" name="corrector"/>
         <bpmn2:dataOutput id="DataOutput_7" itemSubjectRef="ItemDefinition_8" name="nombreDocumentoAprobado"/>
@@ -368,6 +370,7 @@
           <bpmn2:dataInputRefs>DataInput_42</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_43</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_44</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_66</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
         <bpmn2:outputSet id="OutputSet_2" name="Output Set 2">
           <bpmn2:dataOutputRefs>DataOutput_5</bpmn2:dataOutputRefs>
@@ -476,6 +479,10 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_44">
         <bpmn2:sourceRef>fechaRadicacionAnteEmpresa</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_44</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_66">
+        <bpmn2:sourceRef>observacionesDocRadicado</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_66</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataOutputAssociation id="DataOutputAssociation_5">
         <bpmn2:sourceRef>DataOutput_5</bpmn2:sourceRef>
