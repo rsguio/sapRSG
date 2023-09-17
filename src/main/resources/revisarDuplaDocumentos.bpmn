@@ -42,6 +42,7 @@
     <bpmn2:property id="versionamientoDocumentoESP" itemSubjectRef="ItemDefinition_1" name="versionamientoDocumentoESP"/>
     <bpmn2:property id="versionActualESP" itemSubjectRef="ItemDefinition_2" name="versionActualESP"/>
     <bpmn2:property id="nombreDocumentoAprobadoESP" itemSubjectRef="ItemDefinition_1" name="nombreDocumentoAprobadoESP"/>
+    <bpmn2:property id="nombreDocumentoRevisionesESP" itemSubjectRef="ItemDefinition_1" name="nombreDocumentoRevisionesESP"/>
     <bpmn2:task id="Task_6" tns:taskName="VersionesDocumentoWIH" name="Versionar Documento Cliente">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
