@@ -40,6 +40,7 @@
     <bpmn2:property id="numeroRadicadoRequerimiento" itemSubjectRef="ItemDefinition_8" name="numeroRadicadoRequerimiento"/>
     <bpmn2:property id="fechaRadicadoRequerimiento" itemSubjectRef="ItemDefinition_1913" name="fechaRadicadoRequerimiento"/>
     <bpmn2:property id="observacionesDocRadicado" itemSubjectRef="ItemDefinition_8" name="observacionesDocRadicado"/>
+    <bpmn2:property id="numeroRadicadoRequerimientoESP" itemSubjectRef="ItemDefinition_8" name="numeroRadicadoRequerimientoESP"/>
     <bpmn2:startEvent id="StartEvent_3">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">

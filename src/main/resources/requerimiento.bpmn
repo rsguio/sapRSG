@@ -593,6 +593,7 @@
         <bpmn2:dataInput id="DataInput_34" itemSubjectRef="ItemDefinition_1" name="tramite"/>
         <bpmn2:dataInput id="DataInput_166" itemSubjectRef="ItemDefinition_1" name="numeroRadicadoRequerimiento"/>
         <bpmn2:dataInput id="DataInput_169" itemSubjectRef="ItemDefinition_1228" name="fechaRadicadoRequerimiento"/>
+        <bpmn2:dataInput id="DataInput_5" itemSubjectRef="ItemDefinition_1" name="numeroRadicadoRequerimientoESP"/>
         <bpmn2:inputSet id="InputSet_1" name="Input Set 1">
           <bpmn2:dataInputRefs>DataInput_19</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_20</bpmn2:dataInputRefs>
@@ -612,6 +613,7 @@
           <bpmn2:dataInputRefs>DataInput_34</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_166</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_169</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_5</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
         <bpmn2:outputSet id="OutputSet_3" name="Output Set 3"/>
       </bpmn2:ioSpecification>
@@ -678,7 +680,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_34">
         <bpmn2:targetRef>DataInput_34</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_5">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_27">Desestimiento Tácito</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_27">Desistimiento Tácito</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_24">DataInput_34</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -689,6 +691,10 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_169">
         <bpmn2:sourceRef>fechaRadicadoSalida</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_169</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_5">
+        <bpmn2:sourceRef>numeroRadicadoSalidaESP</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_5</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
     </bpmn2:callActivity>
     <bpmn2:sequenceFlow id="SequenceFlow_32" tns:priority="1" name="No" sourceRef="ExclusiveGateway_7" targetRef="CallActivity_2">
@@ -1712,25 +1718,25 @@
         <di:waypoint xsi:type="dc:Point" x="340.0" y="439.0"/>
         <di:waypoint xsi:type="dc:Point" x="365.0" y="439.0"/>
         <di:waypoint xsi:type="dc:Point" x="390.0" y="440.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_24"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_5" bpmnElement="SequenceFlow_5" sourceElement="BPMNShape_ExclusiveGateway_1" targetElement="BPMNShape_ParallelGateway_1">
         <di:waypoint xsi:type="dc:Point" x="700.0" y="440.0"/>
         <di:waypoint xsi:type="dc:Point" x="726.0" y="439.0"/>
         <di:waypoint xsi:type="dc:Point" x="752.0" y="439.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_35"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_12" bpmnElement="SequenceFlow_12" sourceElement="BPMNShape_ExclusiveGateway_3" targetElement="BPMNShape_UserTask_4">
         <di:waypoint xsi:type="dc:Point" x="777.0" y="554.0"/>
         <di:waypoint xsi:type="dc:Point" x="777.0" y="699.0"/>
         <di:waypoint xsi:type="dc:Point" x="844.0" y="699.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_38"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_18" bpmnElement="SequenceFlow_18" sourceElement="BPMNShape_ExclusiveGateway_8" targetElement="BPMNShape_UserTask_9">
         <di:waypoint xsi:type="dc:Point" x="778.0" y="305.0"/>
         <di:waypoint xsi:type="dc:Point" x="778.0" y="135.0"/>
         <di:waypoint xsi:type="dc:Point" x="844.0" y="135.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_41"/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
     <bpmndi:BPMNLabelStyle id="BPMNLabelStyle_1">

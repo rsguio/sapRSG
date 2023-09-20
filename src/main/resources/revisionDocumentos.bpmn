@@ -7,7 +7,7 @@
   <bpmn2:itemDefinition id="ItemDefinition_24" isCollection="false" structureRef="java.lang.Object"/>
   <bpmn2:itemDefinition id="ItemDefinition_2078" isCollection="false" structureRef="java.lang.Long"/>
   <bpmn2:signal id="Signal_1" name="TerminarProcesoTramiteErrado"/>
-  <bpmn2:process id="revisionDocumentos" tns:packageName="defaultPackage" name="Trámite Revisión Documentos" isExecutable="true" processType="Private">
+  <bpmn2:process id="revisionDocumentos" tns:packageName="defaultPackage" name="Trámite Revisión Documento" isExecutable="true" processType="Private">
     <bpmn2:property id="aprobado" itemSubjectRef="ItemDefinition_3" name="aprobado"/>
     <bpmn2:property id="observacionesRevision" itemSubjectRef="ItemDefinition_1" name="observacionesRevision"/>
     <bpmn2:property id="radicado" itemSubjectRef="ItemDefinition_1" name="radicado"/>
@@ -564,7 +564,7 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_EndEvent_4" bpmnElement="EndEvent_4">
         <dc:Bounds height="36.0" width="36.0" x="687.0" y="301.0"/>
-        <bpmndi:BPMNLabel labelStyle="#//@definitions/@diagrams.0/@labelStyle.0">
+        <bpmndi:BPMNLabel id="BPMNLabel_8" labelStyle="BPMNLabelStyle_1">
           <dc:Bounds height="17.0" width="20.0" x="695.0" y="337.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
@@ -640,10 +640,10 @@
         <di:waypoint xsi:type="dc:Point" x="705.0" y="142.0"/>
         <di:waypoint xsi:type="dc:Point" x="705.0" y="221.0"/>
         <di:waypoint xsi:type="dc:Point" x="705.0" y="301.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_14"/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
-    <bpmndi:BPMNLabelStyle>
+    <bpmndi:BPMNLabelStyle id="BPMNLabelStyle_1">
       <dc:Font name="arial" size="9.0"/>
     </bpmndi:BPMNLabelStyle>
   </bpmndi:BPMNDiagram>
