@@ -31,7 +31,7 @@
         
         <work-item-handler>
 	        <resolver>mvel</resolver>
-	        <identifier>new org.jbpm.process.workitem.email.EmailWorkItemHandler("smtp.gmail.com", "587", "rsguio@superservicios.gov.co", "kykdwdylvmmriawi", "true")</identifier>
+	        <identifier>new org.jbpm.process.workitem.email.EmailWorkItemHandler("smtp.gmail.com", "587", "notificaciones_sap@superservicios.gov.co", "eseetyqxbktktslt", "true")</identifier>
 	        <parameters/>
 	        <name>Email</name>
 	    </work-item-handler>
