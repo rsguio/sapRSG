@@ -356,7 +356,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_28">
         <bpmn2:targetRef>DataInput_28</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_28">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_55">05a_radicarDocumento</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_55">21a_generarComunicacion</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_56">DataInput_28</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
@@ -437,7 +437,7 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_37">
         <bpmn2:targetRef>DataInput_37</bpmn2:targetRef>
         <bpmn2:assignment id="Assignment_37">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_73">05_radicarDocumento</bpmn2:from>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_73">21_generarComunicacion</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_74">DataInput_37</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>

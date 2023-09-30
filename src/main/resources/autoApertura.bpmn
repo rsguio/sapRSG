@@ -35,6 +35,11 @@
     <bpmn2:property id="i" itemSubjectRef="ItemDefinition_2" name="i"/>
     <bpmn2:property id="tipoDocumentalRadicadoSalida" itemSubjectRef="ItemDefinition_1" name="tipoDocumentalRadicadoSalida"/>
     <bpmn2:property id="observacionesDocRadicado" itemSubjectRef="ItemDefinition_1" name="observacionesDocRadicado"/>
+    <bpmn2:property id="radComunicaAutoAperturaCliente" itemSubjectRef="ItemDefinition_1" name="radComunicaAutoAperturaCliente"/>
+    <bpmn2:property id="radComunicaAutoAperturaESP" itemSubjectRef="ItemDefinition_1" name="radComunicaAutoAperturaESP"/>
+    <bpmn2:property id="radicadoTramitePruebas" itemSubjectRef="ItemDefinition_1" name="radicadoTramitePruebas"/>
+    <bpmn2:property id="radicadoTrasladoPruebas" itemSubjectRef="ItemDefinition_1" name="radicadoTrasladoPruebas"/>
+    <bpmn2:property id="radicadoFallo" itemSubjectRef="ItemDefinition_1" name="radicadoFallo"/>
     <bpmn2:startEvent id="_1">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
@@ -530,6 +535,8 @@
         <bpmn2:dataInput id="DataInput_123" itemSubjectRef="ItemDefinition_1" name="radicadoNotificar"/>
         <bpmn2:dataInput id="DataInput_124" itemSubjectRef="ItemDefinition_1" name="tipoDocumentalRadicadoNotificar"/>
         <bpmn2:dataOutput id="DataOutput_6" itemSubjectRef="ItemDefinition_3" name="autorizadoTramiteNotificacion"/>
+        <bpmn2:dataOutput id="DataOutput_10" itemSubjectRef="ItemDefinition_1" name="numeroRadicadoSalidaESP"/>
+        <bpmn2:dataOutput id="DataOutput_11" itemSubjectRef="ItemDefinition_1" name="numeroRadicadoSalida"/>
         <bpmn2:inputSet id="InputSet_5" name="Input Set 5">
           <bpmn2:dataInputRefs>DataInput_59</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_60</bpmn2:dataInputRefs>
@@ -552,6 +559,8 @@
         </bpmn2:inputSet>
         <bpmn2:outputSet id="OutputSet_6" name="Output Set 6">
           <bpmn2:dataOutputRefs>DataOutput_6</bpmn2:dataOutputRefs>
+          <bpmn2:dataOutputRefs>DataOutput_10</bpmn2:dataOutputRefs>
+          <bpmn2:dataOutputRefs>DataOutput_11</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
       <bpmn2:dataInputAssociation id="DataInputAssociation_59">
@@ -629,6 +638,14 @@
       <bpmn2:dataOutputAssociation id="DataOutputAssociation_6">
         <bpmn2:sourceRef>DataOutput_6</bpmn2:sourceRef>
         <bpmn2:targetRef>autorizadoTramiteNotificacion</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+      <bpmn2:dataOutputAssociation id="DataOutputAssociation_10">
+        <bpmn2:sourceRef>DataOutput_10</bpmn2:sourceRef>
+        <bpmn2:targetRef>radComunicaAutoAperturaESP</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+      <bpmn2:dataOutputAssociation id="DataOutputAssociation_11">
+        <bpmn2:sourceRef>DataOutput_11</bpmn2:sourceRef>
+        <bpmn2:targetRef>radComunicaAutoAperturaCliente</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
     </bpmn2:callActivity>
     <bpmn2:sequenceFlow id="SequenceFlow_8" tns:priority="1" sourceRef="UserTask_3" targetRef="CallActivity_2"/>
@@ -743,6 +760,7 @@
         <bpmn2:dataInput id="DataInput_90" itemSubjectRef="ItemDefinition_1469" name="fechaRadicacionAnteEmpresa"/>
         <bpmn2:dataInput id="DataInput_91" itemSubjectRef="ItemDefinition_1" name="idcliente"/>
         <bpmn2:dataInput id="DataInput_92" itemSubjectRef="ItemDefinition_1" name="idremitente"/>
+        <bpmn2:dataOutput id="DataOutput_8" itemSubjectRef="ItemDefinition_1" name="numeroRadicadoSalida"/>
         <bpmn2:inputSet id="InputSet_2" name="Input Set 1">
           <bpmn2:dataInputRefs>DataInput_77</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_78</bpmn2:dataInputRefs>
@@ -761,7 +779,9 @@
           <bpmn2:dataInputRefs>DataInput_91</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_92</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="OutputSet_8" name="Output Set 2"/>
+        <bpmn2:outputSet id="OutputSet_8" name="Output Set 2">
+          <bpmn2:dataOutputRefs>DataOutput_8</bpmn2:dataOutputRefs>
+        </bpmn2:outputSet>
       </bpmn2:ioSpecification>
       <bpmn2:dataInputAssociation id="DataInputAssociation_77">
         <bpmn2:sourceRef>radicado</bpmn2:sourceRef>
@@ -827,6 +847,10 @@
         <bpmn2:sourceRef>idremitente</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_92</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
+      <bpmn2:dataOutputAssociation id="DataOutputAssociation_8">
+        <bpmn2:sourceRef>DataOutput_8</bpmn2:sourceRef>
+        <bpmn2:targetRef>radicadoTrasladoPruebas</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
     </bpmn2:callActivity>
     <bpmn2:callActivity id="CallActivity_4" tns:waitForCompletion="true" tns:independent="false" name="Fallo" calledElement="fallo">
       <bpmn2:extensionElements>
@@ -853,6 +877,7 @@
         <bpmn2:dataInput id="DataInput_97" itemSubjectRef="ItemDefinition_1469" name="fechaRadicacionAnteEmpresa"/>
         <bpmn2:dataInput id="DataInput_98" itemSubjectRef="ItemDefinition_1" name="idcliente"/>
         <bpmn2:dataInput id="DataInput_99" itemSubjectRef="ItemDefinition_1" name="idremitente"/>
+        <bpmn2:dataOutput id="DataOutput_7" itemSubjectRef="ItemDefinition_1" name="numeroRadicadoSalida"/>
         <bpmn2:inputSet id="InputSet_3" name="Input Set 1">
           <bpmn2:dataInputRefs>DataInput_68</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_69</bpmn2:dataInputRefs>
@@ -871,7 +896,9 @@
           <bpmn2:dataInputRefs>DataInput_98</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_99</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="OutputSet_7" name="Output Set 2"/>
+        <bpmn2:outputSet id="OutputSet_7" name="Output Set 2">
+          <bpmn2:dataOutputRefs>DataOutput_7</bpmn2:dataOutputRefs>
+        </bpmn2:outputSet>
       </bpmn2:ioSpecification>
       <bpmn2:dataInputAssociation id="DataInputAssociation_68">
         <bpmn2:sourceRef>radicado</bpmn2:sourceRef>
@@ -937,6 +964,10 @@
         <bpmn2:sourceRef>idremitente</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_99</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
+      <bpmn2:dataOutputAssociation id="DataOutputAssociation_7">
+        <bpmn2:sourceRef>DataOutput_7</bpmn2:sourceRef>
+        <bpmn2:targetRef>radicadoFallo</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
     </bpmn2:callActivity>
     <bpmn2:sequenceFlow id="SequenceFlow_9" tns:priority="1" sourceRef="CallActivity_3" targetRef="CallActivity_4"/>
     <bpmn2:callActivity id="CallActivity_5" tns:waitForCompletion="true" tns:independent="false" name="Tramite de Pruebas" calledElement="pruebas">
@@ -964,6 +995,7 @@
         <bpmn2:dataInput id="DataInput_113" itemSubjectRef="ItemDefinition_1469" name="fechaRadicacionAnteEmpresa"/>
         <bpmn2:dataInput id="DataInput_114" itemSubjectRef="ItemDefinition_1" name="idcliente"/>
         <bpmn2:dataInput id="DataInput_115" itemSubjectRef="ItemDefinition_1" name="idremitente"/>
+        <bpmn2:dataOutput id="DataOutput_9" itemSubjectRef="ItemDefinition_1" name="numeroRadicadoSalida"/>
         <bpmn2:inputSet id="InputSet_4" name="Input Set 1">
           <bpmn2:dataInputRefs>DataInput_100</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_101</bpmn2:dataInputRefs>
@@ -982,7 +1014,9 @@
           <bpmn2:dataInputRefs>DataInput_114</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_115</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="OutputSet_9" name="Output Set 2"/>
+        <bpmn2:outputSet id="OutputSet_9" name="Output Set 2">
+          <bpmn2:dataOutputRefs>DataOutput_9</bpmn2:dataOutputRefs>
+        </bpmn2:outputSet>
       </bpmn2:ioSpecification>
       <bpmn2:dataInputAssociation id="DataInputAssociation_100">
         <bpmn2:sourceRef>radicado</bpmn2:sourceRef>
@@ -1048,6 +1082,10 @@
         <bpmn2:sourceRef>idremitente</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_115</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
+      <bpmn2:dataOutputAssociation id="DataOutputAssociation_9">
+        <bpmn2:sourceRef>DataOutput_9</bpmn2:sourceRef>
+        <bpmn2:targetRef>radicadoTramitePruebas</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
     </bpmn2:callActivity>
     <bpmn2:endEvent id="EndEvent_1" name="Fin">
       <bpmn2:extensionElements>
