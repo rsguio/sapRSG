@@ -673,19 +673,7 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
     </bpmn2:scriptTask>
     <bpmn2:sequenceFlow id="SequenceFlow_10" tns:priority="1" sourceRef="_1" targetRef="ScriptTask_2"/>
     <bpmn2:sequenceFlow id="SequenceFlow_11" tns:priority="1" sourceRef="ScriptTask_2" targetRef="UserTask_1"/>
-    <bpmn2:intermediateCatchEvent id="IntermediateCatchEvent_1" name="Esperar 10 días hábiles desde el proceso de notificación.">
-      <bpmn2:extensionElements>
-        <tns:metaData name="elementname">
-          <tns:metaValue><![CDATA[Esperar 10 días hábiles desde el proceso de notificación.]]></tns:metaValue>
-        </tns:metaData>
-      </bpmn2:extensionElements>
-      <bpmn2:incoming>SequenceFlow_1</bpmn2:incoming>
-      <bpmn2:outgoing>SequenceFlow_5</bpmn2:outgoing>
-      <bpmn2:timerEventDefinition id="TimerEventDefinition_1">
-        <bpmn2:timeDate xsi:type="bpmn2:tFormalExpression" id="FormalExpression_44">#{fechaMaxInterponerRecurso}</bpmn2:timeDate>
-      </bpmn2:timerEventDefinition>
-    </bpmn2:intermediateCatchEvent>
-    <bpmn2:sequenceFlow id="SequenceFlow_1" tns:priority="1" sourceRef="ExclusiveGateway_3" targetRef="IntermediateCatchEvent_1">
+    <bpmn2:sequenceFlow id="SequenceFlow_1" tns:priority="1" sourceRef="ExclusiveGateway_3" targetRef="UserTask_5">
       <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_5" language="http://www.java.com/java">return KieFunctions.isTrue(autorizadoTramiteNotificacion);</bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
     <bpmn2:userTask id="UserTask_5" name="Verificar Recurso">
@@ -694,7 +682,7 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
           <tns:metaValue><![CDATA[Verificar Recurso]]></tns:metaValue>
         </tns:metaData>
       </bpmn2:extensionElements>
-      <bpmn2:incoming>SequenceFlow_5</bpmn2:incoming>
+      <bpmn2:incoming>SequenceFlow_1</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_21</bpmn2:outgoing>
       <bpmn2:ioSpecification id="InputOutputSpecification_4">
         <bpmn2:dataInput id="DataInput_93" itemSubjectRef="ItemDefinition_1" name="TaskName"/>
@@ -768,7 +756,6 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
         </bpmn2:resourceAssignmentExpression>
       </bpmn2:potentialOwner>
     </bpmn2:userTask>
-    <bpmn2:sequenceFlow id="SequenceFlow_5" tns:priority="1" sourceRef="IntermediateCatchEvent_1" targetRef="UserTask_5"/>
     <bpmn2:exclusiveGateway id="ExclusiveGateway_4" name="¿Hay recurso de reposición?" gatewayDirection="Diverging">
       <bpmn2:incoming>SequenceFlow_21</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_7</bpmn2:outgoing>
@@ -921,6 +908,26 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
     </bpmn2:sequenceFlow>
     <bpmn2:sequenceFlow id="SequenceFlow_20" tns:priority="1" sourceRef="CallActivity_2" targetRef="EndEvent_3"/>
     <bpmn2:sequenceFlow id="SequenceFlow_21" tns:priority="1" sourceRef="UserTask_5" targetRef="ExclusiveGateway_4"/>
+    <bpmn2:boundaryEvent id="BoundaryEvent_1" name="Esperar 10 días hábiles desde el proceso de notificación." attachedToRef="UserTask_5">
+      <bpmn2:extensionElements>
+        <tns:metaData name="elementname">
+          <tns:metaValue><![CDATA[Esperar 10 días hábiles desde el proceso de notificación.]]></tns:metaValue>
+        </tns:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:outgoing>SequenceFlow_8</bpmn2:outgoing>
+      <bpmn2:timerEventDefinition id="TimerEventDefinition_5">
+        <bpmn2:timeDate xsi:type="bpmn2:tFormalExpression" id="FormalExpression_36">#{fechaMaxInterponerRecurso}</bpmn2:timeDate>
+      </bpmn2:timerEventDefinition>
+    </bpmn2:boundaryEvent>
+    <bpmn2:endEvent id="EndEvent_1" name="Fin agoto tiempo recurso">
+      <bpmn2:extensionElements>
+        <tns:metaData name="elementname">
+          <tns:metaValue><![CDATA[Fin agoto tiempo recurso]]></tns:metaValue>
+        </tns:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_8</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:sequenceFlow id="SequenceFlow_8" tns:priority="1" sourceRef="BoundaryEvent_1" targetRef="EndEvent_1"/>
   </bpmn2:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_Process_1" bpmnElement="fallo">
@@ -980,22 +987,16 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
           <dc:Bounds height="17.0" width="33.0" x="128.0" y="54.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_IntermediateCatchEvent_1" bpmnElement="IntermediateCatchEvent_1">
-        <dc:Bounds height="36.0" width="36.0" x="937.0" y="360.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_4">
-          <dc:Bounds height="119.0" width="79.0" x="916.0" y="396.0"/>
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_UserTask_5" bpmnElement="UserTask_5" isExpanded="true">
-        <dc:Bounds height="50.0" width="110.0" x="1078.0" y="353.0"/>
+        <dc:Bounds height="50.0" width="110.0" x="899.0" y="352.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_6">
-          <dc:Bounds height="34.0" width="61.0" x="1102.0" y="361.0"/>
+          <dc:Bounds height="34.0" width="61.0" x="923.0" y="360.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_ExclusiveGateway_4" bpmnElement="ExclusiveGateway_4" isMarkerVisible="true">
-        <dc:Bounds height="50.0" width="50.0" x="1279.0" y="353.0"/>
+        <dc:Bounds height="50.0" width="50.0" x="1185.0" y="353.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_9">
-          <dc:Bounds height="68.0" width="77.0" x="1266.0" y="403.0"/>
+          <dc:Bounds height="68.0" width="77.0" x="1172.0" y="403.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_CallActivity_2" bpmnElement="CallActivity_2" isExpanded="true">
@@ -1011,9 +1012,21 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_EndEvent_4" bpmnElement="EndEvent_4">
-        <dc:Bounds height="36.0" width="36.0" x="1286.0" y="501.0"/>
+        <dc:Bounds height="36.0" width="36.0" x="1192.0" y="501.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_16">
-          <dc:Bounds height="51.0" width="67.0" x="1271.0" y="537.0"/>
+          <dc:Bounds height="51.0" width="67.0" x="1177.0" y="537.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_BoundaryEvent_1" bpmnElement="BoundaryEvent_1">
+        <dc:Bounds height="36.0" width="36.0" x="991.0" y="384.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="119.0" width="79.0" x="970.0" y="420.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_EndEvent_1" bpmnElement="EndEvent_1">
+        <dc:Bounds height="36.0" width="36.0" x="990.0" y="540.0"/>
+        <bpmndi:BPMNLabel labelStyle="BPMNLabelStyle_1">
+          <dc:Bounds height="51.0" width="65.0" x="976.0" y="576.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_2" bpmnElement="SequenceFlow_2" sourceElement="BPMNShape_UserTask_1" targetElement="BPMNShape_CallActivity_1">
@@ -1079,27 +1092,21 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
         <di:waypoint xsi:type="dc:Point" x="233.0" y="63.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_27"/>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_1" bpmnElement="SequenceFlow_1" sourceElement="BPMNShape_ExclusiveGateway_3" targetElement="BPMNShape_IntermediateCatchEvent_1">
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_1" bpmnElement="SequenceFlow_1" sourceElement="BPMNShape_ExclusiveGateway_3">
         <di:waypoint xsi:type="dc:Point" x="954.0" y="261.0"/>
-        <di:waypoint xsi:type="dc:Point" x="955.0" y="310.0"/>
-        <di:waypoint xsi:type="dc:Point" x="955.0" y="360.0"/>
+        <di:waypoint xsi:type="dc:Point" x="954.0" y="350.0"/>
+        <di:waypoint xsi:type="dc:Point" x="953.0" y="360.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_17"/>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_5" bpmnElement="SequenceFlow_5" sourceElement="BPMNShape_IntermediateCatchEvent_1" targetElement="BPMNShape_UserTask_5">
-        <di:waypoint xsi:type="dc:Point" x="973.0" y="378.0"/>
-        <di:waypoint xsi:type="dc:Point" x="1025.0" y="378.0"/>
-        <di:waypoint xsi:type="dc:Point" x="1078.0" y="378.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_18"/>
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_7" bpmnElement="SequenceFlow_7" sourceElement="BPMNShape_ExclusiveGateway_4" targetElement="BPMNShape_EndEvent_4">
-        <di:waypoint xsi:type="dc:Point" x="1304.0" y="403.0"/>
-        <di:waypoint xsi:type="dc:Point" x="1304.0" y="452.0"/>
-        <di:waypoint xsi:type="dc:Point" x="1304.0" y="501.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1210.0" y="403.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1210.0" y="452.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1210.0" y="501.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_23"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_19" bpmnElement="SequenceFlow_19" sourceElement="BPMNShape_ExclusiveGateway_4" targetElement="BPMNShape_CallActivity_2">
-        <di:waypoint xsi:type="dc:Point" x="1329.0" y="378.0"/>
-        <di:waypoint xsi:type="dc:Point" x="1349.0" y="378.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1235.0" y="378.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1302.0" y="378.0"/>
         <di:waypoint xsi:type="dc:Point" x="1370.0" y="378.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_28"/>
       </bpmndi:BPMNEdge>
@@ -1110,10 +1117,16 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
         <bpmndi:BPMNLabel id="BPMNLabel_29"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_21" bpmnElement="SequenceFlow_21" sourceElement="BPMNShape_UserTask_5" targetElement="BPMNShape_ExclusiveGateway_4">
-        <di:waypoint xsi:type="dc:Point" x="1188.0" y="378.0"/>
-        <di:waypoint xsi:type="dc:Point" x="1233.0" y="378.0"/>
-        <di:waypoint xsi:type="dc:Point" x="1279.0" y="378.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1009.0" y="377.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1097.0" y="377.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1185.0" y="378.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_30"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_8" bpmnElement="SequenceFlow_8" sourceElement="BPMNShape_BoundaryEvent_1" targetElement="BPMNShape_EndEvent_1">
+        <di:waypoint xsi:type="dc:Point" x="1009.0" y="420.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1009.0" y="480.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1008.0" y="540.0"/>
+        <bpmndi:BPMNLabel/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
     <bpmndi:BPMNLabelStyle id="BPMNLabelStyle_1">
