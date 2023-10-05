@@ -671,9 +671,9 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
         <bpmndi:BPMNLabel id="BPMNLabel_1" labelStyle="BPMNLabelStyle_1"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_UserTask_1" bpmnElement="UserTask_1" isExpanded="true">
-        <dc:Bounds height="50.0" width="181.0" x="362.0" y="64.0"/>
+        <dc:Bounds height="50.0" width="223.0" x="320.0" y="64.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_2">
-          <dc:Bounds height="34.0" width="160.0" x="372.0" y="72.0"/>
+          <dc:Bounds height="34.0" width="202.0" x="330.0" y="72.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_CallActivity_1" bpmnElement="CallActivity_1" isExpanded="true">
@@ -689,9 +689,9 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_UserTask_3" bpmnElement="UserTask_3" isExpanded="true">
-        <dc:Bounds height="50.0" width="141.0" x="847.0" y="149.0"/>
+        <dc:Bounds height="50.0" width="244.0" x="796.0" y="149.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_8">
-          <dc:Bounds height="34.0" width="98.0" x="868.0" y="157.0"/>
+          <dc:Bounds height="17.0" width="166.0" x="835.0" y="165.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_ExclusiveGateway_1" bpmnElement="ExclusiveGateway_1" isMarkerVisible="true">
@@ -705,9 +705,9 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_ScriptTask_1" bpmnElement="ScriptTask_1" isExpanded="true">
-        <dc:Bounds height="50.0" width="110.0" x="1132.0" y="86.0"/>
+        <dc:Bounds height="50.0" width="191.0" x="1080.0" y="86.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_9" labelStyle="BPMNLabelStyle_1">
-          <dc:Bounds height="34.0" width="108.0" x="1133.0" y="94.0"/>
+          <dc:Bounds height="17.0" width="164.0" x="1093.0" y="102.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_EndEvent_1" bpmnElement="EndEvent_1">
@@ -723,9 +723,9 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_ScriptTask_2" bpmnElement="ScriptTask_2" isExpanded="true">
-        <dc:Bounds height="50.0" width="110.0" x="214.0" y="64.0"/>
+        <dc:Bounds height="50.0" width="110.0" x="164.0" y="64.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_11" labelStyle="BPMNLabelStyle_1">
-          <dc:Bounds height="17.0" width="33.0" x="252.0" y="80.0"/>
+          <dc:Bounds height="17.0" width="33.0" x="202.0" y="80.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_2" bpmnElement="SequenceFlow_2" sourceElement="BPMNShape_UserTask_1" targetElement="BPMNShape_CallActivity_1">
@@ -737,7 +737,7 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_9" bpmnElement="SequenceFlow_9" sourceElement="BPMNShape_UserTask_2" targetElement="BPMNShape_UserTask_3">
         <di:waypoint xsi:type="dc:Point" x="917.0" y="114.0"/>
         <di:waypoint xsi:type="dc:Point" x="917.0" y="131.0"/>
-        <di:waypoint xsi:type="dc:Point" x="917.0" y="149.0"/>
+        <di:waypoint xsi:type="dc:Point" x="918.0" y="149.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_11"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_3" bpmnElement="SequenceFlow_3" sourceElement="BPMNShape_CallActivity_1" targetElement="BPMNShape_ExclusiveGateway_1">
@@ -749,15 +749,16 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_6" bpmnElement="SequenceFlow_6" sourceElement="BPMNShape_ExclusiveGateway_2" targetElement="BPMNShape_ScriptTask_1">
         <di:waypoint xsi:type="dc:Point" x="1187.0" y="237.0"/>
         <di:waypoint xsi:type="dc:Point" x="1187.0" y="187.0"/>
-        <di:waypoint xsi:type="dc:Point" x="1187.0" y="136.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1175.0" y="187.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1175.0" y="136.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_15">
-          <dc:Bounds height="17.0" width="18.0" x="1179.0" y="188.0"/>
+          <dc:Bounds height="17.0" width="18.0" x="1173.0" y="188.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_8" bpmnElement="SequenceFlow_8" sourceElement="BPMNShape_ScriptTask_1" targetElement="BPMNShape_ExclusiveGateway_1">
-        <di:waypoint xsi:type="dc:Point" x="1187.0" y="86.0"/>
-        <di:waypoint xsi:type="dc:Point" x="1187.0" y="24.0"/>
-        <di:waypoint xsi:type="dc:Point" x="747.0" y="24.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1175.0" y="86.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1175.0" y="28.0"/>
+        <di:waypoint xsi:type="dc:Point" x="747.0" y="28.0"/>
         <di:waypoint xsi:type="dc:Point" x="747.0" y="64.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_17"/>
       </bpmndi:BPMNEdge>
@@ -768,8 +769,8 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
         <bpmndi:BPMNLabel id="BPMNLabel_18"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_5" bpmnElement="SequenceFlow_5" sourceElement="BPMNShape_UserTask_3" targetElement="BPMNShape_CallActivity_3">
-        <di:waypoint xsi:type="dc:Point" x="917.0" y="199.0"/>
-        <di:waypoint xsi:type="dc:Point" x="917.0" y="218.0"/>
+        <di:waypoint xsi:type="dc:Point" x="918.0" y="199.0"/>
+        <di:waypoint xsi:type="dc:Point" x="918.0" y="218.0"/>
         <di:waypoint xsi:type="dc:Point" x="918.0" y="238.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_12"/>
       </bpmndi:BPMNEdge>
@@ -780,15 +781,15 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
         <bpmndi:BPMNLabel id="BPMNLabel_16"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_11" bpmnElement="SequenceFlow_11" sourceElement="BPMNShape_ScriptTask_2" targetElement="BPMNShape_UserTask_1">
-        <di:waypoint xsi:type="dc:Point" x="324.0" y="89.0"/>
-        <di:waypoint xsi:type="dc:Point" x="343.0" y="89.0"/>
-        <di:waypoint xsi:type="dc:Point" x="362.0" y="89.0"/>
+        <di:waypoint xsi:type="dc:Point" x="274.0" y="89.0"/>
+        <di:waypoint xsi:type="dc:Point" x="297.0" y="89.0"/>
+        <di:waypoint xsi:type="dc:Point" x="320.0" y="89.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_20"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_16" bpmnElement="SequenceFlow_16" sourceElement="BPMNShape_StartEvent_1" targetElement="BPMNShape_ScriptTask_2">
         <di:waypoint xsi:type="dc:Point" x="130.0" y="89.0"/>
-        <di:waypoint xsi:type="dc:Point" x="172.0" y="89.0"/>
-        <di:waypoint xsi:type="dc:Point" x="214.0" y="89.0"/>
+        <di:waypoint xsi:type="dc:Point" x="147.0" y="89.0"/>
+        <di:waypoint xsi:type="dc:Point" x="164.0" y="89.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_19"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_1" bpmnElement="SequenceFlow_1" sourceElement="BPMNShape_ExclusiveGateway_1" targetElement="BPMNShape_UserTask_2">
