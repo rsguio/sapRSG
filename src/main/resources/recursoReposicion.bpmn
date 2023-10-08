@@ -39,6 +39,7 @@
     <bpmn2:property id="notificarESP" itemSubjectRef="ItemDefinition_3" name="notificarESP"/>
     <bpmn2:property id="notificarCliente" itemSubjectRef="ItemDefinition_3" name="notificarCliente"/>
     <bpmn2:property id="fechaNotificacionResolucionProcedeREP" itemSubjectRef="ItemDefinition_1455" name="fechaNotificacionResolucionProcedeREP"/>
+    <bpmn2:property id="notificador" itemSubjectRef="ItemDefinition_1" name="notificador"/>
     <bpmn2:startEvent id="_1">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
