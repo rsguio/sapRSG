@@ -55,6 +55,21 @@
   ],
   
   
+    [
+    "name" : "CalcularFechaPronunciamientoWIH",
+    "parameters" : [
+        "fechaRadicadoSalida" : new ObjectDataType(),
+        "fechaRadicadoSalidaESP" : new ObjectDataType(),
+        "fechaPublicoComunicacionCliente" : new ObjectDataType(),
+        "fechaPublicoComunicacionESP" : new ObjectDataType(),
+    ],
+    "results" : [
+        "Result" : new ObjectDataType(),
+    ],
+    "displayName" : "CalcularFechaPronunciamientoWIH",
+    "icon" : "defaultservicenodeicon.png"
+  ],
+  
   [
     "name" : "TramiteErradoWIH",
     "parameters" : [

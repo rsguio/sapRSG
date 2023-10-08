@@ -25,8 +25,6 @@
     <bpmn2:property id="direccion_cliente" itemSubjectRef="ItemDefinition_9" name="direccion_cliente"/>
     <bpmn2:property id="correo_cliente" itemSubjectRef="ItemDefinition_9" name="correo_cliente"/>
     <bpmn2:property id="fechaRadicacionAnteEmpresa" itemSubjectRef="ItemDefinition_1718" name="fechaRadicacionAnteEmpresa"/>
-    <bpmn2:property id="numeroRadicadoSalida" itemSubjectRef="ItemDefinition_9" name="numeroRadicadoSalida"/>
-    <bpmn2:property id="numeroRadicadoSalidaESP" itemSubjectRef="ItemDefinition_9" name="numeroRadicadoSalidaESP"/>
     <bpmn2:property id="radicadoNotificar" itemSubjectRef="ItemDefinition_9" name="radicadoNotificar"/>
     <bpmn2:property id="fechaRadicacionMayor5Dias" itemSubjectRef="ItemDefinition_2074" name="fechaRadicacionMayor5Dias"/>
     <bpmn2:property id="autorizadoTramiteNotificacion" itemSubjectRef="ItemDefinition_2074" name="autorizadoTramiteNotificacion"/>
@@ -479,7 +477,7 @@
         <bpmn2:targetRef>DataInput_71</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataInputAssociation id="DataInputAssociation_72">
-        <bpmn2:sourceRef>numeroRadicadoSalida</bpmn2:sourceRef>
+        <bpmn2:sourceRef>radicadoNotificar</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_72</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataInputAssociation id="DataInputAssociation_35">
@@ -665,7 +663,7 @@
         <bpmn2:targetRef>DataInput_88</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataInputAssociation id="DataInputAssociation_89">
-        <bpmn2:sourceRef>numeroRadicadoSalida</bpmn2:sourceRef>
+        <bpmn2:sourceRef>radicadoNotificar</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_89</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataInputAssociation id="DataInputAssociation_36">
