@@ -32,6 +32,11 @@
     <bpmn2:property id="documentoEnviado" itemSubjectRef="ItemDefinition_3" name="documentoEnviado"/>
     <bpmn2:property id="notificador" itemSubjectRef="ItemDefinition_1" name="notificador"/>
     <bpmn2:property id="tipoDocumentalRadicadoNotificar" itemSubjectRef="ItemDefinition_1" name="tipoDocumentalRadicadoNotificar"/>
+    <bpmn2:property id="fechaMaxPronunciamiento" itemSubjectRef="ItemDefinition_1" name="fechaMaxPronunciamiento"/>
+    <bpmn2:property id="fechaRadicadoSalida" itemSubjectRef="ItemDefinition_1519" name="fechaRadicadoSalida"/>
+    <bpmn2:property id="fechaRadicadoSalidaESP" itemSubjectRef="ItemDefinition_1519" name="fechaRadicadoSalidaESP"/>
+    <bpmn2:property id="fechaPublicoComunicacionCliente" itemSubjectRef="ItemDefinition_1519" name="fechaPublicoComunicacionCliente"/>
+    <bpmn2:property id="fechaPublicoComunicacionESP" itemSubjectRef="ItemDefinition_1519" name="fechaPublicoComunicacionESP"/>
     <bpmn2:startEvent id="_1">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
@@ -684,6 +689,7 @@
         <bpmn2:dataInput id="DataInput_93" itemSubjectRef="ItemDefinition_1" name="idcliente"/>
         <bpmn2:dataInput id="DataInput_94" itemSubjectRef="ItemDefinition_1" name="idremitente"/>
         <bpmn2:dataInput id="DataInput_95" itemSubjectRef="ItemDefinition_1" name="numeroRadicadoSalida"/>
+        <bpmn2:dataOutput id="DataOutput_1" itemSubjectRef="ItemDefinition_1519" name="fechaNotificacion"/>
         <bpmn2:inputSet id="InputSet_2" name="Input Set 1">
           <bpmn2:dataInputRefs>DataInput_79</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_80</bpmn2:dataInputRefs>
@@ -703,7 +709,9 @@
           <bpmn2:dataInputRefs>DataInput_94</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_95</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="OutputSet_9" name="Output Set 2"/>
+        <bpmn2:outputSet id="OutputSet_9" name="Output Set 2">
+          <bpmn2:dataOutputRefs>DataOutput_1</bpmn2:dataOutputRefs>
+        </bpmn2:outputSet>
       </bpmn2:ioSpecification>
       <bpmn2:dataInputAssociation id="DataInputAssociation_77">
         <bpmn2:sourceRef>radicado</bpmn2:sourceRef>
@@ -773,6 +781,10 @@
         <bpmn2:sourceRef>numeroRadicadoSalidaESP</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_95</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
+      <bpmn2:dataOutputAssociation id="DataOutputAssociation_1">
+        <bpmn2:sourceRef>DataOutput_1</bpmn2:sourceRef>
+        <bpmn2:targetRef>fechaPublicoComunicacionESP</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
     </bpmn2:callActivity>
     <bpmn2:sequenceFlow id="SequenceFlow_1" tns:priority="1" name="No" sourceRef="ExclusiveGateway_4" targetRef="CallActivity_2">
       <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_7" language="http://www.java.com/java">return KieFunctions.isFalse(documentoEnviadoESP);</bpmn2:conditionExpression>
@@ -803,6 +815,7 @@
         <bpmn2:dataInput id="DataInput_78" itemSubjectRef="ItemDefinition_1" name="idcliente"/>
         <bpmn2:dataInput id="DataInput_96" itemSubjectRef="ItemDefinition_1" name="idremitente"/>
         <bpmn2:dataInput id="DataInput_97" itemSubjectRef="ItemDefinition_1" name="numeroRadicadoSalida"/>
+        <bpmn2:dataOutput id="DataOutput_2" itemSubjectRef="ItemDefinition_1519" name="fechaNotificacion"/>
         <bpmn2:inputSet id="InputSet_1" name="Input Set 1">
           <bpmn2:dataInputRefs>DataInput_64</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_65</bpmn2:dataInputRefs>
@@ -822,7 +835,9 @@
           <bpmn2:dataInputRefs>DataInput_96</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_97</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="OutputSet_8" name="Output Set 2"/>
+        <bpmn2:outputSet id="OutputSet_8" name="Output Set 2">
+          <bpmn2:dataOutputRefs>DataOutput_2</bpmn2:dataOutputRefs>
+        </bpmn2:outputSet>
       </bpmn2:ioSpecification>
       <bpmn2:dataInputAssociation id="DataInputAssociation_64">
         <bpmn2:sourceRef>radicado</bpmn2:sourceRef>
@@ -892,6 +907,10 @@
         <bpmn2:sourceRef>numeroRadicadoSalida</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_97</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
+      <bpmn2:dataOutputAssociation id="DataOutputAssociation_2">
+        <bpmn2:sourceRef>DataOutput_2</bpmn2:sourceRef>
+        <bpmn2:targetRef>fechaPublicoComunicacionCliente</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
     </bpmn2:callActivity>
     <bpmn2:sequenceFlow id="SequenceFlow_2" tns:priority="1" name="No" sourceRef="ExclusiveGateway_5" targetRef="CallActivity_1">
       <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_9" language="http://www.java.com/java">return KieFunctions.isFalse(documentoEnviado);</bpmn2:conditionExpression>
@@ -917,19 +936,76 @@
     <bpmn2:parallelGateway id="ParallelGateway_2" gatewayDirection="Converging">
       <bpmn2:incoming>SequenceFlow_22</bpmn2:incoming>
       <bpmn2:incoming>SequenceFlow_23</bpmn2:incoming>
-      <bpmn2:outgoing>SequenceFlow_24</bpmn2:outgoing>
+      <bpmn2:outgoing>SequenceFlow_27</bpmn2:outgoing>
     </bpmn2:parallelGateway>
     <bpmn2:sequenceFlow id="SequenceFlow_22" tns:priority="1" sourceRef="ExclusiveGateway_6" targetRef="ParallelGateway_2"/>
     <bpmn2:sequenceFlow id="SequenceFlow_23" tns:priority="1" sourceRef="ExclusiveGateway_7" targetRef="ParallelGateway_2"/>
-    <bpmn2:endEvent id="EndEvent_1" name="Fin">
+    <bpmn2:task id="Task_1" tns:taskName="CalcularFechaPronunciamientoWIH" name="Calcular Fecha Pronunciamiento">
+      <bpmn2:extensionElements>
+        <tns:metaData name="elementname">
+          <tns:metaValue><![CDATA[Calcular Fecha Pronunciamiento]]></tns:metaValue>
+        </tns:metaData>
+        <tns:onEntry-script scriptFormat="http://www.java.com/java"/>
+        <tns:onExit-script scriptFormat="http://www.java.com/java"/>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_27</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_26</bpmn2:outgoing>
+      <bpmn2:ioSpecification id="InputOutputSpecification_10">
+        <bpmn2:dataInput id="DataInput_99" tns:dtype="Object" itemSubjectRef="ItemDefinition_1" name="TaskName"/>
+        <bpmn2:dataInput id="DataInput_100" itemSubjectRef="ItemDefinition_1519" name="fechaRadicadoSalida"/>
+        <bpmn2:dataInput id="DataInput_101" itemSubjectRef="ItemDefinition_1519" name="fechaRadicadoSalidaESP"/>
+        <bpmn2:dataInput id="DataInput_102" itemSubjectRef="ItemDefinition_1519" name="fechaPublicoComunicacionCliente"/>
+        <bpmn2:dataInput id="DataInput_103" itemSubjectRef="ItemDefinition_1519" name="fechaPublicoComunicacionESP"/>
+        <bpmn2:dataOutput id="DataOutput_3" itemSubjectRef="ItemDefinition_1" name="Result"/>
+        <bpmn2:inputSet id="InputSet_3">
+          <bpmn2:dataInputRefs>DataInput_99</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_100</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_101</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_102</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_103</bpmn2:dataInputRefs>
+        </bpmn2:inputSet>
+        <bpmn2:outputSet id="OutputSet_10">
+          <bpmn2:dataOutputRefs>DataOutput_3</bpmn2:dataOutputRefs>
+        </bpmn2:outputSet>
+      </bpmn2:ioSpecification>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_99">
+        <bpmn2:targetRef>DataInput_99</bpmn2:targetRef>
+        <bpmn2:assignment id="Assignment_7">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_24">CalcularFechaPronunciamientoWIH</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_27">_E73D8A57-EFD0-460A-AE7F-08A85EF26922_TaskNameInputX</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_100">
+        <bpmn2:sourceRef>fechaRadicadoSalida</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_100</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_101">
+        <bpmn2:sourceRef>fechaRadicadoSalidaESP</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_101</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_102">
+        <bpmn2:sourceRef>fechaPublicoComunicacionCliente</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_102</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_103">
+        <bpmn2:sourceRef>fechaPublicoComunicacionESP</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_103</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataOutputAssociation id="DataOutputAssociation_3">
+        <bpmn2:sourceRef>DataOutput_3</bpmn2:sourceRef>
+        <bpmn2:targetRef>fechaMaxPronunciamiento</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+    </bpmn2:task>
+    <bpmn2:endEvent id="EndEvent_4" name="Fin">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
           <tns:metaValue><![CDATA[Fin]]></tns:metaValue>
         </tns:metaData>
       </bpmn2:extensionElements>
-      <bpmn2:incoming>SequenceFlow_24</bpmn2:incoming>
+      <bpmn2:incoming>SequenceFlow_26</bpmn2:incoming>
     </bpmn2:endEvent>
-    <bpmn2:sequenceFlow id="SequenceFlow_24" tns:priority="1" sourceRef="ParallelGateway_2" targetRef="EndEvent_1"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_26" tns:priority="1" sourceRef="Task_1" targetRef="EndEvent_4"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_27" tns:priority="1" sourceRef="ParallelGateway_2" targetRef="Task_1"/>
   </bpmn2:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_Process_1" bpmnElement="comunicar">
@@ -1038,13 +1114,19 @@
         <bpmndi:BPMNLabel id="BPMNLabel_19"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_ParallelGateway_2" bpmnElement="ParallelGateway_2" isMarkerVisible="true">
-        <dc:Bounds height="50.0" width="50.0" x="1630.0" y="297.0"/>
+        <dc:Bounds height="50.0" width="50.0" x="1605.0" y="297.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_20"/>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_EndEvent_1" bpmnElement="EndEvent_1">
-        <dc:Bounds height="36.0" width="36.0" x="1748.0" y="304.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_21" labelStyle="BPMNLabelStyle_1">
-          <dc:Bounds height="17.0" width="20.0" x="1756.0" y="340.0"/>
+      <bpmndi:BPMNShape id="BPMNShape_Task_1" bpmnElement="Task_1">
+        <dc:Bounds height="50.0" width="161.0" x="1703.0" y="297.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_21">
+          <dc:Bounds height="34.0" width="111.0" x="1728.0" y="305.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_EndEvent_4" bpmnElement="EndEvent_4">
+        <dc:Bounds height="36.0" width="36.0" x="1914.0" y="304.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_22">
+          <dc:Bounds height="17.0" width="20.0" x="1922.0" y="340.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_4" bpmnElement="SequenceFlow_4" sourceElement="BPMNShape_StartEvent_1" targetElement="BPMNShape_UserTask_1">
@@ -1189,21 +1271,27 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_22" bpmnElement="SequenceFlow_22" sourceElement="BPMNShape_ExclusiveGateway_6" targetElement="BPMNShape_ParallelGateway_2">
         <di:waypoint xsi:type="dc:Point" x="1516.0" y="163.0"/>
-        <di:waypoint xsi:type="dc:Point" x="1655.0" y="163.0"/>
-        <di:waypoint xsi:type="dc:Point" x="1655.0" y="297.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1630.0" y="163.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1630.0" y="297.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_38"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_23" bpmnElement="SequenceFlow_23" sourceElement="BPMNShape_ExclusiveGateway_7" targetElement="BPMNShape_ParallelGateway_2">
         <di:waypoint xsi:type="dc:Point" x="1514.0" y="475.0"/>
-        <di:waypoint xsi:type="dc:Point" x="1655.0" y="475.0"/>
-        <di:waypoint xsi:type="dc:Point" x="1655.0" y="347.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1630.0" y="475.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1630.0" y="347.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_39"/>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_24" bpmnElement="SequenceFlow_24" sourceElement="BPMNShape_ParallelGateway_2" targetElement="BPMNShape_EndEvent_1">
-        <di:waypoint xsi:type="dc:Point" x="1680.0" y="322.0"/>
-        <di:waypoint xsi:type="dc:Point" x="1714.0" y="322.0"/>
-        <di:waypoint xsi:type="dc:Point" x="1748.0" y="322.0"/>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_26" bpmnElement="SequenceFlow_26" sourceElement="BPMNShape_Task_1" targetElement="BPMNShape_EndEvent_4">
+        <di:waypoint xsi:type="dc:Point" x="1864.0" y="322.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1889.0" y="322.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1914.0" y="322.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_40"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_27" bpmnElement="SequenceFlow_27" sourceElement="BPMNShape_ParallelGateway_2" targetElement="BPMNShape_Task_1">
+        <di:waypoint xsi:type="dc:Point" x="1655.0" y="322.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1679.0" y="322.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1703.0" y="322.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_41"/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
     <bpmndi:BPMNLabelStyle id="BPMNLabelStyle_1">

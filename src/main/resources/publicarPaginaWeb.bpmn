@@ -26,6 +26,7 @@
     <bpmn2:property id="numeroAviso" itemSubjectRef="ItemDefinition_9" name="numeroAviso"/>
     <bpmn2:property id="fechaNotificacion" itemSubjectRef="ItemDefinition_2406" name="fechaNotificacion"/>
     <bpmn2:property id="fechaMaxInterponerRecurso" itemSubjectRef="ItemDefinition_9" name="fechaMaxInterponerRecurso"/>
+    <bpmn2:property id="tipoNotificacion" itemSubjectRef="ItemDefinition_9" name="tipoNotificacion"/>
     <bpmn2:startEvent id="_1">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">

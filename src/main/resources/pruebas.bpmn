@@ -774,8 +774,8 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_8" bpmnElement="SequenceFlow_8" sourceElement="BPMNShape_ScriptTask_1" targetElement="BPMNShape_ExclusiveGateway_1">
         <di:waypoint xsi:type="dc:Point" x="1186.0" y="95.0"/>
-        <di:waypoint xsi:type="dc:Point" x="1186.0" y="36.0"/>
-        <di:waypoint xsi:type="dc:Point" x="730.0" y="36.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1186.0" y="15.0"/>
+        <di:waypoint xsi:type="dc:Point" x="730.0" y="15.0"/>
         <di:waypoint xsi:type="dc:Point" x="730.0" y="46.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_15"/>
       </bpmndi:BPMNEdge>
