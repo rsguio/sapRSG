@@ -52,6 +52,8 @@
     <bpmn2:property id="tipoNotificacionESP" itemSubjectRef="ItemDefinition_9" name="tipoNotificacionESP"/>
     <bpmn2:property id="clienteInterpusoRecurso" itemSubjectRef="ItemDefinition_2074" name="clienteInterpusoRecurso"/>
     <bpmn2:property id="espInterpusoRecurso" itemSubjectRef="ItemDefinition_2074" name="espInterpusoRecurso"/>
+    <bpmn2:property id="fechaResolucionNotificar" itemSubjectRef="ItemDefinition_1718" name="fechaResolucionNotificar"/>
+    <bpmn2:property id="tipoDocumentoNotificar" itemSubjectRef="ItemDefinition_9" name="tipoDocumentoNotificar"/>
     <bpmn2:startEvent id="StartEvent_4">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">

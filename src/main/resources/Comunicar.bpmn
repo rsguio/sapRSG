@@ -37,6 +37,8 @@
     <bpmn2:property id="fechaRadicadoSalidaESP" itemSubjectRef="ItemDefinition_1519" name="fechaRadicadoSalidaESP"/>
     <bpmn2:property id="fechaPublicoComunicacionCliente" itemSubjectRef="ItemDefinition_1519" name="fechaPublicoComunicacionCliente"/>
     <bpmn2:property id="fechaPublicoComunicacionESP" itemSubjectRef="ItemDefinition_1519" name="fechaPublicoComunicacionESP"/>
+    <bpmn2:property id="fechaResolucionNotificar" itemSubjectRef="ItemDefinition_1519" name="fechaResolucionNotificar"/>
+    <bpmn2:property id="tipoDocumentoNotificar" itemSubjectRef="ItemDefinition_1" name="tipoDocumentoNotificar"/>
     <bpmn2:startEvent id="_1">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">

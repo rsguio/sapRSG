@@ -40,6 +40,8 @@
     <bpmn2:property id="notificarCliente" itemSubjectRef="ItemDefinition_3" name="notificarCliente"/>
     <bpmn2:property id="fechaNotificacionResolucionProcedeREP" itemSubjectRef="ItemDefinition_1455" name="fechaNotificacionResolucionProcedeREP"/>
     <bpmn2:property id="notificador" itemSubjectRef="ItemDefinition_1" name="notificador"/>
+    <bpmn2:property id="fechaRadicadoSalida" itemSubjectRef="ItemDefinition_1455" name="fechaRadicadoSalida"/>
+    <bpmn2:property id="tipoDocumentalRadicadoSalida" itemSubjectRef="ItemDefinition_1" name="tipoDocumentalRadicadoSalida"/>
     <bpmn2:startEvent id="_1">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
@@ -560,6 +562,8 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
         <bpmn2:dataInput id="DataInput_87" itemSubjectRef="ItemDefinition_3" name="procedenRecursos"/>
         <bpmn2:dataInput id="DataInput_70" itemSubjectRef="ItemDefinition_3" name="notificarCliente"/>
         <bpmn2:dataInput id="DataInput_71" itemSubjectRef="ItemDefinition_3" name="notificarESP"/>
+        <bpmn2:dataInput id="DataInput_69" itemSubjectRef="ItemDefinition_1455" name="fechaResolucionNotificar"/>
+        <bpmn2:dataInput id="DataInput_72" itemSubjectRef="ItemDefinition_1" name="tipoDocumentoNotificar"/>
         <bpmn2:dataOutput id="DataOutput_5" itemSubjectRef="ItemDefinition_3" name="autorizadoTramiteNotificacion"/>
         <bpmn2:inputSet id="InputSet_3" name="Input Set 5">
           <bpmn2:dataInputRefs>DataInput_51</bpmn2:dataInputRefs>
@@ -582,6 +586,8 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
           <bpmn2:dataInputRefs>DataInput_87</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_70</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_71</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_69</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_72</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
         <bpmn2:outputSet id="OutputSet_6" name="Output Set 6">
           <bpmn2:dataOutputRefs>DataOutput_5</bpmn2:dataOutputRefs>
@@ -669,6 +675,14 @@ kcontext.setVariable(&quot;numeroRadicadoSalida&quot;, &quot;&quot;);</bpmn2:scr
       <bpmn2:dataInputAssociation id="DataInputAssociation_71">
         <bpmn2:sourceRef>notificarESP</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_71</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_69">
+        <bpmn2:sourceRef>fechaRadicadoSalida</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_69</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_72">
+        <bpmn2:sourceRef>tipoDocumentalRadicadoSalida</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_72</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataOutputAssociation id="DataOutputAssociation_5">
         <bpmn2:sourceRef>DataOutput_5</bpmn2:sourceRef>

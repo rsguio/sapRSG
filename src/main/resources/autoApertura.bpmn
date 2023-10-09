@@ -41,6 +41,7 @@
     <bpmn2:property id="radicadoTrasladoPruebas" itemSubjectRef="ItemDefinition_1" name="radicadoTrasladoPruebas"/>
     <bpmn2:property id="radicadoFallo" itemSubjectRef="ItemDefinition_1" name="radicadoFallo"/>
     <bpmn2:property id="fechaMaxPronunciamientoPruebas" itemSubjectRef="ItemDefinition_1" name="fechaMaxPronunciamientoPruebas"/>
+    <bpmn2:property id="fechaRadicadoSalida" itemSubjectRef="ItemDefinition_1469" name="fechaRadicadoSalida"/>
     <bpmn2:startEvent id="_1">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
@@ -535,6 +536,8 @@
         <bpmn2:dataInput id="DataInput_122" itemSubjectRef="ItemDefinition_1469" name="fechaRadicacionAnteEmpresa"/>
         <bpmn2:dataInput id="DataInput_123" itemSubjectRef="ItemDefinition_1" name="radicadoNotificar"/>
         <bpmn2:dataInput id="DataInput_124" itemSubjectRef="ItemDefinition_1" name="tipoDocumentalRadicadoNotificar"/>
+        <bpmn2:dataInput id="DataInput_126" itemSubjectRef="ItemDefinition_1469" name="fechaResolucionNotificar"/>
+        <bpmn2:dataInput id="DataInput_127" itemSubjectRef="ItemDefinition_1" name="tipoDocumentoNotificar"/>
         <bpmn2:dataOutput id="DataOutput_6" itemSubjectRef="ItemDefinition_3" name="autorizadoTramiteNotificacion"/>
         <bpmn2:dataOutput id="DataOutput_10" itemSubjectRef="ItemDefinition_1" name="numeroRadicadoSalidaESP"/>
         <bpmn2:dataOutput id="DataOutput_11" itemSubjectRef="ItemDefinition_1" name="numeroRadicadoSalida"/>
@@ -558,6 +561,8 @@
           <bpmn2:dataInputRefs>DataInput_122</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_123</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_124</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_126</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_127</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
         <bpmn2:outputSet id="OutputSet_6" name="Output Set 6">
           <bpmn2:dataOutputRefs>DataOutput_6</bpmn2:dataOutputRefs>
@@ -637,6 +642,14 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_124">
         <bpmn2:sourceRef>tipoDocumentalRadicadoSalida</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_124</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_126">
+        <bpmn2:sourceRef>fechaRadicadoSalida</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_126</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_127">
+        <bpmn2:sourceRef>tipoDocumentalRadicadoSalida</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_127</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataOutputAssociation id="DataOutputAssociation_6">
         <bpmn2:sourceRef>DataOutput_6</bpmn2:sourceRef>

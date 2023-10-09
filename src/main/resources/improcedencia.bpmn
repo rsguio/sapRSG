@@ -35,6 +35,8 @@
     <bpmn2:property id="notificador" itemSubjectRef="ItemDefinition_1" name="notificador"/>
     <bpmn2:property id="observacionesDocRadicado" itemSubjectRef="ItemDefinition_1" name="observacionesDocRadicado"/>
     <bpmn2:property id="seRadicaResolucion" itemSubjectRef="ItemDefinition_3" name="seRadicaResolucion"/>
+    <bpmn2:property id="fechaRadicadoSalida" itemSubjectRef="ItemDefinition_1455" name="fechaRadicadoSalida"/>
+    <bpmn2:property id="tipoDocumentalRadicadoSalida" itemSubjectRef="ItemDefinition_1" name="tipoDocumentalRadicadoSalida"/>
     <bpmn2:startEvent id="_1">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
@@ -530,6 +532,8 @@
         <bpmn2:dataInput id="DataInput_67" itemSubjectRef="ItemDefinition_3" name="procedenRecursos"/>
         <bpmn2:dataInput id="DataInput_68" itemSubjectRef="ItemDefinition_3" name="notificarCliente"/>
         <bpmn2:dataInput id="DataInput_69" itemSubjectRef="ItemDefinition_3" name="notificarESP"/>
+        <bpmn2:dataInput id="DataInput_70" itemSubjectRef="ItemDefinition_1455" name="fechaResolucionNotificar"/>
+        <bpmn2:dataInput id="DataInput_71" itemSubjectRef="ItemDefinition_1" name="tipoDocumentoNotificar"/>
         <bpmn2:dataOutput id="DataOutput_6" itemSubjectRef="ItemDefinition_3" name="autorizadoTramiteNotificacion"/>
         <bpmn2:dataOutput id="DataOutput_10" itemSubjectRef="ItemDefinition_1" name="notificador"/>
         <bpmn2:inputSet id="InputSet_2" name="Input Set 5">
@@ -553,6 +557,8 @@
           <bpmn2:dataInputRefs>DataInput_67</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_68</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_69</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_70</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_71</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
         <bpmn2:outputSet id="OutputSet_4" name="Output Set 6">
           <bpmn2:dataOutputRefs>DataOutput_6</bpmn2:dataOutputRefs>
@@ -647,6 +653,14 @@
           <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_51">true</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_47">DataInput_69</bpmn2:to>
         </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_70">
+        <bpmn2:sourceRef>fechaRadicadoSalida</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_70</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_71">
+        <bpmn2:sourceRef>tipoDocumentalRadicadoSalida</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_71</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataOutputAssociation id="DataOutputAssociation_6">
         <bpmn2:sourceRef>DataOutput_6</bpmn2:sourceRef>
