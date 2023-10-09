@@ -725,7 +725,7 @@
     <bpmn2:sequenceFlow id="SequenceFlow_6" tns:priority="1" name="No" sourceRef="ScriptTask_1" targetRef="ExclusiveGateway_3">
       <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_6" language="http://www.java.com/java">return KieFunctions.isFalse(rechazadoTramiteSeleccionado);</bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
-    <bpmn2:exclusiveGateway id="ExclusiveGateway_5" name="Tramite rechazado" gatewayDirection="Diverging">
+    <bpmn2:exclusiveGateway id="ExclusiveGateway_5" name="Tramite Requerimiento Rechazado" gatewayDirection="Diverging">
       <bpmn2:incoming>SequenceFlow_12</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_7</bpmn2:outgoing>
       <bpmn2:outgoing>SequenceFlow_20</bpmn2:outgoing>
@@ -1011,7 +1011,7 @@ kcontext.setVariable(&quot;tramite&quot;,&quot;&quot;);</bpmn2:script>
       <bpmndi:BPMNShape id="BPMNShape_ExclusiveGateway_5" bpmnElement="ExclusiveGateway_5" isMarkerVisible="true">
         <dc:Bounds height="50.0" width="50.0" x="910.0" y="381.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_14">
-          <dc:Bounds height="34.0" width="75.0" x="898.0" y="431.0"/>
+          <dc:Bounds height="51.0" width="99.0" x="886.0" y="431.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_EndEvent_1" bpmnElement="EndEvent_1">
@@ -1046,13 +1046,13 @@ kcontext.setVariable(&quot;tramite&quot;,&quot;&quot;);</bpmn2:script>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_ExclusiveGateway_7" bpmnElement="ExclusiveGateway_7" isMarkerVisible="true">
         <dc:Bounds height="50.0" width="50.0" x="910.0" y="251.0"/>
-        <bpmndi:BPMNLabel>
+        <bpmndi:BPMNLabel id="BPMNLabel_20">
           <dc:Bounds height="51.0" width="80.0" x="895.0" y="301.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_EndEvent_3" bpmnElement="EndEvent_3">
         <dc:Bounds height="36.0" width="36.0" x="1028.0" y="258.0"/>
-        <bpmndi:BPMNLabel>
+        <bpmndi:BPMNLabel id="BPMNLabel_21">
           <dc:Bounds height="17.0" width="20.0" x="1036.0" y="294.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
@@ -1181,13 +1181,13 @@ kcontext.setVariable(&quot;tramite&quot;,&quot;&quot;);</bpmn2:script>
         <di:waypoint xsi:type="dc:Point" x="935.0" y="381.0"/>
         <di:waypoint xsi:type="dc:Point" x="935.0" y="341.0"/>
         <di:waypoint xsi:type="dc:Point" x="935.0" y="301.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_31"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_21" bpmnElement="SequenceFlow_21" sourceElement="BPMNShape_ExclusiveGateway_7" targetElement="BPMNShape_ScriptTask_1">
         <di:waypoint xsi:type="dc:Point" x="935.0" y="251.0"/>
         <di:waypoint xsi:type="dc:Point" x="935.0" y="214.0"/>
         <di:waypoint xsi:type="dc:Point" x="935.0" y="177.0"/>
-        <bpmndi:BPMNLabel>
+        <bpmndi:BPMNLabel id="BPMNLabel_32">
           <dc:Bounds height="17.0" width="13.0" x="929.0" y="215.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
@@ -1195,7 +1195,7 @@ kcontext.setVariable(&quot;tramite&quot;,&quot;&quot;);</bpmn2:script>
         <di:waypoint xsi:type="dc:Point" x="960.0" y="276.0"/>
         <di:waypoint xsi:type="dc:Point" x="994.0" y="276.0"/>
         <di:waypoint xsi:type="dc:Point" x="1028.0" y="276.0"/>
-        <bpmndi:BPMNLabel>
+        <bpmndi:BPMNLabel id="BPMNLabel_33">
           <dc:Bounds height="17.0" width="18.0" x="986.0" y="277.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>

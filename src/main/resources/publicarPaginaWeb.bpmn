@@ -4,6 +4,7 @@
   <bpmn2:itemDefinition id="ItemDefinition_9" isCollection="false" structureRef="java.lang.String"/>
   <bpmn2:itemDefinition id="ItemDefinition_675" isCollection="false" structureRef="java.lang.Long"/>
   <bpmn2:itemDefinition id="ItemDefinition_2406" isCollection="false" structureRef="java.lang.Object"/>
+  <bpmn2:itemDefinition id="ItemDefinition_1" isCollection="false" structureRef="java.lang.Boolean"/>
   <bpmn2:process id="publicacionPaginaWeb" tns:packageName="defaultPackage" name="Publicacion pagina web" isExecutable="true" processType="Private">
     <bpmn2:property id="radicado" itemSubjectRef="ItemDefinition_9" name="radicado"/>
     <bpmn2:property id="fecha_radicado" itemSubjectRef="ItemDefinition_9" name="fecha_radicado"/>
@@ -27,6 +28,8 @@
     <bpmn2:property id="fechaNotificacion" itemSubjectRef="ItemDefinition_2406" name="fechaNotificacion"/>
     <bpmn2:property id="fechaMaxInterponerRecurso" itemSubjectRef="ItemDefinition_9" name="fechaMaxInterponerRecurso"/>
     <bpmn2:property id="tipoNotificacion" itemSubjectRef="ItemDefinition_9" name="tipoNotificacion"/>
+    <bpmn2:property id="notificarCliente" itemSubjectRef="ItemDefinition_1" name="notificarCliente"/>
+    <bpmn2:property id="notificarESP" itemSubjectRef="ItemDefinition_1" name="notificarESP"/>
     <bpmn2:startEvent id="_1">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">

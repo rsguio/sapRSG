@@ -591,6 +591,8 @@
         <bpmn2:dataInput id="DataInput_124" itemSubjectRef="ItemDefinition_1" name="idcliente"/>
         <bpmn2:dataInput id="DataInput_125" itemSubjectRef="ItemDefinition_1" name="idremitente"/>
         <bpmn2:dataInput id="DataInput_135" itemSubjectRef="ItemDefinition_1" name="numeroRadicadoSalida"/>
+        <bpmn2:dataInput id="DataInput_68" itemSubjectRef="ItemDefinition_3" name="notificarCliente"/>
+        <bpmn2:dataInput id="DataInput_69" itemSubjectRef="ItemDefinition_3" name="notificarESP"/>
         <bpmn2:inputSet id="InputSet_3" name="Input Set 1">
           <bpmn2:dataInputRefs>DataInput_101</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_102</bpmn2:dataInputRefs>
@@ -609,6 +611,8 @@
           <bpmn2:dataInputRefs>DataInput_124</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_125</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_135</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_68</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_69</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
         <bpmn2:outputSet id="OutputSet_9" name="Output Set 2"/>
       </bpmn2:ioSpecification>
@@ -679,6 +683,20 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_135">
         <bpmn2:sourceRef>numeroRadicadoSalida</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_135</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_68">
+        <bpmn2:targetRef>DataInput_68</bpmn2:targetRef>
+        <bpmn2:assignment id="Assignment_13">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_47">true</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_32">DataInput_68</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_69">
+        <bpmn2:targetRef>DataInput_69</bpmn2:targetRef>
+        <bpmn2:assignment id="Assignment_15">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_58">false</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_50">DataInput_69</bpmn2:to>
+        </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
     </bpmn2:callActivity>
     <bpmn2:sequenceFlow id="SequenceFlow_1" tns:priority="1" name="NO" sourceRef="ExclusiveGateway_2" targetRef="CallActivity_3">
@@ -887,6 +905,8 @@
         <bpmn2:dataInput id="DataInput_131" itemSubjectRef="ItemDefinition_1" name="idcliente"/>
         <bpmn2:dataInput id="DataInput_132" itemSubjectRef="ItemDefinition_1" name="idremitente"/>
         <bpmn2:dataInput id="DataInput_134" itemSubjectRef="ItemDefinition_1" name="numeroRadicadoSalida"/>
+        <bpmn2:dataInput id="DataInput_70" itemSubjectRef="ItemDefinition_3" name="notificarCliente"/>
+        <bpmn2:dataInput id="DataInput_71" itemSubjectRef="ItemDefinition_3" name="notificarESP"/>
         <bpmn2:inputSet id="InputSet_6" name="Input Set 1">
           <bpmn2:dataInputRefs>DataInput_109</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_110</bpmn2:dataInputRefs>
@@ -905,6 +925,8 @@
           <bpmn2:dataInputRefs>DataInput_131</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_132</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_134</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_70</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_71</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
         <bpmn2:outputSet id="OutputSet_10" name="Output Set 2"/>
       </bpmn2:ioSpecification>
@@ -975,6 +997,20 @@
       <bpmn2:dataInputAssociation id="DataInputAssociation_134">
         <bpmn2:sourceRef>numeroRadicadoSalidaESP</bpmn2:sourceRef>
         <bpmn2:targetRef>DataInput_134</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_70">
+        <bpmn2:targetRef>DataInput_70</bpmn2:targetRef>
+        <bpmn2:assignment id="Assignment_17">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_61">false</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_59">DataInput_70</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_71">
+        <bpmn2:targetRef>DataInput_71</bpmn2:targetRef>
+        <bpmn2:assignment id="Assignment_21">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_77">true</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_69">DataInput_71</bpmn2:to>
+        </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
     </bpmn2:callActivity>
     <bpmn2:sequenceFlow id="SequenceFlow_17" tns:priority="1" name="NO" sourceRef="ExclusiveGateway_4" targetRef="CallActivity_4">

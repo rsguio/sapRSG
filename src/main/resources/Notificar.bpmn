@@ -251,6 +251,8 @@
         <bpmn2:dataInput id="DataInput_20" itemSubjectRef="ItemDefinition_9" name="numeroAviso"/>
         <bpmn2:dataInput id="DataInput_21" itemSubjectRef="ItemDefinition_9" name="numeroCitacion"/>
         <bpmn2:dataInput id="DataInput_39" itemSubjectRef="ItemDefinition_9" name="tipoNotificacion"/>
+        <bpmn2:dataInput id="DataInput_40" itemSubjectRef="ItemDefinition_2074" name="notificarCliente"/>
+        <bpmn2:dataInput id="DataInput_41" itemSubjectRef="ItemDefinition_2074" name="notificarESP"/>
         <bpmn2:dataOutput id="DataOutput_1" itemSubjectRef="ItemDefinition_1718" name="fechaNotificacion"/>
         <bpmn2:dataOutput id="DataOutput_2" itemSubjectRef="ItemDefinition_9" name="fechaMaxInterponerRecurso"/>
         <bpmn2:dataOutput id="DataOutput_3" itemSubjectRef="ItemDefinition_9" name="tipoNotificacion"/>
@@ -275,6 +277,8 @@
           <bpmn2:dataInputRefs>DataInput_20</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_21</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>DataInput_39</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_40</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>DataInput_41</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
         <bpmn2:outputSet id="OutputSet_34" name="Output Set 2">
           <bpmn2:dataOutputRefs>DataOutput_1</bpmn2:dataOutputRefs>
@@ -364,6 +368,14 @@
           <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_37">Publicación Página Web</bpmn2:from>
           <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_29">DataInput_39</bpmn2:to>
         </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_40">
+        <bpmn2:sourceRef>notificarCliente</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_40</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation id="DataInputAssociation_41">
+        <bpmn2:sourceRef>notificarESP</bpmn2:sourceRef>
+        <bpmn2:targetRef>DataInput_41</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
       <bpmn2:dataOutputAssociation id="DataOutputAssociation_1">
         <bpmn2:sourceRef>DataOutput_1</bpmn2:sourceRef>
