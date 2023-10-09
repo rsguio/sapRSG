@@ -64,7 +64,7 @@
         "fechaPublicoComunicacionESP" : new ObjectDataType(),
     ],
     "results" : [
-        "Result" : new ObjectDataType(),
+        "Result" : new StringDataType(),
     ],
     "displayName" : "CalcularFechaPronunciamientoWIH",
     "icon" : "defaultservicenodeicon.png"

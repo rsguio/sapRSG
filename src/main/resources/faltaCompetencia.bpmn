@@ -377,10 +377,10 @@
       <bpmn2:outgoing>SequenceFlow_2</bpmn2:outgoing>
       <bpmn2:outgoing>SequenceFlow_14</bpmn2:outgoing>
     </bpmn2:exclusiveGateway>
-    <bpmn2:endEvent id="EndEvent_4" name="Fin">
+    <bpmn2:endEvent id="EndEvent_4" name="Tramite Rechazado">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
-          <tns:metaValue><![CDATA[Fin]]></tns:metaValue>
+          <tns:metaValue><![CDATA[Tramite Rechazado]]></tns:metaValue>
         </tns:metaData>
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_2</bpmn2:incoming>
@@ -1057,7 +1057,7 @@
       <bpmndi:BPMNShape id="BPMNShape_EndEvent_4" bpmnElement="EndEvent_4">
         <dc:Bounds height="36.0" width="36.0" x="707.0" y="269.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_7" labelStyle="BPMNLabelStyle_1">
-          <dc:Bounds height="17.0" width="20.0" x="715.0" y="305.0"/>
+          <dc:Bounds height="34.0" width="75.0" x="688.0" y="305.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_UserTask_2" bpmnElement="UserTask_2" isExpanded="true">
@@ -1254,25 +1254,25 @@
         <di:waypoint xsi:type="dc:Point" x="409.0" y="81.0"/>
         <di:waypoint xsi:type="dc:Point" x="437.0" y="81.0"/>
         <di:waypoint xsi:type="dc:Point" x="465.0" y="81.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_15"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_8" bpmnElement="SequenceFlow_8" sourceElement="BPMNShape_ParallelGateway_2" targetElement="BPMNShape_UserTask_2">
         <di:waypoint xsi:type="dc:Point" x="872.0" y="82.0"/>
         <di:waypoint xsi:type="dc:Point" x="931.0" y="82.0"/>
         <di:waypoint xsi:type="dc:Point" x="990.0" y="83.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_23"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_12" bpmnElement="SequenceFlow_12" sourceElement="BPMNShape_ExclusiveGateway_3" targetElement="BPMNShape_UserTask_4">
         <di:waypoint xsi:type="dc:Point" x="848.0" y="312.0"/>
         <di:waypoint xsi:type="dc:Point" x="848.0" y="429.0"/>
         <di:waypoint xsi:type="dc:Point" x="980.0" y="429.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_24"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_14" bpmnElement="SequenceFlow_14" sourceElement="BPMNShape_ExclusiveGateway_1" targetElement="BPMNShape_ParallelGateway_2">
         <di:waypoint xsi:type="dc:Point" x="750.0" y="81.0"/>
         <di:waypoint xsi:type="dc:Point" x="786.0" y="81.0"/>
         <di:waypoint xsi:type="dc:Point" x="822.0" y="82.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_25"/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
     <bpmndi:BPMNLabelStyle id="BPMNLabelStyle_1">

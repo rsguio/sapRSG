@@ -416,10 +416,10 @@
       </bpmn2:dataInputAssociation>
     </bpmn2:task>
     <bpmn2:sequenceFlow id="SequenceFlow_6" tns:priority="1" sourceRef="Task_3" targetRef="UserTask_2"/>
-    <bpmn2:endEvent id="EndEvent_4" name="Fin">
+    <bpmn2:endEvent id="EndEvent_4" name="Tramite Rechazado">
       <bpmn2:extensionElements>
         <tns:metaData name="elementname">
-          <tns:metaValue><![CDATA[Fin]]></tns:metaValue>
+          <tns:metaValue><![CDATA[Tramite Rechazado]]></tns:metaValue>
         </tns:metaData>
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_15</bpmn2:incoming>
@@ -658,7 +658,7 @@
       <bpmndi:BPMNShape id="BPMNShape_EndEvent_4" bpmnElement="EndEvent_4">
         <dc:Bounds height="36.0" width="36.0" x="1299.0" y="196.0"/>
         <bpmndi:BPMNLabel id="BPMNLabel_8" labelStyle="BPMNLabelStyle_1">
-          <dc:Bounds height="17.0" width="20.0" x="1307.0" y="232.0"/>
+          <dc:Bounds height="34.0" width="75.0" x="1280.0" y="232.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_Task_5" bpmnElement="Task_4">
